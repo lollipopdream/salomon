@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ZoomIn, ZoomOut, Maximize2 } from 'lucide-react';
 import { useStore } from '../store/useStore';
-import course from '../../public/all_course_2016.jpg';
+// import course from '../../public/all_course_2016.jpg';
 
 // Anchor points on the SVG canvas (1200×800 viewBox for higher detail)
 const ROUTE_PATH_1 = "M 600 720 C 585 650 555 580 510 510 C 465 440 435 370 420 300 C 405 250 398 200 390 150";
