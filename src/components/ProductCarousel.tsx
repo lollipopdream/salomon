@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { PRODUCTS } from '../data/products';
 import { useStore } from '../store/useStore';
+import { useAdminStore } from '../store/useAdminStore';
 
 const CATEGORY_FILTERS = [
   { label: 'シーズン', value: 'all' },
@@ -23,9 +23,10 @@ export function ProductCarousel() {
   const [activeFilter, setActiveFilter] = useState('all');
   const scrollRef = useRef<HTMLDivElement>(null);
   const recommendedProducts = useStore(s => s.recommendedProducts);
+  const adminProducts = useAdminStore(s => s.products);
 
-  // Use recommended products if available, else all products
-  const displayProducts = recommendedProducts.length > 0 ? recommendedProducts : PRODUCTS;
+  // Use recommended products if available, else fall back to admin product list
+  const displayProducts = recommendedProducts.length > 0 ? recommendedProducts : adminProducts;
 
   const filtered = activeFilter === 'all'
     ? displayProducts

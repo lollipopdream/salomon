@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Cloud, CloudRain, CloudSnow, CloudSun, Sun } from 'lucide-react';
 import { useStore } from '../store/useStore';
+import { useAdminStore } from '../store/useAdminStore';
 import type { WeatherCode } from '../types';
 
 function WeatherIcon({ code }: { code: WeatherCode }) {
@@ -16,6 +17,7 @@ function WeatherIcon({ code }: { code: WeatherCode }) {
 
 export function MainHeader() {
   const weather = useStore(s => s.weather);
+  const heroMessages = useAdminStore(s => s.heroMessages);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -45,10 +47,10 @@ export function MainHeader() {
       {/* Center: Hero title */}
       <div className="absolute left-1/2 -translate-x-1/2 top-3 text-center animate-fadeInUp opacity-0-start" style={{ animationFillMode: 'forwards' }}>
         <h1 className="text-3xl font-bold text-white leading-tight">
-          こんにちは！今日はどの山の情報が知りたいですか？
+          {heroMessages.greeting}
         </h1>
         <p className="text-salomon-muted text-sm mt-1 tracking-wide">
-          高尾山の最新情報をAIがご案内します。
+          {heroMessages.subtitle}
         </p>
       </div>
 
