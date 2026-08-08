@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ZoomIn, ZoomOut, Maximize2 } from 'lucide-react';
 import { useStore } from '../store/useStore';
-import Course from './../../public/course.jpg'
+// import Course from './../../public/course.jpg'
 
 // Anchor points on the SVG canvas (1200×800 viewBox for higher detail)
 const ROUTE_PATH_1 = "M 600 720 C 585 650 555 580 510 510 C 465 440 435 370 420 300 C 405 250 398 200 390 150";
@@ -79,7 +79,7 @@ export function MountainMap() {
       >
         <img
           // src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=90"
-          src={Course}
+          src="/course.jpg"
           alt="高尾山"
           className="w-full h-full object-cover object-center pointer-events-none select-none"
           draggable={false}
