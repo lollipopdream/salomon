@@ -12,7 +12,7 @@ async function mount() {
 
   console.log('pathname:', path);
 
-  const isAdmin = path === '/admin' || path.startsWith('/admin/');
+  const isAdmin = path == '/admin' || path.startsWith('/admin/');
 
   if (isAdmin) {
     const { AdminApp } = await import('./admin/AdminApp');
