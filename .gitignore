@@ -1,7 +1,31 @@
-node_modules
-dist
-dist-ssr
-*.local
+# クライアント提供資料(社外秘)。原本はGitへ絶対にcommitしない。
+docs/reference/
+
+# Visual reference用のローカル画像・動画(local-only reference)。原本・派生frameともにGitへ絶対にcommitしない。
+.local/
+
+# 秘密情報
 .env
-.env.local
+.env.*
+!.env.example
+.htpasswd
+*.pem
+*.key
+*.crt
+
+# 依存関係・ビルド成果物
+node_modules/
+dist/
+.vite/
+
+# DEMタイルPNG・仮ルートJSONはオフライン再現用に同梱するため除外しない。
+
+# 航空写真タイル・モザイクの一時生成物
+.aerial-texture-tmp/
+
+# OS
 .DS_Store
+
+# キャッシュ
+.pytest_cache/
+__pycache__/

@@ -1,0 +1,69 @@
+# nginx設定テンプレート(仲介者確認用VPS限定公開)
+#
+# これは「例」であり、実際のVPSへは配置・reloadしていません
+# (docs/deploy_plan.md「Human Gateまでの作業範囲」参照)。
+# [2026-08-14方針変更] domain/subdomainは使用せず、VPSのIPv4アドレス直打ち(49.212.213.226)で
+# 公開する。証明書はLet's Encryptのshort-lived IPアドレス証明書(有効期間 約6日、docs/deploy_plan.md
+# §6.1参照)を使用するため、自動renewal + nginx reloadの構成(§6.2)が必須。
+# [2026-08-14実deploy前レビューで修正] renewalはHTTP-01 webroot方式(§6.1)のため、この最終設定へ
+# 差し替えた後も port 80 の /.well-known/acme-challenge/ は配信し続ける必要がある。80番serverに
+# 無条件の301だけを置くと renewal 用の certbot webroot リクエストが届かなくなるため、
+# ACME challengeパスをリダイレクトより優先するlocationとして先に置くこと。
+# .htpasswd はこのファイルとは別にVPS上でユーザーが生成してください
+# (このリポジトリには実パスワード・証明書等の秘密情報を一切含めません)。
+
+# --- 検索エンジン対策・server情報非公開(HTTPヘッダーレベル、robots.txt/metaタグと二重化) ---
+server_tokens off;
+
+server {
+    listen 80;
+    server_name 49.212.213.226;
+
+    # --- ACME challenge応答(HTTP-01 webroot renewalのため、最終設定でも継続して配信する) ---
+    # webrootパスは deploy/nginx.bootstrap.conf.example と一致させること(/var/www/certbot-challenge)。
+    # このlocationを下のリダイレクトより先に置くことで、challengeリクエストが301より優先して処理される。
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot-challenge;
+        try_files $uri =404;
+    }
+
+    # --- それ以外はHTTPSへリダイレクト(固定IPを使用、$hostではなく49.212.213.226) ---
+    # domain/subdomainを使用しない方針(§6)のため、$hostではなく固定IPを明示する。
+    location / {
+        return 301 https://49.212.213.226$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name 49.212.213.226;
+
+    # --- TLS証明書パス(Let's Encrypt IPアドレス証明書、certbot --ip-address取得時の標準パス) ---
+    ssl_certificate     /etc/letsencrypt/live/49.212.213.226/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/49.212.213.226/privkey.pem;
+
+    # --- 明示的アクセス制限(Basic認証) ---
+    # .htpasswd はVPS上で `htpasswd -c /etc/nginx/.htpasswd <username>` 等で生成する運用とし、
+    # このリポジトリ・Gitには絶対に含めない([VD-NF3]、.gitignoreで.htpasswdを除外済み)。
+    auth_basic           "Restricted (mediator preview)";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    # --- 検索エンジンindex防止(HTTPヘッダー、robots.txt/metaタグと二重化) ---
+    add_header X-Robots-Tag "noindex, nofollow" always;
+
+    # --- directory listing禁止(nginxの既定値もoffだが明示する) ---
+    autoindex off;
+
+    # --- 静的ファイル配信のみ(SPAルーティング不要、index.html 1枚+assets/data) ---
+    # 2026-08-14 VPS調査時点でnginx/`/var/www`とも未インストール・未作成(docs/deploy_plan.md §2.2)。
+    # 下記パスはdocs/deploy_plan.md §3の推奨案(releases/current方式)であり、まだ作成していない。
+    root /var/www/salomon-poc/current;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # 不要なアクセスログへ個人情報等が残らないよう、必要ならログ設計は別途検討
+    # (本PoCはログ出力先の指定なし=nginxのデフォルト設定に従う想定)
+}

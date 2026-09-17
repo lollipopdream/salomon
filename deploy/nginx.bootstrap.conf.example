@@ -1,0 +1,33 @@
+# nginx設定テンプレート(TLS証明書取得専用のbootstrap設定)
+#
+# これは「例」であり、実際のVPSへは配置・reloadしていません
+# (docs/deploy_plan.md §6・§8「ステップF」参照)。
+#
+# 目的: Let's Encrypt(certbot、webroot方式)がACME challengeに応答できるようにするための
+# HTTP限定の最小構成。SALOMON PoC本体はこの段階では一切配信しない(平文HTTPでの一般公開を避ける)。
+# 証明書取得後は、この設定ファイルを deploy/nginx.conf.example (最終HTTPS+Basic認証設定)へ
+# 置き換える(docs/deploy_plan.md §8「ステップJ」)。この設定はあくまで初回証明書取得までの一時利用で、
+# 差し替え後は deploy/nginx.conf.example 側の port 80 が /.well-known/acme-challenge/ を
+# 継続して配信し、renewal(HTTP-01 webroot方式)に対応する([2026-08-14実deploy前レビューで明記]。
+#
+# [2026-08-14方針変更] domain/subdomainは使用せず、VPSのIPv4アドレス直打ち(49.212.213.226)で
+# 公開する(Let's Encrypt IPアドレス証明書、docs/deploy_plan.md §6参照)。
+
+server_tokens off;
+
+server {
+    listen 80;
+    server_name 49.212.213.226;
+
+    # --- ACME challenge応答専用(certbot --webroot が使用するパス) ---
+    # docs/deploy_plan.md §8「ステップD」で作成する webroot ディレクトリと対応させること。
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot-challenge;
+        try_files $uri =404;
+    }
+
+    # --- それ以外は一切配信しない(SALOMON PoC本体を平文HTTPで公開しないため) ---
+    location / {
+        return 404;
+    }
+}
