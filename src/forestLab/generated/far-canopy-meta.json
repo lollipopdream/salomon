@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "phase": "matsu-h01-forest-lab-reference-locked-cluster-hlod-prototype",
+  "generator": "tools/generateFarCanopy.mjs",
+  "world": {
+    "patchId": "A",
+    "xMin": 838.7224233659354,
+    "xMax": 3075.3155523417627,
+    "zMin": 2143.4017486018347,
+    "zMax": 4379.994877577662,
+    "sideMeters": 2236.5931289758273,
+    "texelMeters": 1.0920864887577282,
+    "pngRowZeroIsZMin": true,
+    "requiredTextureFlipY": false
+  },
+  "size": 2048,
+  "seed": 20260913,
+  "lambda": 2.99573227355399,
+  "stampSpacingMeters": 5.560885426191613,
+  "stampCount": 163735,
+  "maskThreshold": 0.35,
+  "routeCorridorRemoval": false,
+  "prefilter": {
+    "cellSize": 64,
+    "colorAveraging": "alpha-weighted box"
+  },
+  "inputs": {
+    "groveTopAtlasPng": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png",
+      "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+    },
+    "groveTopAtlasMeta": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_meta.json",
+      "sha256": "5c19be2b5a074095fe974a1fd620e02dbb924f6eb904de6931f6022ae301955d"
+    },
+    "forestMaskPng": {
+      "path": "public/data/forest/takao-forest-mask.png",
+      "sha256": "7a62e69c0938ab2c5de749ac165d8de132bbc1da81cc86ab1d6057eff0e31d4c"
+    }
+  },
+  "output": {
+    "path": "src/forestLab/generated/far-canopy-2048.png",
+    "sha256": "a0c9e2c89ed451b7c10ee30694d406459fba5f56ab8b1a136c025f838f3648d0"
+  },
+  "stats": {
+    "forestTexelCount": 3612109,
+    "nonForestTexelCount": 582195,
+    "nonForestMaxAlpha": 0,
+    "forestMeanAlpha": 0.9490464054911723,
+    "forestFullyOpaqueFraction": 0.5939247680510195,
+    "stampCount": 163735
+  },
+  "notes": [
+    "この texture の stamp 配置は candidate 4/5 の cluster instance 配置とは独立のアルゴリズムであり、instance と 1:1 対応しない。",
+    "同一 SEED・同一閉鎖度式・同一 mask を使うため統計的には整合するが、幾何的な一致は保証しない(design §10 RISK-2)。"
+  ]
+}

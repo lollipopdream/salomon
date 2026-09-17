@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "phase": "matsu-h01-r4-canopy-continuity-lab",
+  "generator": "tools/generateR4FarCanopy.mjs",
+  "appearance": "R4",
+  "macroAppearanceSource": "R2",
+  "world": {
+    "patchId": "A",
+    "xMin": 838.7224233659354,
+    "xMax": 3075.3155523417627,
+    "zMin": 2143.4017486018347,
+    "zMax": 4379.994877577662,
+    "sideMeters": 2236.5931289758273,
+    "texelMeters": 1.0920864887577282,
+    "pngRowZeroIsZMin": true,
+    "requiredTextureFlipY": false
+  },
+  "size": 2048,
+  "seed": 20260913,
+  "lambda": 2.99573227355399,
+  "stampSpacingMeters": 5.560885426191613,
+  "stampCount": 163734,
+  "maskThreshold": 0.35,
+  "routeCorridorRemoval": false,
+  "prefilter": {
+    "cellSize": 64,
+    "colorAveraging": "alpha-weighted box"
+  },
+  "appearanceParameters": {
+    "macroFieldOctaves": [
+      {
+        "wavelengthMeters": 323.44739479345264,
+        "weight": 0.48,
+        "rotationDeg": 0,
+        "offsetX": 0,
+        "offsetZ": 0
+      },
+      {
+        "wavelengthMeters": 161.72369739672632,
+        "weight": 0.3,
+        "rotationDeg": 31,
+        "offsetX": 137,
+        "offsetZ": -211
+      },
+      {
+        "wavelengthMeters": 14.150823522213551,
+        "weight": 0.22,
+        "rotationDeg": 67,
+        "offsetX": -523,
+        "offsetZ": 389
+      }
+    ],
+    "familyThresholds": {
+      "DARK_CONIFER_THRESHOLD": 0.3892,
+      "BRIGHT_BROADLEAF_THRESHOLD": 0.6137
+    },
+    "groveWeightsByFamily": [
+      [
+        0.3,
+        0.1,
+        0.45,
+        0.03,
+        0.02,
+        0.1
+      ],
+      [
+        0.15,
+        0.2,
+        0.1,
+        0.25,
+        0.18,
+        0.12
+      ],
+      [
+        0.03,
+        0.07,
+        0.02,
+        0.3,
+        0.5,
+        0.08
+      ]
+    ],
+    "colorAnchors": [
+      {
+        "field": 0.3232,
+        "r": 0.427798,
+        "g": 0.793242,
+        "b": 1.332398
+      },
+      {
+        "field": 0.4825,
+        "r": 0.937507,
+        "g": 1.000528,
+        "b": 1.077988
+      },
+      {
+        "field": 0.6409,
+        "r": 1.416025,
+        "g": 1.232618,
+        "b": 0.972103
+      }
+    ],
+    "configSelectionHashIndex": "b + 2",
+    "yawSelectionHashIndex": "b + 5",
+    "note": "Identical to far-canopy-r2-meta.json appearanceParameters (macro field / thresholds / weights / color anchors unchanged); computed via the imported R2 selectionFamilyAt/colorMultiplierAt functions, not recomputed independently."
+  },
+  "brightFamilySource": {
+    "family": "BRIGHT_BROADLEAF",
+    "familyIndex": 2,
+    "source": "BROADLEAF_ROUND_LIGHT baked atlas, view=top (plan view)",
+    "variants": [
+      "ROUND_LIGHT_A",
+      "ROUND_LIGHT_B"
+    ],
+    "variantSelection": "hashIndexTo01(b + 2, SEED) < 0.5 ? ROUND_LIGHT_A : ROUND_LIGHT_B (same hash draw the grove pipeline uses as the pickWeighted() input for configIndex; no new hash index consumed)",
+    "yawSelection": "yawIndex = min(3, floor(hashIndexTo01(b + 5, SEED) * 4)); yaw degrees = [0, 90, 180, 270] (identical draw and mapping the grove pipeline uses for grove-top yaw selection)",
+    "worldSizeConversion": "tightWorldWidth = cell.crownWidth; tightWorldDepth = cell.physicalHeight (numerically verified equal to renderedWorldWidth/renderedWorldHeight scaled by the tight alphaTightBounds crop fraction)",
+    "colorProcessing": "none"
+  },
+  "inputs": {
+    "groveTopAtlasPng": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png",
+      "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+    },
+    "groveTopAtlasMeta": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_meta.json",
+      "sha256": "5c19be2b5a074095fe974a1fd620e02dbb924f6eb904de6931f6022ae301955d"
+    },
+    "forestMaskPng": {
+      "path": "public/data/forest/takao-forest-mask.png",
+      "sha256": "7a62e69c0938ab2c5de749ac165d8de132bbc1da81cc86ab1d6057eff0e31d4c"
+    },
+    "broadleafRoundLightAtlasA": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf_round_light_a_3072x2304.png",
+      "sha256": "aee763f9d88f119917578a6323a0ce24a5c05eb0e5b6244b74773c7c5436727d"
+    },
+    "broadleafRoundLightAtlasB": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf_round_light_b_3072x2304.png",
+      "sha256": "1240c5ce4ee0d167fa3b00eedae29eb6fdcf26a667f24d56020e16c37d84bae0"
+    },
+    "broadleafRoundLightAtlasMeta": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf-round-light-atlas-meta.json",
+      "sha256": "77a89dce8f04365f08d1c8867e0b6104e656c2ecde088be639ad46dcb8ef376c"
+    }
+  },
+  "output": {
+    "path": "src/forestLab/generated/far-canopy-r4-2048.png",
+    "sha256": "95b7551668e8c367f4aa11d11dcb8f00b5212ae518d35e75e64b1e83bac12bb6"
+  },
+  "stats": {
+    "forestTexelCount": 3612109,
+    "nonForestTexelCount": 582195,
+    "nonForestMaxAlpha": 0,
+    "forestMeanAlpha": 0.9533639439752799,
+    "forestFullyOpaqueFraction": 0.669185509075169,
+    "stampCount": 163734,
+    "brightFamilyStampCount": 29873,
+    "brightFamilyVariantCounts": {
+      "ROUND_LIGHT_A": 14931,
+      "ROUND_LIGHT_B": 14942
+    },
+    "brightFamilyYawCounts": {
+      "yaw0": 7478,
+      "yaw90": 7443,
+      "yaw180": 7438,
+      "yaw270": 7514
+    }
+  },
+  "notes": [
+    "この texture の stamp 配置は candidate 4/5 の cluster instance 配置とは独立のアルゴリズムであり、instance と 1:1 対応しない(前 phase から継承、design §10 RISK-2)。",
+    "同一 SEED・同一閉鎖度式・同一 mask を使うため統計的には整合するが、幾何的な一致は保証しない。",
+    "R2(far-canopy-r2-2048.png)からの差分は family===BRIGHT_BROADLEAF(index 2)の stamp の pixel source だけであり、macro field / thresholds / GROVE_WEIGHTS_BY_FAMILY / color anchors / SEED / stamp 位置・個数・theta・scale の hash は不変。",
+    "family===BRIGHT_BROADLEAF の stamp は grove top atlas ではなく、baked BROADLEAF_ROUND_LIGHT の \"top\" cell(plan view, variant A/B, yaw 0/90/180/270)から引く。FAR は plan view のため top cell の projection semantics が一致する(side card へ top cell を貼ることは引き続き禁止のまま; この生成器は side cell を一切参照しない)。",
+    "BRL top cell の world サイズ換算は crownWidth(width) / physicalHeight(depth)を用いる。これは grove top cell の tightWorldWidth/tightWorldDepth と同じ crop-to-world 換算式の結果であることをこの生成器自身が起動のたびに数値検証している(prepareBrlTopCells 内の assert)。",
+    "color_processing: none。BRL 由来 pixel に対する新規の色処理(hue shift / saturation変更 / brightness 乗算 / tint)は一切行っていない。stamp 位置に応じた color multiplier(colorMultiplierAt)は R2 から不変で継承された既存処理であり、grove 由来・BRL 由来を問わず全 stamp に同一に適用される(BRL 固有の追加処理ではない)。"
+  ]
+}

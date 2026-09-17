@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "phase": "matsu-h01-r9-far-canopy-convergence",
+  "generator": "outputs/matsu-h01-r9-far-canopy-convergence/tools/r9_compose_farcanopy.mjs",
+  "world": {
+    "patchId": "A",
+    "xMin": 838.7224233659354,
+    "xMax": 3075.3155523417627,
+    "zMin": 2143.4017486018347,
+    "zMax": 4379.994877577662,
+    "sideMeters": 2236.5931289758273,
+    "texelMeters": 1.0920864887577282,
+    "pngRowZeroIsZMin": true,
+    "requiredTextureFlipY": false
+  },
+  "size": 2048,
+  "correction": {
+    "mechanism": "linear-light-additive-offset",
+    "channel": "blue",
+    "space": "linear-sRGB",
+    "offsetLinearBlue": 0.018,
+    "appliedToAlphaGreaterThanZero": true,
+    "role": "calibration-probe"
+  },
+  "parent": {
+    "path": "src/forestLab/generated/far-canopy-2048.png",
+    "sha256": "a0c9e2c89ed451b7c10ee30694d406459fba5f56ab8b1a136c025f838f3648d0"
+  },
+  "inputs": {
+    "groveTopAtlasPng": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png",
+      "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+    },
+    "groveTopAtlasMeta": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_meta.json",
+      "sha256": "5c19be2b5a074095fe974a1fd620e02dbb924f6eb904de6931f6022ae301955d"
+    },
+    "forestMaskPng": {
+      "path": "public/data/forest/takao-forest-mask.png",
+      "sha256": "7a62e69c0938ab2c5de749ac165d8de132bbc1da81cc86ab1d6057eff0e31d4c"
+    }
+  },
+  "output": {
+    "path": "src/forestLab/generated/far-canopy-r9-i1-skylight-blue-2048.png",
+    "sha256": "e67fb7ed872fa5ff3b6262b05899cf3b27bd3e561bdfd6fc05c04b67e50ac682"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "phase": "matsu-h01-r5-far-first-crown-grain-lab",
+  "generator": "tools/generateR5FarCanopy.mjs",
+  "appearance": "R5",
+  "macroAppearanceSource": "R2",
+  "world": {
+    "patchId": "A",
+    "xMin": 838.7224233659354,
+    "xMax": 3075.3155523417627,
+    "zMin": 2143.4017486018347,
+    "zMax": 4379.994877577662,
+    "sideMeters": 2236.5931289758273,
+    "texelMeters": 1.0920864887577282,
+    "pngRowZeroIsZMin": true,
+    "requiredTextureFlipY": false
+  },
+  "size": 2048,
+  "seed": 20260913,
+  "lambda": 2.99573227355399,
+  "stampSpacingMeters": 5.560885426191613,
+  "stampCount": 163730,
+  "maskThreshold": 0.35,
+  "routeCorridorRemoval": false,
+  "prefilter": {
+    "cellSize": 64,
+    "colorAveraging": "alpha-weighted box",
+    "note": "PREFILTER_SIZE (64) unchanged from R2/R4. At the R5 bright-family footprint (mean ~18.5m diameter, ~16.9 texels across), 64 prefilter samples across the tight crop already oversamples the destination footprint several times over; increasing it further was not needed to eliminate the hard-block artifact (the alpha feather, not prefilter resolution, is what removes the box-edge discontinuity -- see notes)."
+  },
+  "alphaEdgeTreatment": {
+    "technique": "smooth alpha feather (allowed technique; not a blur, not recoloring)",
+    "featherStart": 0.8,
+    "description": "For each texel inside a stamp's oriented box test, alpha is multiplied by a factor that is 1 while the Chebyshev-normalized distance to the box boundary is <= featherStart, and ramps via smoothstep to exactly 0 at the box boundary otherwise. RGB and interior alpha (distance <= featherStart) are untouched -- only the outer band of each stamp's own footprint is tapered. This guarantees the alpha field is continuous across every stamp boundary, eliminating the hard rectangular/stair-step block A5 attributed to the unmodified box test."
+  },
+  "blockDetection": {
+    "method": "first-difference (neighbor-to-neighbor) scan of the FINAL output alpha channel, row-wise and column-wise; counts runs of consecutive texels whose difference exceeds jumpThresholdAlpha255, of length >= runLengthMinTexels",
+    "jumpThresholdAlpha255": 40,
+    "runLengthMinTexels": 28,
+    "maxSingleStampDiameterTexels": 23.772468179149055,
+    "result": {
+      "maxHorizontalRun": 14,
+      "horizontalRunCount": 0,
+      "maxVerticalRun": 14,
+      "verticalRunCount": 0
+    },
+    "assertion": "generate() asserts horizontalRunCount === 0 && verticalRunCount === 0 and throws (refuses to write output) otherwise."
+  },
+  "maskOutsideAlphaVerification": {
+    "method": "re-decoded the PNG this generator just wrote (not the in-memory generation buffers) and scanned every texel classified non-forest by the same mask/threshold logic used during generation, reading alpha directly from the decoded PNG bytes",
+    "nonForestTexelCount": 582195,
+    "maxAlphaOutsideMask": 0,
+    "assertion": "generate() asserts maxAlphaOutsideMask === 0 and throws otherwise."
+  },
+  "grainDiagnostic": {
+    "method": "local reimplementation (not imported -- see notes) of measureCrownGrain.mjs's detrended-luminance horizontal+vertical autocorrelation, first-local-minimum method, applied directly to this texture's RGBA buffer (and, for comparison, to the existing R2/R4 textures) inside a verified all-forest crop near the texture center; NOT a screen-space render measurement (dev server/browser launch is out of scope for this task)",
+    "cropRectTexels": {
+      "x": 772,
+      "y": 972,
+      "w": 256,
+      "h": 256
+    },
+    "texelMeters": 1.0920864887577282,
+    "r2": {
+      "horizontalGrainPx": 9,
+      "horizontalUsedFallback": false,
+      "verticalGrainPx": 8,
+      "verticalUsedFallback": false,
+      "bandPx": {
+        "min": 8,
+        "max": 9
+      },
+      "bandWorldMeters": {
+        "min": 8.736691910061825,
+        "max": 9.828778398819553
+      }
+    },
+    "r4": {
+      "horizontalGrainPx": 9,
+      "horizontalUsedFallback": false,
+      "verticalGrainPx": 9,
+      "verticalUsedFallback": false,
+      "bandPx": {
+        "min": 9,
+        "max": 9
+      },
+      "bandWorldMeters": {
+        "min": 9.828778398819553,
+        "max": 9.828778398819553
+      }
+    },
+    "r5": {
+      "horizontalGrainPx": 8,
+      "horizontalUsedFallback": false,
+      "verticalGrainPx": 8,
+      "verticalUsedFallback": false,
+      "bandPx": {
+        "min": 8,
+        "max": 8
+      },
+      "bandWorldMeters": {
+        "min": 8.736691910061825,
+        "max": 8.736691910061825
+      }
+    },
+    "referenceTargetWorldMetersBand": {
+      "min": 17.6,
+      "max": 22.6
+    },
+    "referenceSource": "r5-far-design-evidence.md §1 / evidence/far-architecture-findings.md PART B",
+    "caveat": "This texture-space autocorrelation is dominated by the dense, heavily-overlapping stamp LATTICE (stampSpacingMeters=5.561m) rather than by individual stamp footprint size -- consistent with far-architecture-findings.md A6/PART B's own finding that PRIMARY-camera screen-space grain was identical between R3 and R4 despite very different stamp footprints. It is reported for completeness but should NOT be read as evidence that the R5 bright-family footprint reduction (see brightFamilyFootprint below) moved crown grain toward the 17.6-22.6m reference band; that claim rests on the analytic footprint-to-target-band comparison in brightFamilyFootprint, not on this diagnostic. A true screen-space verification would require rendering PRIMARY/OVERVIEW captures (dev server/browser launch), which is out of scope for this task."
+  },
+  "brightFamilyFootprint": {
+    "source": "BROADLEAF_ROUND_LIGHT baked atlas, view=top (plan view), same as R4",
+    "scaleRange": {
+      "min": 0.78,
+      "max": 0.92
+    },
+    "scaleSelectionHashIndex": "b + 4 (same draw the grove pipeline uses for CONIFER_SCALE_MIN/MAX; reinterpreted into BRIGHT_SCALE_MIN/MAX only for family===BRIGHT_BROADLEAF stamps; no new hash index consumed)",
+    "variantSelection": "hashIndexTo01(b + 2, SEED) < 0.5 ? ROUND_LIGHT_A : ROUND_LIGHT_B (same as R4)",
+    "yawSelection": "yawIndex = min(3, floor(hashIndexTo01(b + 5, SEED) * 4)); yaw degrees = [0, 90, 180, 270] (same as R4)",
+    "resultingDiameterMeters": {
+      "min": 14.821305368029199,
+      "max": 22.49497856293108,
+      "mean": 18.45915072056499
+    },
+    "targetDiameterMetersRange": {
+      "min": 17,
+      "max": 20
+    }
+  },
+  "appearanceParameters": {
+    "macroFieldOctaves": [
+      {
+        "wavelengthMeters": 323.44739479345264,
+        "weight": 0.48,
+        "rotationDeg": 0,
+        "offsetX": 0,
+        "offsetZ": 0
+      },
+      {
+        "wavelengthMeters": 161.72369739672632,
+        "weight": 0.3,
+        "rotationDeg": 31,
+        "offsetX": 137,
+        "offsetZ": -211
+      },
+      {
+        "wavelengthMeters": 14.150823522213551,
+        "weight": 0.22,
+        "rotationDeg": 67,
+        "offsetX": -523,
+        "offsetZ": 389
+      }
+    ],
+    "familyThresholds": {
+      "DARK_CONIFER_THRESHOLD": 0.3892,
+      "BRIGHT_BROADLEAF_THRESHOLD": 0.6137
+    },
+    "groveWeightsByFamily": [
+      [
+        0.3,
+        0.1,
+        0.45,
+        0.03,
+        0.02,
+        0.1
+      ],
+      [
+        0.15,
+        0.2,
+        0.1,
+        0.25,
+        0.18,
+        0.12
+      ],
+      [
+        0.03,
+        0.07,
+        0.02,
+        0.3,
+        0.5,
+        0.08
+      ]
+    ],
+    "colorAnchors": [
+      {
+        "field": 0.3232,
+        "r": 0.427798,
+        "g": 0.793242,
+        "b": 1.332398
+      },
+      {
+        "field": 0.4825,
+        "r": 0.937507,
+        "g": 1.000528,
+        "b": 1.077988
+      },
+      {
+        "field": 0.6409,
+        "r": 1.416025,
+        "g": 1.232618,
+        "b": 0.972103
+      }
+    ],
+    "configSelectionHashIndex": "b + 2",
+    "yawSelectionHashIndex": "b + 5",
+    "note": "Identical to far-canopy-r2-meta.json appearanceParameters; computed via the imported R2 selectionFamilyAt/colorMultiplierAt functions, not recomputed independently. Cross-checked at generation time against far-canopy-r2-meta.json (see crossCheckAgainstR2Meta())."
+  },
+  "inputs": {
+    "groveTopAtlasPng": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png",
+      "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+    },
+    "groveTopAtlasMeta": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_meta.json",
+      "sha256": "5c19be2b5a074095fe974a1fd620e02dbb924f6eb904de6931f6022ae301955d"
+    },
+    "forestMaskPng": {
+      "path": "public/data/forest/takao-forest-mask.png",
+      "sha256": "7a62e69c0938ab2c5de749ac165d8de132bbc1da81cc86ab1d6057eff0e31d4c"
+    },
+    "broadleafRoundLightAtlasA": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf_round_light_a_3072x2304.png",
+      "sha256": "aee763f9d88f119917578a6323a0ce24a5c05eb0e5b6244b74773c7c5436727d"
+    },
+    "broadleafRoundLightAtlasB": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf_round_light_b_3072x2304.png",
+      "sha256": "1240c5ce4ee0d167fa3b00eedae29eb6fdcf26a667f24d56020e16c37d84bae0"
+    },
+    "broadleafRoundLightAtlasMeta": {
+      "path": "outputs/matsu-h01-broadleaf-round-light-asset-source-and-bake-preflight/bake/broadleaf-round-light-atlas-meta.json",
+      "sha256": "77a89dce8f04365f08d1c8867e0b6104e656c2ecde088be639ad46dcb8ef376c"
+    },
+    "r2MetaForCrossCheck": {
+      "path": "src/forestLab/generated/far-canopy-r2-meta.json",
+      "sha256": "bfc36f5d1c023f111e4fa4ee7b6cd7544a06b4a848dd560d5777933703b69306"
+    }
+  },
+  "output": {
+    "path": "src/forestLab/generated/far-canopy-r5-2048.png",
+    "sha256": "c3be3e74d7521ce0e1547b458ac84d3b652a4572b32a13a00e2d665079446dc0"
+  },
+  "stats": {
+    "forestTexelCount": 3612109,
+    "nonForestTexelCount": 582195,
+    "nonForestMaxAlpha": 0,
+    "forestMeanAlpha": 0.9456763749519728,
+    "forestFullyOpaqueFraction": 0.6336146002238582,
+    "stampCount": 163730,
+    "brightFamilyStampCount": 29873,
+    "brightFamilyVariantCounts": {
+      "ROUND_LIGHT_A": 14931,
+      "ROUND_LIGHT_B": 14942
+    },
+    "brightFamilyYawCounts": {
+      "yaw0": 7478,
+      "yaw90": 7443,
+      "yaw180": 7438,
+      "yaw270": 7514
+    },
+    "featherAppliedTexelCount": 14571494
+  },
+  "notes": [
+    "この texture の stamp 配置は candidate 4/5 の cluster instance 配置とは独立のアルゴリズムであり、instance と 1:1 対応しない(前 phase から継承、design §10 RISK-2)。",
+    "同一 SEED・同一閉鎖度式・同一 mask を使うため統計的には整合するが、幾何的な一致は保証しない。",
+    "stamp 位置・個数・theta の hash、macro field / thresholds / GROVE_WEIGHTS_BY_FAMILY / color anchors / SEED は R2/R4 から不変。",
+    "family===BRIGHT_BROADLEAF の stamp は grove top atlas ではなく、baked BROADLEAF_ROUND_LIGHT の \"top\" cell(plan view, variant A/B, yaw 0/90/180/270)から引く(R4 から継承、変更なし)。",
+    "R5 で新規に変えたのは (1) BRIGHT_BROADLEAF stamp の footprint scale 範囲を CONIFER_SCALE_MIN/MAX から BRIGHT_SCALE_MIN=0.78/BRIGHT_SCALE_MAX=0.92 へ変更(同じ hash draw b+4 を再利用、新規 hash 消費なし)、(2) 全 stamp(grove/bright 問わず)に alpha feather を追加(featherStart=0.8、box 境界で alpha が正確に 0 へ滑らかに漸近する)。stamp 位置・個数・SEED・macro distribution は変更していない。",
+    "colorProcessing: none。stamp 位置に応じた color multiplier(colorMultiplierAt)は R2 から不変で継承された既存処理であり、grove 由来・BRL 由来を問わず全 stamp に同一に適用される(再着色ではない;既存 macro distribution の一部)。alpha feather は alpha チャンネルのみを操作し、RGB・色相・彩度・明度には一切触れていない。",
+    "block 検出は §24 の例示どおり、出力 alpha の 1 次差分(隣接 texel 間の絶対差)を行・列それぞれについて走査し、閾値(40/255)を超える差分が 28 texel 以上連続する run の数を数える方法。runLengthMin は生成時に実測した grove/bright 双方の最大 1 stamp 直径(texel 換算, 23.77px)+4px のマージンで、単一 stamp 自身の(feather済み)縁では届き得ない長さに設定している。scan は forest mask 内部のtexel ペアだけを対象とし、forest/非forest mask 境界(§36 G により意図的に alpha=0 への hard cutoff が要求される境界)は除外している(mask 境界と stamp 由来の block artifact を混同しないため)。生成器自身がこの検出結果をassert しており、block が検出された場合は出力を書き込まずに例外で停止する。",
+    "grain diagnostic (§36 J) は screen-space render (dev server 起動禁止のため未実施) ではなく、texture 空間で measureCrownGrain.mjs と同一の方法(detrended luminance の水平/垂直自己相関、最初の極小)をこのファイル内に再実装(measureCrownGrain.mjs の import は同ファイルが import 時に無条件で main() を実行し許可外の evidence ファイルへ書き込むため意図的に避けた)して直接適用したものであり、reference 写真との厳密な等価測定ではないproxy 指標である。詳細は meta.grainDiagnostic を参照。"
+  ]
+}

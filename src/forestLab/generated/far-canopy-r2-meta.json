@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "phase": "matsu-h01-forest-lab-reference-appearance-convergence-v1",
+  "generator": "tools/generateFarCanopy2.mjs",
+  "appearance": "R2",
+  "world": {
+    "patchId": "A",
+    "xMin": 838.7224233659354,
+    "xMax": 3075.3155523417627,
+    "zMin": 2143.4017486018347,
+    "zMax": 4379.994877577662,
+    "sideMeters": 2236.5931289758273,
+    "texelMeters": 1.0920864887577282,
+    "pngRowZeroIsZMin": true,
+    "requiredTextureFlipY": false
+  },
+  "size": 2048,
+  "seed": 20260913,
+  "lambda": 2.99573227355399,
+  "stampSpacingMeters": 5.560885426191613,
+  "stampCount": 163725,
+  "maskThreshold": 0.35,
+  "routeCorridorRemoval": false,
+  "prefilter": {
+    "cellSize": 64,
+    "colorAveraging": "alpha-weighted box"
+  },
+  "appearanceParameters": {
+    "macroFieldOctaves": [
+      {
+        "wavelengthMeters": 323.44739479345264,
+        "weight": 0.48,
+        "rotationDeg": 0,
+        "offsetX": 0,
+        "offsetZ": 0
+      },
+      {
+        "wavelengthMeters": 161.72369739672632,
+        "weight": 0.3,
+        "rotationDeg": 31,
+        "offsetX": 137,
+        "offsetZ": -211
+      },
+      {
+        "wavelengthMeters": 14.150823522213551,
+        "weight": 0.22,
+        "rotationDeg": 67,
+        "offsetX": -523,
+        "offsetZ": 389
+      }
+    ],
+    "familyThresholds": {
+      "DARK_CONIFER_THRESHOLD": 0.3892,
+      "BRIGHT_BROADLEAF_THRESHOLD": 0.6137
+    },
+    "groveWeightsByFamily": [
+      [
+        0.3,
+        0.1,
+        0.45,
+        0.03,
+        0.02,
+        0.1
+      ],
+      [
+        0.15,
+        0.2,
+        0.1,
+        0.25,
+        0.18,
+        0.12
+      ],
+      [
+        0.03,
+        0.07,
+        0.02,
+        0.3,
+        0.5,
+        0.08
+      ]
+    ],
+    "colorAnchors": [
+      {
+        "field": 0.3232,
+        "r": 0.427798,
+        "g": 0.793242,
+        "b": 1.332398
+      },
+      {
+        "field": 0.4825,
+        "r": 0.937507,
+        "g": 1.000528,
+        "b": 1.077988
+      },
+      {
+        "field": 0.6409,
+        "r": 1.416025,
+        "g": 1.232618,
+        "b": 0.972103
+      }
+    ],
+    "configSelectionHashIndex": "b + 2",
+    "yawSelectionHashIndex": "b + 5"
+  },
+  "inputs": {
+    "groveTopAtlasPng": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png",
+      "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+    },
+    "groveTopAtlasMeta": {
+      "path": "public/data/forest/impostor-v2/grove_top_atlas_meta.json",
+      "sha256": "5c19be2b5a074095fe974a1fd620e02dbb924f6eb904de6931f6022ae301955d"
+    },
+    "forestMaskPng": {
+      "path": "public/data/forest/takao-forest-mask.png",
+      "sha256": "7a62e69c0938ab2c5de749ac165d8de132bbc1da81cc86ab1d6057eff0e31d4c"
+    }
+  },
+  "output": {
+    "path": "src/forestLab/generated/far-canopy-r2-2048.png",
+    "sha256": "52c03ac27d070c1ac318ca25b8fcdb549c4ca83947cf7c6fe9a614de220c3fc0"
+  },
+  "stats": {
+    "forestTexelCount": 3612109,
+    "nonForestTexelCount": 582195,
+    "nonForestMaxAlpha": 0,
+    "forestMeanAlpha": 0.9498556584253464,
+    "forestFullyOpaqueFraction": 0.6209441630914239,
+    "stampCount": 163725
+  },
+  "notes": [
+    "この texture の stamp 配置は candidate 4/5 の cluster instance 配置とは独立のアルゴリズムであり、instance と 1:1 対応しない。",
+    "同一 SEED・同一閉鎖度式・同一 mask を使うため統計的には整合するが、幾何的な一致は保証しない(design §10 RISK-2、継承)。",
+    "BASELINE(far-canopy-2048.png)からの差分は cellIndex 選択(family 別 grove config weight による CDF 引き)と、stamp 位置での color multiplier 適用の 2 点のみ(design §7.5)。stamp 位置・個数・theta・scale の hash は不変。"
+  ]
+}

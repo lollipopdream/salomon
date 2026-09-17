@@ -1,0 +1,2673 @@
+{
+  "schema_version": 1,
+  "generator_version": "dense-broadleaf-grove-r3-v2",
+  "generated_at": "2026-09-14T00:00:00.000Z",
+  "generated_at_note": "Fixed build timestamp so every output is byte-identical across reruns.",
+  "seed": 1511502095,
+  "seed_hex": "0x5a17b10f",
+  "hash_function": {
+    "name": "hashIndexTo01 / forestRandom integer hash",
+    "description": "uint32 xor with imul(seed,0x9e3779b1), avalanche multipliers 0x21f0aaad and 0x735a2d97, normalized by 2^32"
+  },
+  "alpha_threshold": {
+    "normalized": 0.03,
+    "byte_minimum": 8,
+    "coordinate_convention": "top-left origin; production target x0/y0 inclusive and x1/y1 exclusive; BRL source alphaTightBounds inclusive"
+  },
+  "composition": {
+    "source_views": "side only; top row-of-views excluded",
+    "source_yaw_pool_deg": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      270,
+      315
+    ],
+    "excluded_source_yaw": {
+      "yaw_deg": 225,
+      "reason": "Both BRL side cells at yaw 225 are backlit/desaturated high-contrast outliers, so they are omitted without recolouring the baked pixels.",
+      "measured_cells": [
+        {
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 225,
+          "medianS": 0.344262,
+          "microStdev32": 40.512537,
+          "key": "brl:ROUND_LIGHT_A:side:225"
+        },
+        {
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 225,
+          "medianS": 0.316239,
+          "microStdev32": 40.97837,
+          "key": "brl:ROUND_LIGHT_B:side:225"
+        }
+      ],
+      "comparison_note": "All other side yaw medianS values are 0.462963-0.571429 and microStdev32 values are 23.425150-30.421184; yaw 225 is the sole excluded yaw."
+    },
+    "color_processing": "none",
+    "alpha_compositing": "straight-alpha sources sampled and accumulated in premultiplied source-over space; straight RGBA8 output",
+    "depth_order": [
+      "back/smaller full trees",
+      "middle full trees",
+      "front/larger crown-only occluders",
+      "foreground/largest crown-only closure row"
+    ],
+    "wide_rows": [
+      {
+        "layer": "back",
+        "count": 5,
+        "scale_range": [
+          0.4,
+          0.48
+        ],
+        "mode": "full",
+        "normalized_ground": 0.965,
+        "normalized_vertical_jitter_amplitude": 0.27
+      },
+      {
+        "layer": "middle",
+        "count": 5,
+        "scale_range": [
+          0.49,
+          0.58
+        ],
+        "mode": "full",
+        "normalized_ground": 0.985,
+        "normalized_vertical_jitter_amplitude": 0.2
+      },
+      {
+        "layer": "front",
+        "count": 6,
+        "scale_range": [
+          0.57,
+          0.64
+        ],
+        "mode": "crown",
+        "crown_fraction": 0.68,
+        "normalized_ground": 1,
+        "normalized_vertical_jitter_amplitude": 0.12
+      },
+      {
+        "layer": "foreground",
+        "count": 7,
+        "scale_range": [
+          0.63,
+          0.7
+        ],
+        "mode": "crown",
+        "crown_fraction": 0.6,
+        "normalized_ground": 1.008,
+        "normalized_vertical_jitter_amplitude": 0.05
+      }
+    ],
+    "narrow_rows": [
+      {
+        "layer": "back",
+        "count": 4,
+        "scale_range": [
+          0.4,
+          0.47
+        ],
+        "mode": "full",
+        "normalized_ground": 0.965,
+        "normalized_vertical_jitter_amplitude": 0.27
+      },
+      {
+        "layer": "middle",
+        "count": 4,
+        "scale_range": [
+          0.48,
+          0.56
+        ],
+        "mode": "full",
+        "normalized_ground": 0.985,
+        "normalized_vertical_jitter_amplitude": 0.2
+      },
+      {
+        "layer": "front",
+        "count": 5,
+        "scale_range": [
+          0.55,
+          0.61
+        ],
+        "mode": "crown",
+        "crown_fraction": 0.68,
+        "normalized_ground": 1,
+        "normalized_vertical_jitter_amplitude": 0.12
+      },
+      {
+        "layer": "foreground",
+        "count": 6,
+        "scale_range": [
+          0.6,
+          0.66
+        ],
+        "mode": "crown",
+        "crown_fraction": 0.6,
+        "normalized_ground": 1.008,
+        "normalized_vertical_jitter_amplitude": 0.05
+      }
+    ],
+    "x_placement_rule": "Even slot centers across target tight width plus seeded jitter within +/-0.36 slot widths.",
+    "y_jitter_rule": "Layer ground baseline plus deterministic seeded jitter: back +/-0.1350, middle +/-0.1000, front +/-0.0600, foreground +/-0.0250 target tight heights. This exposes distinct crown domes and dips while retaining a dense bottom closure row.",
+    "source_selection_rule": "A/B alternate by target cell and crown ordinal; side yaw cycles by target yaw, ordinal*3, layer, and target cell index across the 7-yaw non-225 pool.",
+    "affine_fit_rule": "Bilinear independent-axis scale/translate from threshold-tight working bounds to production exclusive-max target bounds, followed by four real-sample edge witnesses and exact assertion."
+  },
+  "cells": [
+    {
+      "config": "G4",
+      "yaw_deg": 0,
+      "atlas_origin_px": {
+        "x": 1536,
+        "y": 0
+      },
+      "crown_count": 23,
+      "scale_distribution": [
+        0.479295,
+        0.441553,
+        0.44504,
+        0.406873,
+        0.467736,
+        0.519328,
+        0.548918,
+        0.579624,
+        0.501097,
+        0.524621,
+        0.584736,
+        0.602881,
+        0.614373,
+        0.601616,
+        0.620673,
+        0.624337,
+        0.670091,
+        0.684876,
+        0.641965,
+        0.693095,
+        0.647009,
+        0.684343,
+        0.637835
+      ],
+      "scale_min": 0.406873,
+      "scale_max": 0.693095,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.479295,
+          "normalized_x": 0.033114,
+          "normalized_ground_y": 0.857003
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.441553,
+          "normalized_x": 0.277114,
+          "normalized_ground_y": 0.944581
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.44504,
+          "normalized_x": 0.471701,
+          "normalized_ground_y": 0.856586
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.406873,
+          "normalized_x": 0.630885,
+          "normalized_ground_y": 0.844411
+        },
+        {
+          "ordinal": 4,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.467736,
+          "normalized_x": 0.836803,
+          "normalized_ground_y": 1.044211
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.519328,
+          "normalized_x": 0.084228,
+          "normalized_ground_y": 1.040568
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.548918,
+          "normalized_x": 0.308398,
+          "normalized_ground_y": 1.058131
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.579624,
+          "normalized_x": 0.56083,
+          "normalized_ground_y": 0.926634
+        },
+        {
+          "ordinal": 8,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.501097,
+          "normalized_x": 0.68604,
+          "normalized_ground_y": 0.924191
+        },
+        {
+          "ordinal": 9,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.524621,
+          "normalized_x": 0.828858,
+          "normalized_ground_y": 0.98383
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.584736,
+          "normalized_x": 0.095933,
+          "normalized_ground_y": 0.992539
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.602881,
+          "normalized_x": 0.258452,
+          "normalized_ground_y": 1.012295
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.614373,
+          "normalized_x": 0.430771,
+          "normalized_ground_y": 1.015603
+        },
+        {
+          "ordinal": 13,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.601616,
+          "normalized_x": 0.641489,
+          "normalized_ground_y": 0.941141
+        },
+        {
+          "ordinal": 14,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.620673,
+          "normalized_x": 0.765486,
+          "normalized_ground_y": 1.019355
+        },
+        {
+          "ordinal": 15,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.624337,
+          "normalized_x": 0.912048,
+          "normalized_ground_y": 1.01764
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.670091,
+          "normalized_x": 0.020448,
+          "normalized_ground_y": 1.011157
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.684876,
+          "normalized_x": 0.166372,
+          "normalized_ground_y": 0.999052
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.641965,
+          "normalized_x": 0.319623,
+          "normalized_ground_y": 1.01961
+        },
+        {
+          "ordinal": 19,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.693095,
+          "normalized_x": 0.545389,
+          "normalized_ground_y": 1.016149
+        },
+        {
+          "ordinal": 20,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.647009,
+          "normalized_x": 0.649334,
+          "normalized_ground_y": 0.99227
+        },
+        {
+          "ordinal": 21,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.684343,
+          "normalized_x": 0.794604,
+          "normalized_ground_y": 1.011368
+        },
+        {
+          "ordinal": 22,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.637835,
+          "normalized_x": 0.945411,
+          "normalized_ground_y": 1.018221
+        }
+      ],
+      "production_alpha_coverage": 0.30306243896484375,
+      "pre_refinement_alpha_coverage": 0.6404685974121094,
+      "achieved_alpha_coverage": 0.603343964,
+      "required_alpha_coverage": 0.45,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 501,
+          "mean_row_px": 112.904192,
+          "stdev_px": 28.77913,
+          "min_row_px": 60,
+          "max_row_px": 223,
+          "peak_to_trough_px": 163,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 501,
+          "mean_row_px": 115.57485,
+          "stdev_px": 28.626176,
+          "min_row_px": 60,
+          "max_row_px": 192,
+          "peak_to_trough_px": 132,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 147,
+        "x1": 512,
+        "y1": 477,
+        "count": 134361
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 506,
+        "y1": 453
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 506,
+        "y1": 453
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G5",
+      "yaw_deg": 0,
+      "atlas_origin_px": {
+        "x": 2048,
+        "y": 0
+      },
+      "crown_count": 23,
+      "scale_distribution": [
+        0.479115,
+        0.411579,
+        0.415277,
+        0.449061,
+        0.450025,
+        0.55939,
+        0.51054,
+        0.491057,
+        0.564263,
+        0.57056,
+        0.617328,
+        0.591367,
+        0.620575,
+        0.616021,
+        0.625975,
+        0.573472,
+        0.67225,
+        0.644563,
+        0.68242,
+        0.696117,
+        0.677996,
+        0.676277,
+        0.683594
+      ],
+      "scale_min": 0.411579,
+      "scale_max": 0.696117,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.479115,
+          "normalized_x": 0.165188,
+          "normalized_ground_y": 0.870679
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.411579,
+          "normalized_x": 0.305718,
+          "normalized_ground_y": 0.904703
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.415277,
+          "normalized_x": 0.557586,
+          "normalized_ground_y": 1.085046
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.449061,
+          "normalized_x": 0.673881,
+          "normalized_ground_y": 1.043739
+        },
+        {
+          "ordinal": 4,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.450025,
+          "normalized_x": 0.925361,
+          "normalized_ground_y": 1.073457
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.55939,
+          "normalized_x": 0.073677,
+          "normalized_ground_y": 0.91829
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.51054,
+          "normalized_x": 0.353975,
+          "normalized_ground_y": 1.060295
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.491057,
+          "normalized_x": 0.462921,
+          "normalized_ground_y": 0.932579
+        },
+        {
+          "ordinal": 8,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.564263,
+          "normalized_x": 0.635507,
+          "normalized_ground_y": 0.954864
+        },
+        {
+          "ordinal": 9,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.57056,
+          "normalized_x": 0.868688,
+          "normalized_ground_y": 1.050008
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.617328,
+          "normalized_x": 0.071525,
+          "normalized_ground_y": 0.972736
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.591367,
+          "normalized_x": 0.30534,
+          "normalized_ground_y": 0.988526
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.620575,
+          "normalized_x": 0.357181,
+          "normalized_ground_y": 1.051767
+        },
+        {
+          "ordinal": 13,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.616021,
+          "normalized_x": 0.543346,
+          "normalized_ground_y": 0.981535
+        },
+        {
+          "ordinal": 14,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.625975,
+          "normalized_x": 0.798443,
+          "normalized_ground_y": 1.052513
+        },
+        {
+          "ordinal": 15,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.573472,
+          "normalized_x": 0.858113,
+          "normalized_ground_y": 0.973949
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.67225,
+          "normalized_x": 0.049224,
+          "normalized_ground_y": 1.0223
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.644563,
+          "normalized_x": 0.253097,
+          "normalized_ground_y": 1.03067
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.68242,
+          "normalized_x": 0.379968,
+          "normalized_ground_y": 0.996677
+        },
+        {
+          "ordinal": 19,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.696117,
+          "normalized_x": 0.455762,
+          "normalized_ground_y": 0.998028
+        },
+        {
+          "ordinal": 20,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.677996,
+          "normalized_x": 0.657462,
+          "normalized_ground_y": 1.014583
+        },
+        {
+          "ordinal": 21,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.676277,
+          "normalized_x": 0.767646,
+          "normalized_ground_y": 0.992747
+        },
+        {
+          "ordinal": 22,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.683594,
+          "normalized_x": 0.886089,
+          "normalized_ground_y": 1.011951
+        }
+      ],
+      "production_alpha_coverage": 0.24778366088867188,
+      "pre_refinement_alpha_coverage": 0.5197525024414062,
+      "achieved_alpha_coverage": 0.484630585,
+      "required_alpha_coverage": 0.45,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 134.256972,
+          "stdev_px": 17.269706,
+          "min_row_px": 101,
+          "max_row_px": 177,
+          "peak_to_trough_px": 76,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 139.649402,
+          "stdev_px": 22.254786,
+          "min_row_px": 101,
+          "max_row_px": 193,
+          "peak_to_trough_px": 92,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 149,
+        "x1": 512,
+        "y1": 439,
+        "count": 119848
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 101,
+        "x1": 507,
+        "y1": 411
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 101,
+        "x1": 507,
+        "y1": 411
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G4",
+      "yaw_deg": 90,
+      "atlas_origin_px": {
+        "x": 1536,
+        "y": 512
+      },
+      "crown_count": 19,
+      "scale_distribution": [
+        0.422007,
+        0.449947,
+        0.429686,
+        0.418998,
+        0.547552,
+        0.508232,
+        0.501272,
+        0.546699,
+        0.595354,
+        0.585952,
+        0.572281,
+        0.595503,
+        0.608036,
+        0.60113,
+        0.659774,
+        0.655911,
+        0.643598,
+        0.602537,
+        0.621991
+      ],
+      "scale_min": 0.418998,
+      "scale_max": 0.659774,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.422007,
+          "normalized_x": 0.089092,
+          "normalized_ground_y": 1.06214
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.449947,
+          "normalized_x": 0.347233,
+          "normalized_ground_y": 1.002138
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.429686,
+          "normalized_x": 0.549008,
+          "normalized_ground_y": 1.053046
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.418998,
+          "normalized_x": 0.913638,
+          "normalized_ground_y": 0.862226
+        },
+        {
+          "ordinal": 4,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.547552,
+          "normalized_x": 0.078913,
+          "normalized_ground_y": 0.887316
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.508232,
+          "normalized_x": 0.340158,
+          "normalized_ground_y": 0.988779
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.501272,
+          "normalized_x": 0.566174,
+          "normalized_ground_y": 0.895309
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.546699,
+          "normalized_x": 0.957008,
+          "normalized_ground_y": 1.033338
+        },
+        {
+          "ordinal": 8,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.595354,
+          "normalized_x": 0.097417,
+          "normalized_ground_y": 0.983466
+        },
+        {
+          "ordinal": 9,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.585952,
+          "normalized_x": 0.300997,
+          "normalized_ground_y": 1.007618
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.572281,
+          "normalized_x": 0.487538,
+          "normalized_ground_y": 0.988693
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.595503,
+          "normalized_x": 0.697029,
+          "normalized_ground_y": 0.972416
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.608036,
+          "normalized_x": 0.914477,
+          "normalized_ground_y": 1.059222
+        },
+        {
+          "ordinal": 13,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.60113,
+          "normalized_x": 0.061248,
+          "normalized_ground_y": 1.022419
+        },
+        {
+          "ordinal": 14,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.659774,
+          "normalized_x": 0.245083,
+          "normalized_ground_y": 1.011702
+        },
+        {
+          "ordinal": 15,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.655911,
+          "normalized_x": 0.442189,
+          "normalized_ground_y": 0.988323
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.643598,
+          "normalized_x": 0.539658,
+          "normalized_ground_y": 1.007338
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.602537,
+          "normalized_x": 0.750174,
+          "normalized_ground_y": 0.987244
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.621991,
+          "normalized_x": 0.901984,
+          "normalized_ground_y": 0.990932
+        }
+      ],
+      "production_alpha_coverage": 0.4365119934082031,
+      "pre_refinement_alpha_coverage": 0.8302268981933594,
+      "achieved_alpha_coverage": 0.780605316,
+      "required_alpha_coverage": 0.55,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 57.203187,
+          "stdev_px": 24.35467,
+          "min_row_px": 14,
+          "max_row_px": 100,
+          "peak_to_trough_px": 86,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 79.629482,
+          "stdev_px": 32.512734,
+          "min_row_px": 14,
+          "max_row_px": 155,
+          "peak_to_trough_px": 141,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 127,
+        "x1": 512,
+        "y1": 512,
+        "count": 163974
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G5",
+      "yaw_deg": 90,
+      "atlas_origin_px": {
+        "x": 2048,
+        "y": 512
+      },
+      "crown_count": 19,
+      "scale_distribution": [
+        0.466017,
+        0.438298,
+        0.415852,
+        0.435513,
+        0.507939,
+        0.548157,
+        0.546568,
+        0.538903,
+        0.57819,
+        0.56431,
+        0.573259,
+        0.586029,
+        0.571792,
+        0.600019,
+        0.608068,
+        0.652632,
+        0.626538,
+        0.608373,
+        0.614136
+      ],
+      "scale_min": 0.415852,
+      "scale_max": 0.652632,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.466017,
+          "normalized_x": 0.173938,
+          "normalized_ground_y": 1.073464
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.438298,
+          "normalized_x": 0.396554,
+          "normalized_ground_y": 0.983344
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.415852,
+          "normalized_x": 0.610237,
+          "normalized_ground_y": 0.969257
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.435513,
+          "normalized_x": 0.934168,
+          "normalized_ground_y": 1.032033
+        },
+        {
+          "ordinal": 4,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.507939,
+          "normalized_x": 0.04602,
+          "normalized_ground_y": 0.95255
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.548157,
+          "normalized_x": 0.33254,
+          "normalized_ground_y": 0.917151
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.546568,
+          "normalized_x": 0.689611,
+          "normalized_ground_y": 1.000174
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.538903,
+          "normalized_x": 0.849953,
+          "normalized_ground_y": 0.985851
+        },
+        {
+          "ordinal": 8,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.57819,
+          "normalized_x": 0.10249,
+          "normalized_ground_y": 0.967629
+        },
+        {
+          "ordinal": 9,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.56431,
+          "normalized_x": 0.243352,
+          "normalized_ground_y": 1.057932
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.573259,
+          "normalized_x": 0.474798,
+          "normalized_ground_y": 0.984966
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.586029,
+          "normalized_x": 0.659682,
+          "normalized_ground_y": 1.024389
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.571792,
+          "normalized_x": 0.883581,
+          "normalized_ground_y": 1.054365
+        },
+        {
+          "ordinal": 13,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.600019,
+          "normalized_x": 0.051835,
+          "normalized_ground_y": 1.006231
+        },
+        {
+          "ordinal": 14,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.608068,
+          "normalized_x": 0.228458,
+          "normalized_ground_y": 1.01392
+        },
+        {
+          "ordinal": 15,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.652632,
+          "normalized_x": 0.389514,
+          "normalized_ground_y": 0.996752
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.626538,
+          "normalized_x": 0.643225,
+          "normalized_ground_y": 1.03071
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.608373,
+          "normalized_x": 0.803079,
+          "normalized_ground_y": 1.017953
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.614136,
+          "normalized_x": 0.971783,
+          "normalized_ground_y": 1.005629
+        }
+      ],
+      "production_alpha_coverage": 0.42229461669921875,
+      "pre_refinement_alpha_coverage": 0.797637939453125,
+      "achieved_alpha_coverage": 0.772842407,
+      "required_alpha_coverage": 0.55,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 62.655378,
+          "stdev_px": 22.727354,
+          "min_row_px": 25,
+          "max_row_px": 119,
+          "peak_to_trough_px": 94,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 71.737052,
+          "stdev_px": 18.890083,
+          "min_row_px": 25,
+          "max_row_px": 106,
+          "peak_to_trough_px": 81,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 101,
+        "x1": 512,
+        "y1": 512,
+        "count": 182595
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 25,
+        "x1": 507,
+        "y1": 487
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 25,
+        "x1": 507,
+        "y1": 487
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G4",
+      "yaw_deg": 180,
+      "atlas_origin_px": {
+        "x": 1536,
+        "y": 1024
+      },
+      "crown_count": 23,
+      "scale_distribution": [
+        0.478728,
+        0.465117,
+        0.478022,
+        0.443215,
+        0.434898,
+        0.538175,
+        0.531357,
+        0.51317,
+        0.516753,
+        0.498353,
+        0.586934,
+        0.609603,
+        0.633613,
+        0.586926,
+        0.583813,
+        0.633875,
+        0.658723,
+        0.631281,
+        0.64244,
+        0.680856,
+        0.666933,
+        0.695227,
+        0.654843
+      ],
+      "scale_min": 0.434898,
+      "scale_max": 0.695227,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.478728,
+          "normalized_x": 0.030736,
+          "normalized_ground_y": 0.975176
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.465117,
+          "normalized_x": 0.319748,
+          "normalized_ground_y": 0.940117
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.478022,
+          "normalized_x": 0.502229,
+          "normalized_ground_y": 0.877686
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.443215,
+          "normalized_x": 0.732293,
+          "normalized_ground_y": 1.099862
+        },
+        {
+          "ordinal": 4,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.434898,
+          "normalized_x": 0.89028,
+          "normalized_ground_y": 0.83675
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.538175,
+          "normalized_x": 0.055328,
+          "normalized_ground_y": 0.950674
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.531357,
+          "normalized_x": 0.277413,
+          "normalized_ground_y": 0.97816
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.51317,
+          "normalized_x": 0.443408,
+          "normalized_ground_y": 0.917044
+        },
+        {
+          "ordinal": 8,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.516753,
+          "normalized_x": 0.722834,
+          "normalized_ground_y": 1.075528
+        },
+        {
+          "ordinal": 9,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.498353,
+          "normalized_x": 0.930142,
+          "normalized_ground_y": 1.018347
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.586934,
+          "normalized_x": 0.025931,
+          "normalized_ground_y": 1.01732
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.609603,
+          "normalized_x": 0.194623,
+          "normalized_ground_y": 0.961628
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.633613,
+          "normalized_x": 0.426724,
+          "normalized_ground_y": 0.964552
+        },
+        {
+          "ordinal": 13,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.586926,
+          "normalized_x": 0.612115,
+          "normalized_ground_y": 1.032229
+        },
+        {
+          "ordinal": 14,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.583813,
+          "normalized_x": 0.799315,
+          "normalized_ground_y": 1.050288
+        },
+        {
+          "ordinal": 15,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.633875,
+          "normalized_x": 0.963937,
+          "normalized_ground_y": 0.968353
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.658723,
+          "normalized_x": 0.120431,
+          "normalized_ground_y": 1.024208
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.631281,
+          "normalized_x": 0.190752,
+          "normalized_ground_y": 1.003113
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.64244,
+          "normalized_x": 0.35357,
+          "normalized_ground_y": 1.0024
+        },
+        {
+          "ordinal": 19,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.680856,
+          "normalized_x": 0.548531,
+          "normalized_ground_y": 0.992984
+        },
+        {
+          "ordinal": 20,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.666933,
+          "normalized_x": 0.607316,
+          "normalized_ground_y": 1.021197
+        },
+        {
+          "ordinal": 21,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.695227,
+          "normalized_x": 0.767112,
+          "normalized_ground_y": 1.031848
+        },
+        {
+          "ordinal": 22,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.654843,
+          "normalized_x": 0.893308,
+          "normalized_ground_y": 1.017337
+        }
+      ],
+      "production_alpha_coverage": 0.30307769775390625,
+      "pre_refinement_alpha_coverage": 0.6655426025390625,
+      "achieved_alpha_coverage": 0.627098083,
+      "required_alpha_coverage": 0.45,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 99.571713,
+          "stdev_px": 18.75311,
+          "min_row_px": 60,
+          "max_row_px": 147,
+          "peak_to_trough_px": 87,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 90.800797,
+          "stdev_px": 19.022742,
+          "min_row_px": 60,
+          "max_row_px": 131,
+          "peak_to_trough_px": 71,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 175,
+        "x1": 512,
+        "y1": 493,
+        "count": 134204
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 507,
+        "y1": 453
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 507,
+        "y1": 453
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G5",
+      "yaw_deg": 180,
+      "atlas_origin_px": {
+        "x": 2048,
+        "y": 1024
+      },
+      "crown_count": 23,
+      "scale_distribution": [
+        0.400028,
+        0.403779,
+        0.414852,
+        0.439401,
+        0.414552,
+        0.563807,
+        0.529813,
+        0.500229,
+        0.533775,
+        0.577165,
+        0.581572,
+        0.619092,
+        0.633778,
+        0.592201,
+        0.598228,
+        0.582571,
+        0.643688,
+        0.662517,
+        0.697517,
+        0.670243,
+        0.646209,
+        0.648424,
+        0.692765
+      ],
+      "scale_min": 0.400028,
+      "scale_max": 0.697517,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.400028,
+          "normalized_x": 0.091717,
+          "normalized_ground_y": 0.937341
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.403779,
+          "normalized_x": 0.36349,
+          "normalized_ground_y": 0.96961
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.414852,
+          "normalized_x": 0.429913,
+          "normalized_ground_y": 1.033914
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.439401,
+          "normalized_x": 0.725353,
+          "normalized_ground_y": 1.092765
+        },
+        {
+          "ordinal": 4,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.414552,
+          "normalized_x": 0.921522,
+          "normalized_ground_y": 1.007186
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.563807,
+          "normalized_x": 0.042637,
+          "normalized_ground_y": 0.982524
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.529813,
+          "normalized_x": 0.281025,
+          "normalized_ground_y": 1.079922
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.500229,
+          "normalized_x": 0.482426,
+          "normalized_ground_y": 0.982239
+        },
+        {
+          "ordinal": 8,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.533775,
+          "normalized_x": 0.661564,
+          "normalized_ground_y": 1.026351
+        },
+        {
+          "ordinal": 9,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.577165,
+          "normalized_x": 0.940421,
+          "normalized_ground_y": 0.968222
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.581572,
+          "normalized_x": 0.050421,
+          "normalized_ground_y": 0.969101
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.619092,
+          "normalized_x": 0.29459,
+          "normalized_ground_y": 1.012982
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.633778,
+          "normalized_x": 0.464585,
+          "normalized_ground_y": 0.985985
+        },
+        {
+          "ordinal": 13,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.592201,
+          "normalized_x": 0.607723,
+          "normalized_ground_y": 0.975828
+        },
+        {
+          "ordinal": 14,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.598228,
+          "normalized_x": 0.793855,
+          "normalized_ground_y": 0.941269
+        },
+        {
+          "ordinal": 15,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.582571,
+          "normalized_x": 0.915846,
+          "normalized_ground_y": 1.055865
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.643688,
+          "normalized_x": 0.061301,
+          "normalized_ground_y": 1.012008
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.662517,
+          "normalized_x": 0.167543,
+          "normalized_ground_y": 1.031598
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.697517,
+          "normalized_x": 0.316974,
+          "normalized_ground_y": 1.020418
+        },
+        {
+          "ordinal": 19,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.670243,
+          "normalized_x": 0.5449,
+          "normalized_ground_y": 1.025911
+        },
+        {
+          "ordinal": 20,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.646209,
+          "normalized_x": 0.608261,
+          "normalized_ground_y": 1.000775
+        },
+        {
+          "ordinal": 21,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.648424,
+          "normalized_x": 0.787567,
+          "normalized_ground_y": 0.995631
+        },
+        {
+          "ordinal": 22,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.692765,
+          "normalized_x": 0.913952,
+          "normalized_ground_y": 1.00815
+        }
+      ],
+      "production_alpha_coverage": 0.247894287109375,
+      "pre_refinement_alpha_coverage": 0.5118980407714844,
+      "achieved_alpha_coverage": 0.464313507,
+      "required_alpha_coverage": 0.45,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 138.671315,
+          "stdev_px": 15.300364,
+          "min_row_px": 102,
+          "max_row_px": 188,
+          "peak_to_trough_px": 86,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 146.40239,
+          "stdev_px": 21.925477,
+          "min_row_px": 102,
+          "max_row_px": 184,
+          "peak_to_trough_px": 82,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 157,
+        "x1": 512,
+        "y1": 441,
+        "count": 112770
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 102,
+        "x1": 507,
+        "y1": 411
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 102,
+        "x1": 507,
+        "y1": 411
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G4",
+      "yaw_deg": 270,
+      "atlas_origin_px": {
+        "x": 1536,
+        "y": 1536
+      },
+      "crown_count": 19,
+      "scale_distribution": [
+        0.409337,
+        0.444409,
+        0.452724,
+        0.421053,
+        0.557256,
+        0.488695,
+        0.507215,
+        0.505431,
+        0.589046,
+        0.577323,
+        0.574902,
+        0.590341,
+        0.565815,
+        0.615066,
+        0.641509,
+        0.653565,
+        0.646516,
+        0.624834,
+        0.629198
+      ],
+      "scale_min": 0.409337,
+      "scale_max": 0.653565,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.409337,
+          "normalized_x": 0.037399,
+          "normalized_ground_y": 0.873453
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.444409,
+          "normalized_x": 0.35171,
+          "normalized_ground_y": 0.924748
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.452724,
+          "normalized_x": 0.699912,
+          "normalized_ground_y": 0.941821
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.421053,
+          "normalized_x": 0.922724,
+          "normalized_ground_y": 1.014535
+        },
+        {
+          "ordinal": 4,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.557256,
+          "normalized_x": 0.145076,
+          "normalized_ground_y": 1.062077
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.488695,
+          "normalized_x": 0.447788,
+          "normalized_ground_y": 0.962835
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.507215,
+          "normalized_x": 0.564443,
+          "normalized_ground_y": 0.99181
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.505431,
+          "normalized_x": 0.820042,
+          "normalized_ground_y": 0.953567
+        },
+        {
+          "ordinal": 8,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_B:side:180",
+          "scale": 0.589046,
+          "normalized_x": 0.145301,
+          "normalized_ground_y": 0.993296
+        },
+        {
+          "ordinal": 9,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.577323,
+          "normalized_x": 0.335344,
+          "normalized_ground_y": 0.946491
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.574902,
+          "normalized_x": 0.464044,
+          "normalized_ground_y": 0.957776
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.590341,
+          "normalized_x": 0.69532,
+          "normalized_ground_y": 0.967
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.565815,
+          "normalized_x": 0.922179,
+          "normalized_ground_y": 1.009781
+        },
+        {
+          "ordinal": 13,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.615066,
+          "normalized_x": 0.094936,
+          "normalized_ground_y": 1.021834
+        },
+        {
+          "ordinal": 14,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.641509,
+          "normalized_x": 0.307188,
+          "normalized_ground_y": 1.004374
+        },
+        {
+          "ordinal": 15,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.653565,
+          "normalized_x": 0.445946,
+          "normalized_ground_y": 0.991241
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.646516,
+          "normalized_x": 0.626586,
+          "normalized_ground_y": 0.996995
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.624834,
+          "normalized_x": 0.694278,
+          "normalized_ground_y": 1.007383
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.629198,
+          "normalized_x": 0.974755,
+          "normalized_ground_y": 1.004032
+        }
+      ],
+      "production_alpha_coverage": 0.4362335205078125,
+      "pre_refinement_alpha_coverage": 0.8087158203125,
+      "achieved_alpha_coverage": 0.8268013,
+      "required_alpha_coverage": 0.55,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 68.213147,
+          "stdev_px": 27.461171,
+          "min_row_px": 14,
+          "max_row_px": 150,
+          "peak_to_trough_px": 136,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 56.037849,
+          "stdev_px": 18.3862,
+          "min_row_px": 14,
+          "max_row_px": 117,
+          "peak_to_trough_px": 103,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 179,
+        "x1": 512,
+        "y1": 512,
+        "count": 150224
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "tight_bounds_equal": true
+    },
+    {
+      "config": "G5",
+      "yaw_deg": 270,
+      "atlas_origin_px": {
+        "x": 2048,
+        "y": 1536
+      },
+      "crown_count": 19,
+      "scale_distribution": [
+        0.453384,
+        0.464296,
+        0.421636,
+        0.44825,
+        0.511226,
+        0.551387,
+        0.54909,
+        0.50851,
+        0.55166,
+        0.579838,
+        0.551667,
+        0.597466,
+        0.583868,
+        0.620426,
+        0.632135,
+        0.646982,
+        0.600285,
+        0.658666,
+        0.650984
+      ],
+      "scale_min": 0.421636,
+      "scale_max": 0.658666,
+      "sources_used": [
+        {
+          "ordinal": 0,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_A:side:0",
+          "scale": 0.453384,
+          "normalized_x": 0.141642,
+          "normalized_ground_y": 0.870065
+        },
+        {
+          "ordinal": 1,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_B:side:135",
+          "scale": 0.464296,
+          "normalized_x": 0.437602,
+          "normalized_ground_y": 1.084637
+        },
+        {
+          "ordinal": 2,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.421636,
+          "normalized_x": 0.560366,
+          "normalized_ground_y": 0.868396
+        },
+        {
+          "ordinal": 3,
+          "layer": "back",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.44825,
+          "normalized_x": 0.831424,
+          "normalized_ground_y": 0.952602
+        },
+        {
+          "ordinal": 4,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_A:side:315",
+          "scale": 0.511226,
+          "normalized_x": 0.042879,
+          "normalized_ground_y": 0.979331
+        },
+        {
+          "ordinal": 5,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_B:side:90",
+          "scale": 0.551387,
+          "normalized_x": 0.298809,
+          "normalized_ground_y": 1.062337
+        },
+        {
+          "ordinal": 6,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.54909,
+          "normalized_x": 0.712473,
+          "normalized_ground_y": 1.010357
+        },
+        {
+          "ordinal": 7,
+          "layer": "middle",
+          "mode": "full",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.50851,
+          "normalized_x": 0.871232,
+          "normalized_ground_y": 0.903878
+        },
+        {
+          "ordinal": 8,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_A:side:270",
+          "scale": 0.55166,
+          "normalized_x": 0.171542,
+          "normalized_ground_y": 0.951123
+        },
+        {
+          "ordinal": 9,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_B:side:45",
+          "scale": 0.579838,
+          "normalized_x": 0.302774,
+          "normalized_ground_y": 0.981309
+        },
+        {
+          "ordinal": 10,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 180,
+          "source_key": "brl:ROUND_LIGHT_A:side:180",
+          "scale": 0.551667,
+          "normalized_x": 0.461815,
+          "normalized_ground_y": 0.990944
+        },
+        {
+          "ordinal": 11,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.597466,
+          "normalized_x": 0.660409,
+          "normalized_ground_y": 0.963303
+        },
+        {
+          "ordinal": 12,
+          "layer": "front",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.583868,
+          "normalized_x": 0.870523,
+          "normalized_ground_y": 0.947845
+        },
+        {
+          "ordinal": 13,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 0,
+          "source_key": "brl:ROUND_LIGHT_B:side:0",
+          "scale": 0.620426,
+          "normalized_x": 0.119479,
+          "normalized_ground_y": 1.009821
+        },
+        {
+          "ordinal": 14,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 135,
+          "source_key": "brl:ROUND_LIGHT_A:side:135",
+          "scale": 0.632135,
+          "normalized_x": 0.296838,
+          "normalized_ground_y": 0.99386
+        },
+        {
+          "ordinal": 15,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 315,
+          "source_key": "brl:ROUND_LIGHT_B:side:315",
+          "scale": 0.646982,
+          "normalized_x": 0.378427,
+          "normalized_ground_y": 0.995569
+        },
+        {
+          "ordinal": 16,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 90,
+          "source_key": "brl:ROUND_LIGHT_A:side:90",
+          "scale": 0.600285,
+          "normalized_x": 0.604157,
+          "normalized_ground_y": 1.026185
+        },
+        {
+          "ordinal": 17,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_B",
+          "yaw_deg": 270,
+          "source_key": "brl:ROUND_LIGHT_B:side:270",
+          "scale": 0.658666,
+          "normalized_x": 0.693639,
+          "normalized_ground_y": 1.00086
+        },
+        {
+          "ordinal": 18,
+          "layer": "foreground",
+          "mode": "crown",
+          "variant": "ROUND_LIGHT_A",
+          "yaw_deg": 45,
+          "source_key": "brl:ROUND_LIGHT_A:side:45",
+          "scale": 0.650984,
+          "normalized_x": 0.916651,
+          "normalized_ground_y": 1.026465
+        }
+      ],
+      "production_alpha_coverage": 0.42214202880859375,
+      "pre_refinement_alpha_coverage": 0.7862091064453125,
+      "achieved_alpha_coverage": 0.760803223,
+      "required_alpha_coverage": 0.55,
+      "top_silhouette": {
+        "method": "For every x in the target tight bounds, the first alpha >= 8 row is sampled; standard deviation and peak-to-trough are in atlas pixels with top-left origin.",
+        "before_refinement": {
+          "columns": 502,
+          "mean_row_px": 66.466135,
+          "stdev_px": 23.400077,
+          "min_row_px": 26,
+          "max_row_px": 136,
+          "peak_to_trough_px": 110,
+          "empty_columns": 0
+        },
+        "after_refinement": {
+          "columns": 502,
+          "mean_row_px": 69.533865,
+          "stdev_px": 22.86209,
+          "min_row_px": 26,
+          "max_row_px": 131,
+          "peak_to_trough_px": 105,
+          "empty_columns": 0
+        }
+      },
+      "working_tight_bounds": {
+        "x0": 0,
+        "y0": 120,
+        "x1": 512,
+        "y1": 512,
+        "count": 171793
+      },
+      "target_tight_bounds": {
+        "x0": 5,
+        "y0": 26,
+        "x1": 507,
+        "y1": 487
+      },
+      "achieved_tight_bounds": {
+        "x0": 5,
+        "y0": 26,
+        "x1": 507,
+        "y1": 487
+      },
+      "tight_bounds_equal": true
+    }
+  ],
+  "verification": {
+    "untouched_cell_count": 16,
+    "untouched_cells_pixel_identical": true,
+    "target_tight_bounds_all_equal": true,
+    "coverage_targets_all_met": true,
+    "yaw_225_source_cells_excluded": true,
+    "both_brl_variants_used_per_target": true
+  },
+  "sha256": {
+    "output_png": "1cae7ba517eafd52b1e20e3504c03d5e114e6fdf6d77eade6ec740463c257cd0",
+    "production_grove_atlas": "709388457f4987ec781fb9971ecc1d7659d11588ab57dbc6d09334c75c5bf2d2",
+    "broadleaf_round_light_a": "aee763f9d88f119917578a6323a0ce24a5c05eb0e5b6244b74773c7c5436727d",
+    "broadleaf_round_light_b": "1240c5ce4ee0d167fa3b00eedae29eb6fdcf26a667f24d56020e16c37d84bae0",
+    "broadleaf_meta": "77a89dce8f04365f08d1c8867e0b6104e656c2ecde088be639ad46dcb8ef376c",
+    "production_meta": "cc89ca5159aff9bdccb960e4f3467a0127e5845f530cf1ad48e6e93ef3b75653",
+    "preview_png": "902e93d7bb6aa9795c4f528e32a42815097ac480f067bf6ac34da12cf62d9bce"
+  }
+}
