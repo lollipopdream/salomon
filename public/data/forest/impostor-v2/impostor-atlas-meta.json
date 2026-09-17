@@ -1,0 +1,3571 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T13:42:20.983960+00:00",
+  "incomplete": false,
+  "bake": {
+    "pitch_deg": 0.0,
+    "alpha_threshold": 0.03,
+    "pixel_origin": "top-left",
+    "uv_convention": "u right from left edge; v measured from BOTTOM edge (OpenGL/Three.js convention)",
+    "ground_pivot_in_tight_convention": "u right; v up from tight bottom edge; unclamped; zero for empty cells",
+    "yaw_convention": "0 degrees camera at -Y; positive orbit around +Z",
+    "total_seconds": 838.9272334780107,
+    "peak_memory_mb": 1071.7109375,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "compute_device_type": "NONE",
+    "blender_version": "4.5.13 LTS",
+    "samples": 48,
+    "film_transparent": true,
+    "view_transform": "Standard",
+    "use_adaptive_sampling": true,
+    "adaptive_threshold": 0.009999999776482582,
+    "max_bounces": 4,
+    "diffuse_bounces": 2,
+    "glossy_bounces": 2,
+    "transmission_bounces": 2,
+    "transparent_max_bounces": 8,
+    "use_denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false
+  },
+  "sources": [
+    {
+      "file": "fir_tree_01_1k.blend",
+      "sha256_before": "153d20aae6d7c63a4c52689d91e8bead78f6d17a70e11ef4d03d19953383de00",
+      "sha256_after": "153d20aae6d7c63a4c52689d91e8bead78f6d17a70e11ef4d03d19953383de00",
+      "bytes": 218986261
+    },
+    {
+      "file": "tree_small_02_1k.blend",
+      "sha256_before": "af3fef6da3eb97057d9d4d3c4281c5944696b8d518715deddd8500482d30b1bd",
+      "sha256_after": "af3fef6da3eb97057d9d4d3c4281c5944696b8d518715deddd8500482d30b1bd",
+      "bytes": 63805841
+    }
+  ],
+  "variants": {
+    "FIR_A": {
+      "object": "fir_tree_01_a_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 70661,
+      "source_physical_height_m": 18.95704684406519,
+      "source_width_m": 6.583094120025635,
+      "crown_width_over_height": 0.34726369429669784,
+      "class": "conifer"
+    },
+    "FIR_B": {
+      "object": "fir_tree_01_b_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 54927,
+      "source_physical_height_m": 14.077526301145554,
+      "source_width_m": 6.084495782852173,
+      "crown_width_over_height": 0.4322134196515086,
+      "class": "conifer"
+    },
+    "FIR_C": {
+      "object": "fir_tree_01_c_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 31512,
+      "source_physical_height_m": 14.552308432757854,
+      "source_width_m": 6.3499040603637695,
+      "crown_width_over_height": 0.4363502938179808,
+      "class": "conifer"
+    },
+    "BL": {
+      "object": "tree_small_02_LOD1",
+      "source_file": "tree_small_02_1k.blend",
+      "triangles": 495533,
+      "source_physical_height_m": 4.564037313684821,
+      "source_width_m": 4.292668700218201,
+      "crown_width_over_height": 0.9405419818429293,
+      "class": "broadleaf"
+    }
+  },
+  "grove_configs": {
+    "G1": {
+      "name": "conifer_dominant",
+      "members": [
+        {
+          "variant": "FIR_A",
+          "x": 0.0,
+          "y": 0.0,
+          "rot_z_deg": 0,
+          "scale": 1.0
+        },
+        {
+          "variant": "FIR_B",
+          "x": 7.2,
+          "y": 3.1,
+          "rot_z_deg": 137,
+          "scale": 0.94
+        },
+        {
+          "variant": "FIR_C",
+          "x": -6.4,
+          "y": 4.8,
+          "rot_z_deg": 251,
+          "scale": 1.06
+        },
+        {
+          "variant": "FIR_B",
+          "x": 2.6,
+          "y": -6.9,
+          "rot_z_deg": 64,
+          "scale": 0.82
+        }
+      ]
+    },
+    "G2": {
+      "name": "mixed_conifer",
+      "members": [
+        {
+          "variant": "FIR_A",
+          "x": -5.1,
+          "y": -2.2,
+          "rot_z_deg": 23,
+          "scale": 0.91
+        },
+        {
+          "variant": "FIR_C",
+          "x": 4.9,
+          "y": 1.4,
+          "rot_z_deg": 198,
+          "scale": 1.12
+        },
+        {
+          "variant": "FIR_B",
+          "x": -1.8,
+          "y": 6.7,
+          "rot_z_deg": 305,
+          "scale": 0.87
+        },
+        {
+          "variant": "BL",
+          "x": 6.8,
+          "y": -5.3,
+          "rot_z_deg": 78,
+          "scale": 2.4
+        },
+        {
+          "variant": "FIR_C",
+          "x": -8.3,
+          "y": 2.9,
+          "rot_z_deg": 142,
+          "scale": 0.79
+        }
+      ]
+    },
+    "G3": {
+      "name": "dense_conifer",
+      "members": [
+        {
+          "variant": "FIR_A",
+          "x": 0.9,
+          "y": 1.1,
+          "rot_z_deg": 11,
+          "scale": 1.04
+        },
+        {
+          "variant": "FIR_A",
+          "x": -4.6,
+          "y": -3.4,
+          "rot_z_deg": 166,
+          "scale": 0.88
+        },
+        {
+          "variant": "FIR_B",
+          "x": 4.2,
+          "y": -2.0,
+          "rot_z_deg": 292,
+          "scale": 1.09
+        },
+        {
+          "variant": "FIR_C",
+          "x": -2.1,
+          "y": 5.2,
+          "rot_z_deg": 49,
+          "scale": 0.95
+        },
+        {
+          "variant": "FIR_B",
+          "x": 6.1,
+          "y": 4.4,
+          "rot_z_deg": 218,
+          "scale": 0.83
+        }
+      ]
+    },
+    "G4": {
+      "name": "mixed_forest",
+      "members": [
+        {
+          "variant": "FIR_B",
+          "x": -3.7,
+          "y": 0.6,
+          "rot_z_deg": 88,
+          "scale": 1.0
+        },
+        {
+          "variant": "BL",
+          "x": 2.9,
+          "y": 2.4,
+          "rot_z_deg": 312,
+          "scale": 2.9
+        },
+        {
+          "variant": "FIR_C",
+          "x": 7.4,
+          "y": -3.8,
+          "rot_z_deg": 174,
+          "scale": 0.92
+        },
+        {
+          "variant": "BL",
+          "x": -7.1,
+          "y": -4.1,
+          "rot_z_deg": 41,
+          "scale": 2.2
+        },
+        {
+          "variant": "FIR_A",
+          "x": 1.2,
+          "y": -7.2,
+          "rot_z_deg": 249,
+          "scale": 0.86
+        }
+      ]
+    },
+    "G5": {
+      "name": "broadleaf_pocket",
+      "members": [
+        {
+          "variant": "BL",
+          "x": 0.0,
+          "y": 0.8,
+          "rot_z_deg": 0,
+          "scale": 3.1
+        },
+        {
+          "variant": "BL",
+          "x": 6.3,
+          "y": -2.6,
+          "rot_z_deg": 127,
+          "scale": 2.6
+        },
+        {
+          "variant": "BL",
+          "x": -5.8,
+          "y": -1.9,
+          "rot_z_deg": 263,
+          "scale": 2.8
+        },
+        {
+          "variant": "FIR_C",
+          "x": 2.2,
+          "y": 6.4,
+          "rot_z_deg": 58,
+          "scale": 0.74
+        }
+      ]
+    },
+    "G6": {
+      "name": "irregular_sparse",
+      "members": [
+        {
+          "variant": "FIR_A",
+          "x": -6.9,
+          "y": 2.1,
+          "rot_z_deg": 205,
+          "scale": 0.97
+        },
+        {
+          "variant": "FIR_C",
+          "x": 5.4,
+          "y": -4.6,
+          "rot_z_deg": 71,
+          "scale": 1.03
+        },
+        {
+          "variant": "BL",
+          "x": 0.6,
+          "y": 5.9,
+          "rot_z_deg": 331,
+          "scale": 2.5
+        }
+      ]
+    }
+  },
+  "atlases": {
+    "tree": {
+      "file": "tree_atlas_2048.png",
+      "width": 2048,
+      "height": 2048,
+      "cell_width": 256,
+      "cell_height": 512,
+      "cols": 8,
+      "rows": 4,
+      "classification": "tree",
+      "sha256": "ea88e5e015476dc66b28e2a1c9f5513afd1bc57b2e588c68a001a6cb96fa80ec"
+    },
+    "grove": {
+      "file": "grove_atlas_3072x2048.png",
+      "width": 3072,
+      "height": 2048,
+      "cell_width": 512,
+      "cell_height": 512,
+      "cols": 6,
+      "rows": 4,
+      "classification": "grove",
+      "sha256": "709388457f4987ec781fb9971ecc1d7659d11588ab57dbc6d09334c75c5bf2d2"
+    }
+  },
+  "cells": [
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 0,
+      "cell_index": 0,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.75,
+        "u1": 0.125,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.0625,
+        "v": 0.7524508193600923
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336188513711917,
+      "rendered_world_width": 9.668094256855959,
+      "rendered_world_height": 19.336188513711917,
+      "ground_pivot_px": {
+        "x": 128.0,
+        "y": 506.980721950531
+      },
+      "content_alpha_coverage": 0.26383209228515625,
+      "pixel_content_bounds": {
+        "x0": 41,
+        "y0": 6,
+        "x1": 215,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.02001953125,
+        "v0": 0.751953125,
+        "u1": 0.10498046875,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.571282815206785,
+      "tight_world_height": 18.95852858180348,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.00203043436149202
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 1,
+      "cell_index": 1,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 45.0,
+      "uv_rect_px": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.125,
+        "v0": 0.75,
+        "u1": 0.25,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.18749994412064552,
+        "v": 0.75245093065314
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336187847155987,
+      "rendered_world_width": 9.668093923577993,
+      "rendered_world_height": 19.336187847155987,
+      "ground_pivot_px": {
+        "x": 127.99988555908203,
+        "y": 506.9804940223694
+      },
+      "content_alpha_coverage": 0.26795196533203125,
+      "pixel_content_bounds": {
+        "x0": 40,
+        "y0": 6,
+        "x1": 207,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.14453125,
+        "v0": 0.751953125,
+        "u1": 0.22607421875,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.306920645459082,
+      "tight_world_height": 18.95852792826622,
+      "ground_pivot_in_tight": {
+        "u": 0.5269454225094733,
+        "v": 0.002030888401654612
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 2,
+      "cell_index": 2,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.25,
+        "v0": 0.75,
+        "u1": 0.375,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.3125000447034836,
+        "v": 0.75245093065314
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336187732476176,
+      "rendered_world_width": 9.668093866238088,
+      "rendered_world_height": 19.336187732476176,
+      "ground_pivot_px": {
+        "x": 128.00009155273438,
+        "y": 506.9804940223694
+      },
+      "content_alpha_coverage": 0.26180267333984375,
+      "pixel_content_bounds": {
+        "x0": 43,
+        "y0": 6,
+        "x1": 213,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.27099609375,
+        "v0": 0.751953125,
+        "u1": 0.35400390625,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.42021858304873,
+      "tight_world_height": 18.95852781582625,
+      "ground_pivot_in_tight": {
+        "u": 0.5000005385454963,
+        "v": 0.002030888401654612
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 3,
+      "cell_index": 3,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 135.0,
+      "uv_rect_px": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.375,
+        "v0": 0.75,
+        "u1": 0.5,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.4374999962747097,
+        "v": 0.7524508070200682
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336188975730387,
+      "rendered_world_width": 9.668094487865194,
+      "rendered_world_height": 19.336188975730387,
+      "ground_pivot_px": {
+        "x": 127.99999237060547,
+        "y": 506.9807472229004
+      },
+      "content_alpha_coverage": 0.25955963134765625,
+      "pixel_content_bounds": {
+        "x0": 36,
+        "y0": 6,
+        "x1": 209,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.392578125,
+        "v0": 0.751953125,
+        "u1": 0.47705078125,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.5335169781276505,
+      "tight_world_height": 18.958529034798154,
+      "ground_pivot_in_tight": {
+        "u": 0.5317918634139045,
+        "v": 0.002030384018126712
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 4,
+      "cell_index": 4,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.75,
+        "u1": 0.625,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.5624998547136784,
+        "v": 0.7524508193600923
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.33618952761169,
+      "rendered_world_width": 9.668094763805845,
+      "rendered_world_height": 19.33618952761169,
+      "ground_pivot_px": {
+        "x": 127.99970245361328,
+        "y": 506.980721950531
+      },
+      "content_alpha_coverage": 0.26385498046875,
+      "pixel_content_bounds": {
+        "x0": 41,
+        "y0": 6,
+        "x1": 215,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.52001953125,
+        "v0": 0.751953125,
+        "u1": 0.60498046875,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.571283159774286,
+      "tight_world_height": 18.958529575900524,
+      "ground_pivot_in_tight": {
+        "u": 0.4999982899632947,
+        "v": 0.00203043436149202
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 5,
+      "cell_index": 5,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 225.0,
+      "uv_rect_px": {
+        "x": 1280,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.625,
+        "v0": 0.75,
+        "u1": 0.75,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.6875000074505806,
+        "v": 0.7524508070200682
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336188975730387,
+      "rendered_world_width": 9.668094487865194,
+      "rendered_world_height": 19.336188975730387,
+      "ground_pivot_px": {
+        "x": 128.00001525878906,
+        "y": 506.9807472229004
+      },
+      "content_alpha_coverage": 0.26792144775390625,
+      "pixel_content_bounds": {
+        "x0": 49,
+        "y0": 6,
+        "x1": 216,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.64892578125,
+        "v0": 0.751953125,
+        "u1": 0.73046875,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.30692101356831,
+      "tight_world_height": 18.958529034798154,
+      "ground_pivot_in_tight": {
+        "u": 0.4730539835855633,
+        "v": 0.002030384018126712
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 6,
+      "cell_index": 6,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.75,
+        "v0": 0.75,
+        "u1": 0.875,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.8124999515712261,
+        "v": 0.75245093065314
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336187732476176,
+      "rendered_world_width": 9.668093866238088,
+      "rendered_world_height": 19.336187732476176,
+      "ground_pivot_px": {
+        "x": 127.9999008178711,
+        "y": 506.9804940223694
+      },
+      "content_alpha_coverage": 0.26222991943359375,
+      "pixel_content_bounds": {
+        "x0": 43,
+        "y0": 6,
+        "x1": 213,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.77099609375,
+        "v0": 0.751953125,
+        "u1": 0.85400390625,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.42021858304873,
+      "tight_world_height": 18.95852781582625,
+      "ground_pivot_in_tight": {
+        "u": 0.49999941657571234,
+        "v": 0.002030888401654612
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 0,
+      "col": 7,
+      "cell_index": 7,
+      "source_variant": "FIR_A",
+      "grove_config": null,
+      "yaw_deg": 315.0,
+      "uv_rect_px": {
+        "x": 1792,
+        "y": 0,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.875,
+        "v0": 0.75,
+        "u1": 1.0,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.9375000521540642,
+        "v": 0.75245093065314
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336187847155987,
+      "rendered_world_width": 9.668093923577993,
+      "rendered_world_height": 19.336187847155987,
+      "ground_pivot_px": {
+        "x": 128.00010681152344,
+        "y": 506.9804940223694
+      },
+      "content_alpha_coverage": 0.25931549072265625,
+      "pixel_content_bounds": {
+        "x0": 47,
+        "y0": 6,
+        "x1": 220,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.89794921875,
+        "v0": 0.751953125,
+        "u1": 0.982421875,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 6.533516596792941,
+      "tight_world_height": 18.95852792826622,
+      "ground_pivot_in_tight": {
+        "u": 0.46820870989319907,
+        "v": 0.002030888401654612
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 0,
+      "cell_index": 8,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.5,
+        "u1": 0.125,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.0625,
+        "v": 0.5024508049245924
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 14.359077625495908,
+      "rendered_world_width": 7.179538812747954,
+      "rendered_world_height": 14.359077625495908,
+      "ground_pivot_px": {
+        "x": 128.0,
+        "y": 506.9807515144348
+      },
+      "content_alpha_coverage": 0.2700042724609375,
+      "pixel_content_bounds": {
+        "x0": 28,
+        "y0": 6,
+        "x1": 228,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.013671875,
+        "v0": 0.501953125,
+        "u1": 0.111328125,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 5.609014697459339,
+      "tight_world_height": 14.078626890622942,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0020303754692533576
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 1,
+      "cell_index": 9,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 45.0,
+      "uv_rect_px": {
+        "x": 256,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.125,
+        "v0": 0.5,
+        "u1": 0.25,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.18749992921948433,
+        "v": 0.5208820756524801
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 16.90094823749435,
+      "rendered_world_width": 8.450474118747175,
+      "rendered_world_height": 16.90094823749435,
+      "ground_pivot_px": {
+        "x": 127.9998550415039,
+        "y": 469.2335090637207
+      },
+      "content_alpha_coverage": 0.195953369140625,
+      "pixel_content_bounds": {
+        "x0": 32,
+        "y0": 43,
+        "x1": 213,
+        "y1": 470
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.140625,
+        "v0": 0.5205078125,
+        "u1": 0.22900390625,
+        "v1": 0.72900390625
+      },
+      "tight_world_width": 5.974749279270464,
+      "tight_world_height": 14.095126752754078,
+      "ground_pivot_in_tight": {
+        "u": 0.5303859394558227,
+        "v": 0.0017950607407009294
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 2,
+      "cell_index": 10,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.25,
+        "v0": 0.5,
+        "u1": 0.375,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.3125000521540642,
+        "v": 0.5024509294889867
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 14.359076865483734,
+      "rendered_world_width": 7.179538432741867,
+      "rendered_world_height": 14.359076865483734,
+      "ground_pivot_px": {
+        "x": 128.00010681152344,
+        "y": 506.9804964065552
+      },
+      "content_alpha_coverage": 0.27426910400390625,
+      "pixel_content_bounds": {
+        "x0": 20,
+        "y0": 6,
+        "x1": 236,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.259765625,
+        "v0": 0.501953125,
+        "u1": 0.365234375,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 6.05773555262595,
+      "tight_world_height": 14.078626145454756,
+      "ground_pivot_in_tight": {
+        "u": 0.5000004944977937,
+        "v": 0.0020308836522805263
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 3,
+      "cell_index": 11,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 135.0,
+      "uv_rect_px": {
+        "x": 768,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.375,
+        "v0": 0.5,
+        "u1": 0.5,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.4374999962747097,
+        "v": 0.5208820588886738
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 16.90094410187225,
+      "rendered_world_width": 8.450472050936124,
+      "rendered_world_height": 16.90094410187225,
+      "ground_pivot_px": {
+        "x": 127.99999237060547,
+        "y": 469.2335433959961
+      },
+      "content_alpha_coverage": 0.20053863525390625,
+      "pixel_content_bounds": {
+        "x0": 33,
+        "y0": 43,
+        "x1": 215,
+        "y1": 470
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.39111328125,
+        "v0": 0.5205078125,
+        "u1": 0.47998046875,
+        "v1": 0.72900390625
+      },
+      "tight_world_width": 6.007757473712401,
+      "tight_world_height": 14.095123303709864,
+      "ground_pivot_in_tight": {
+        "u": 0.5219779800582718,
+        "v": 0.0017949803372456822
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 4,
+      "cell_index": 12,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.5,
+        "u1": 0.625,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.5624998472630978,
+        "v": 0.5024508130736649
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 14.359078492904024,
+      "rendered_world_width": 7.179539246452012,
+      "rendered_world_height": 14.359078492904024,
+      "ground_pivot_px": {
+        "x": 127.99968719482422,
+        "y": 506.9807348251343
+      },
+      "content_alpha_coverage": 0.2700347900390625,
+      "pixel_content_bounds": {
+        "x0": 28,
+        "y0": 5,
+        "x1": 228,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.513671875,
+        "v0": 0.501953125,
+        "u1": 0.611328125,
+        "v1": 0.74755859375
+      },
+      "tight_world_width": 5.609015036290634,
+      "tight_world_height": 14.106672816270946,
+      "ground_pivot_in_tight": {
+        "u": 0.4999984359741211,
+        "v": 0.0020263721170292698
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 5,
+      "cell_index": 13,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 225.0,
+      "uv_rect_px": {
+        "x": 1280,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.625,
+        "v0": 0.5,
+        "u1": 0.75,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.6875000074505806,
+        "v": 0.5208820588886738
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 16.90094410187225,
+      "rendered_world_width": 8.450472050936124,
+      "rendered_world_height": 16.90094410187225,
+      "ground_pivot_px": {
+        "x": 128.00001525878906,
+        "y": 469.2335433959961
+      },
+      "content_alpha_coverage": 0.19611358642578125,
+      "pixel_content_bounds": {
+        "x0": 43,
+        "y0": 43,
+        "x1": 224,
+        "y1": 470
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.64599609375,
+        "v0": 0.5205078125,
+        "u1": 0.734375,
+        "v1": 0.72900390625
+      },
+      "tight_world_width": 5.974747817263432,
+      "tight_world_height": 14.095123303709864,
+      "ground_pivot_in_tight": {
+        "u": 0.4696133439712103,
+        "v": 0.0017949803372456822
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 6,
+      "cell_index": 14,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.75,
+        "v0": 0.5,
+        "u1": 0.875,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.8124999515712261,
+        "v": 0.5024509294889867
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 14.359076865483734,
+      "rendered_world_width": 7.179538432741867,
+      "rendered_world_height": 14.359076865483734,
+      "ground_pivot_px": {
+        "x": 127.9999008178711,
+        "y": 506.9804964065552
+      },
+      "content_alpha_coverage": 0.274139404296875,
+      "pixel_content_bounds": {
+        "x0": 20,
+        "y0": 6,
+        "x1": 236,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.759765625,
+        "v0": 0.501953125,
+        "u1": 0.865234375,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 6.05773555262595,
+      "tight_world_height": 14.078626145454756,
+      "ground_pivot_in_tight": {
+        "u": 0.4999995408234773,
+        "v": 0.0020308836522805263
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 1,
+      "col": 7,
+      "cell_index": 15,
+      "source_variant": "FIR_B",
+      "grove_config": null,
+      "yaw_deg": 315.0,
+      "uv_rect_px": {
+        "x": 1792,
+        "y": 512,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.875,
+        "v0": 0.5,
+        "u1": 1.0,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.937500074505806,
+        "v": 0.5208820756524801
+      },
+      "source_physical_height_m": 14.077526301145554,
+      "rendered": true,
+      "ortho_scale": 16.90094823749435,
+      "rendered_world_width": 8.450474118747175,
+      "rendered_world_height": 16.90094823749435,
+      "ground_pivot_px": {
+        "x": 128.00015258789062,
+        "y": 469.2335090637207
+      },
+      "content_alpha_coverage": 0.20069122314453125,
+      "pixel_content_bounds": {
+        "x0": 41,
+        "y0": 44,
+        "x1": 223,
+        "y1": 470
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.89501953125,
+        "v0": 0.5205078125,
+        "u1": 0.98388671875,
+        "v1": 0.728515625
+      },
+      "tight_world_width": 6.00775894379682,
+      "tight_world_height": 14.06211708822772,
+      "ground_pivot_in_tight": {
+        "u": 0.47802281641698147,
+        "v": 0.0017992744983082087
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 0,
+      "cell_index": 16,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.25,
+        "u1": 0.125,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.0625,
+        "v": 0.25245080329477787
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 14.843355242207087,
+      "rendered_world_width": 7.421677621103544,
+      "rendered_world_height": 14.843355242207087,
+      "ground_pivot_px": {
+        "x": 128.0,
+        "y": 506.9807548522949
+      },
+      "content_alpha_coverage": 0.16884613037109375,
+      "pixel_content_bounds": {
+        "x0": 19,
+        "y0": 6,
+        "x1": 237,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.00927734375,
+        "v0": 0.251953125,
+        "u1": 0.11572265625,
+        "v1": 0.4970703125
+      },
+      "tight_world_width": 6.320022349220986,
+      "tight_world_height": 14.55344596013273,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0020303688201296377
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 1,
+      "cell_index": 17,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 45.0,
+      "uv_rect_px": {
+        "x": 256,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.125,
+        "v0": 0.25,
+        "u1": 0.25,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.18749993294477463,
+        "v": 0.2729359641671181
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 17.822529163817215,
+      "rendered_world_width": 8.911264581908608,
+      "rendered_world_height": 17.822529163817215,
+      "ground_pivot_px": {
+        "x": 127.99986267089844,
+        "y": 465.0271453857422
+      },
+      "content_alpha_coverage": 0.120269775390625,
+      "pixel_content_bounds": {
+        "x0": 47,
+        "y0": 48,
+        "x1": 214,
+        "y1": 466
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.14794921875,
+        "v0": 0.2724609375,
+        "u1": 0.2294921875,
+        "v1": 0.4765625
+      },
+      "tight_world_width": 5.813207754604443,
+      "tight_world_height": 14.55042420014765,
+      "ground_pivot_in_tight": {
+        "u": 0.485029117789811,
+        "v": 0.002327403383391896
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 2,
+      "cell_index": 18,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.25,
+        "v0": 0.25,
+        "u1": 0.375,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.3125000521540642,
+        "v": 0.2524509320501238
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 14.843354527346568,
+      "rendered_world_width": 7.421677263673284,
+      "rendered_world_height": 14.843354527346568,
+      "ground_pivot_px": {
+        "x": 128.00010681152344,
+        "y": 506.98049116134644
+      },
+      "content_alpha_coverage": 0.1740875244140625,
+      "pixel_content_bounds": {
+        "x0": 25,
+        "y0": 6,
+        "x1": 230,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.26220703125,
+        "v0": 0.251953125,
+        "u1": 0.3623046875,
+        "v1": 0.4970703125
+      },
+      "tight_world_width": 5.9431399963008715,
+      "tight_world_height": 14.55344525923433,
+      "ground_pivot_in_tight": {
+        "u": 0.5024395454220656,
+        "v": 0.002030894100903515
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 3,
+      "cell_index": 19,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 135.0,
+      "uv_rect_px": {
+        "x": 768,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.375,
+        "v0": 0.25,
+        "u1": 0.5,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.4374999962747097,
+        "v": 0.2729359492659569
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 17.8225258942709,
+      "rendered_world_width": 8.91126294713545,
+      "rendered_world_height": 17.8225258942709,
+      "ground_pivot_px": {
+        "x": 127.99999237060547,
+        "y": 465.0271759033203
+      },
+      "content_alpha_coverage": 0.12470245361328125,
+      "pixel_content_bounds": {
+        "x0": 48,
+        "y0": 48,
+        "x1": 206,
+        "y1": 466
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.3984375,
+        "v0": 0.2724609375,
+        "u1": 0.4755859375,
+        "v1": 0.4765625
+      },
+      "tight_world_width": 5.49992010018516,
+      "tight_world_height": 14.550421530869603,
+      "ground_pivot_in_tight": {
+        "u": 0.5063290656367435,
+        "v": 0.0023273303748317883
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 4,
+      "cell_index": 20,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.25,
+        "u1": 0.625,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.5624998472630978,
+        "v": 0.25245081121101975
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 14.843356220192018,
+      "rendered_world_width": 7.421678110096009,
+      "rendered_world_height": 14.843356220192018,
+      "ground_pivot_px": {
+        "x": 127.99968719482422,
+        "y": 506.98073863983154
+      },
+      "content_alpha_coverage": 0.16872406005859375,
+      "pixel_content_bounds": {
+        "x0": 19,
+        "y0": 6,
+        "x1": 237,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.50927734375,
+        "v0": 0.251953125,
+        "u1": 0.61572265625,
+        "v1": 0.4970703125
+      },
+      "tight_world_width": 6.320022765628632,
+      "tight_world_height": 14.553446919016393,
+      "ground_pivot_in_tight": {
+        "u": 0.4999985651138726,
+        "v": 0.0020304011158734205
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 5,
+      "cell_index": 21,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 225.0,
+      "uv_rect_px": {
+        "x": 1280,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.625,
+        "v0": 0.25,
+        "u1": 0.75,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.6875000074505806,
+        "v": 0.2729359492659569
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 17.8225258942709,
+      "rendered_world_width": 8.91126294713545,
+      "rendered_world_height": 17.8225258942709,
+      "ground_pivot_px": {
+        "x": 128.00001525878906,
+        "y": 465.0271759033203
+      },
+      "content_alpha_coverage": 0.12065887451171875,
+      "pixel_content_bounds": {
+        "x0": 42,
+        "y0": 48,
+        "x1": 209,
+        "y1": 466
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6455078125,
+        "v0": 0.2724609375,
+        "u1": 0.72705078125,
+        "v1": 0.4765625
+      },
+      "tight_world_width": 5.813206688170391,
+      "tight_world_height": 14.550421530869603,
+      "ground_pivot_in_tight": {
+        "u": 0.5149701512502339,
+        "v": 0.0023273303748317883
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 6,
+      "cell_index": 22,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.75,
+        "v0": 0.25,
+        "u1": 0.875,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.8124999515712261,
+        "v": 0.2524509320501238
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 14.843354527346568,
+      "rendered_world_width": 7.421677263673284,
+      "rendered_world_height": 14.843354527346568,
+      "ground_pivot_px": {
+        "x": 127.9999008178711,
+        "y": 506.98049116134644
+      },
+      "content_alpha_coverage": 0.174560546875,
+      "pixel_content_bounds": {
+        "x0": 26,
+        "y0": 6,
+        "x1": 231,
+        "y1": 507
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.7626953125,
+        "v0": 0.25244140625,
+        "u1": 0.86279296875,
+        "v1": 0.4970703125
+      },
+      "tight_world_width": 5.9431399963008715,
+      "tight_world_height": 14.524454332423106,
+      "ground_pivot_in_tight": {
+        "u": 0.49756049179449313,
+        "v": 3.8939797711705496e-05
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 2,
+      "col": 7,
+      "cell_index": 23,
+      "source_variant": "FIR_C",
+      "grove_config": null,
+      "yaw_deg": 315.0,
+      "uv_rect_px": {
+        "x": 1792,
+        "y": 1024,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.875,
+        "v0": 0.25,
+        "u1": 1.0,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.9375000670552254,
+        "v": 0.2729359641671181
+      },
+      "source_physical_height_m": 14.552308432757854,
+      "rendered": true,
+      "ortho_scale": 17.822529163817215,
+      "rendered_world_width": 8.911264581908608,
+      "rendered_world_height": 17.822529163817215,
+      "ground_pivot_px": {
+        "x": 128.00013732910156,
+        "y": 465.0271453857422
+      },
+      "content_alpha_coverage": 0.1248626708984375,
+      "pixel_content_bounds": {
+        "x0": 50,
+        "y0": 48,
+        "x1": 208,
+        "y1": 466
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8994140625,
+        "v0": 0.2724609375,
+        "u1": 0.9765625,
+        "v1": 0.4765625
+      },
+      "tight_world_width": 5.499921109146719,
+      "tight_world_height": 14.55042420014765,
+      "ground_pivot_in_tight": {
+        "u": 0.49367175524747825,
+        "v": 0.002327403383391896
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 0,
+      "cell_index": 24,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.0,
+        "u1": 0.125,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.0625,
+        "v": 0.029273170977830887
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 5.9597271537780765,
+      "rendered_world_width": 2.9798635768890382,
+      "rendered_world_height": 5.9597271537780765,
+      "ground_pivot_px": {
+        "x": 128.0,
+        "y": 452.04854583740234
+      },
+      "content_alpha_coverage": 0.28067779541015625,
+      "pixel_content_bounds": {
+        "x0": 2,
+        "y0": 59,
+        "x1": 254,
+        "y1": 453
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.0009765625,
+        "v0": 0.02880859375,
+        "u1": 0.1240234375,
+        "v1": 0.22119140625
+      },
+      "tight_world_width": 2.933303208500147,
+      "tight_world_height": 4.5861962863057855,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0024148582807047114
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 1,
+      "cell_index": 25,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 45.0,
+      "uv_rect_px": {
+        "x": 256,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.125,
+        "v0": 0.0,
+        "u1": 0.25,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.1874999739229679,
+        "v": 0.0701771080493927
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 10.406329412607343,
+      "rendered_world_width": 5.203164706303672,
+      "rendered_world_height": 10.406329412607343,
+      "ground_pivot_px": {
+        "x": 127.99994659423828,
+        "y": 368.27728271484375
+      },
+      "content_alpha_coverage": 0.13240814208984375,
+      "pixel_content_bounds": {
+        "x0": 37,
+        "y0": 143,
+        "x1": 240,
+        "y1": 369
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.14306640625,
+        "v0": 0.06982421875,
+        "u1": 0.2421875,
+        "v1": 0.18017578125
+      },
+      "tight_world_width": 4.125947013201739,
+      "tight_world_height": 4.59341884228371,
+      "ground_pivot_in_tight": {
+        "u": 0.44827559898639546,
+        "v": 0.0031978640936117255
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 2,
+      "cell_index": 26,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.25,
+        "v0": 0.0,
+        "u1": 0.375,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.312500037252903,
+        "v": 0.059851884841918945
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 8.757044652140033,
+      "rendered_world_width": 4.378522326070017,
+      "rendered_world_height": 8.757044652140033,
+      "ground_pivot_px": {
+        "x": 128.0000762939453,
+        "y": 389.42333984375
+      },
+      "content_alpha_coverage": 0.19347381591796875,
+      "pixel_content_bounds": {
+        "x0": 2,
+        "y0": 122,
+        "x1": 254,
+        "y1": 390
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.2509765625,
+        "v0": 0.0595703125,
+        "u1": 0.3740234375,
+        "v1": 0.1904296875
+      },
+      "tight_world_width": 4.310107914725172,
+      "tight_world_height": 4.583765560104548,
+      "ground_pivot_in_tight": {
+        "u": 0.5000003027537513,
+        "v": 0.002151717000932836
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 3,
+      "cell_index": 27,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 135.0,
+      "uv_rect_px": {
+        "x": 768,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.375,
+        "v0": 0.0,
+        "u1": 0.5,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.4375000074505806,
+        "v": 0.0701771154999733
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 10.406329589117254,
+      "rendered_world_width": 5.203164794558627,
+      "rendered_world_height": 10.406329589117254,
+      "ground_pivot_px": {
+        "x": 128.00001525878906,
+        "y": 368.2772674560547
+      },
+      "content_alpha_coverage": 0.1136016845703125,
+      "pixel_content_bounds": {
+        "x0": 51,
+        "y0": 143,
+        "x1": 207,
+        "y1": 369
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.39990234375,
+        "v0": 0.06982421875,
+        "u1": 0.47607421875,
+        "v1": 0.18017578125
+      },
+      "tight_world_width": 3.1706785466841634,
+      "tight_world_height": 4.593418920196288,
+      "ground_pivot_in_tight": {
+        "u": 0.493589841402494,
+        "v": 0.0031979316103774888
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 4,
+      "cell_index": 28,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.0,
+        "u1": 0.625,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.5624998398125172,
+        "v": 0.02927320823073387
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 5.959729881921865,
+      "rendered_world_width": 2.9798649409609324,
+      "rendered_world_height": 5.959729881921865,
+      "ground_pivot_px": {
+        "x": 127.99967193603516,
+        "y": 452.04846954345703
+      },
+      "content_alpha_coverage": 0.28093719482421875,
+      "pixel_content_bounds": {
+        "x0": 2,
+        "y0": 59,
+        "x1": 254,
+        "y1": 453
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.5009765625,
+        "v0": 0.02880859375,
+        "u1": 0.6240234375,
+        "v1": 0.22119140625
+      },
+      "tight_world_width": 2.9333045512584177,
+      "tight_world_height": 4.586198385697685,
+      "ground_pivot_in_tight": {
+        "u": 0.49999869815886966,
+        "v": 0.002415051920159819
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 5,
+      "cell_index": 29,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 225.0,
+      "uv_rect_px": {
+        "x": 1280,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.625,
+        "v0": 0.0,
+        "u1": 0.75,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.6874999925494194,
+        "v": 0.0701771154999733
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 10.406329589117254,
+      "rendered_world_width": 5.203164794558627,
+      "rendered_world_height": 10.406329589117254,
+      "ground_pivot_px": {
+        "x": 127.99998474121094,
+        "y": 368.2772674560547
+      },
+      "content_alpha_coverage": 0.13242340087890625,
+      "pixel_content_bounds": {
+        "x0": 16,
+        "y0": 143,
+        "x1": 219,
+        "y1": 369
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6328125,
+        "v0": 0.06982421875,
+        "u1": 0.73193359375,
+        "v1": 0.18017578125
+      },
+      "tight_world_width": 4.125947083185161,
+      "tight_world_height": 4.593418920196288,
+      "ground_pivot_in_tight": {
+        "u": 0.5517240627645859,
+        "v": 0.0031979316103774888
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 6,
+      "cell_index": 30,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.75,
+        "v0": 0.0,
+        "u1": 0.875,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.8124999664723873,
+        "v": 0.059851884841918945
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 8.757044652140033,
+      "rendered_world_width": 4.378522326070017,
+      "rendered_world_height": 8.757044652140033,
+      "ground_pivot_px": {
+        "x": 127.99993133544922,
+        "y": 389.42333984375
+      },
+      "content_alpha_coverage": 0.19330596923828125,
+      "pixel_content_bounds": {
+        "x0": 2,
+        "y0": 122,
+        "x1": 254,
+        "y1": 390
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.7509765625,
+        "v0": 0.0595703125,
+        "u1": 0.8740234375,
+        "v1": 0.1904296875
+      },
+      "tight_world_width": 4.310107914725172,
+      "tight_world_height": 4.583765560104548,
+      "ground_pivot_in_tight": {
+        "u": 0.49999972752162386,
+        "v": 0.002151717000932836
+      }
+    },
+    {
+      "atlas": "tree",
+      "classification": "tree",
+      "row": 3,
+      "col": 7,
+      "cell_index": 31,
+      "source_variant": "BL",
+      "grove_config": null,
+      "yaw_deg": 315.0,
+      "uv_rect_px": {
+        "x": 1792,
+        "y": 1536,
+        "w": 256,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.875,
+        "v0": 0.0,
+        "u1": 1.0,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.9375000223517418,
+        "v": 0.0701771080493927
+      },
+      "source_physical_height_m": 4.564037313684821,
+      "rendered": true,
+      "ortho_scale": 10.406329412607343,
+      "rendered_world_width": 5.203164706303672,
+      "rendered_world_height": 10.406329412607343,
+      "ground_pivot_px": {
+        "x": 128.0000457763672,
+        "y": 368.27728271484375
+      },
+      "content_alpha_coverage": 0.11348724365234375,
+      "pixel_content_bounds": {
+        "x0": 50,
+        "y0": 144,
+        "x1": 204,
+        "y1": 369
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8994140625,
+        "v0": 0.06982421875,
+        "u1": 0.974609375,
+        "v1": 0.1796875
+      },
+      "tight_world_width": 3.1300287686358024,
+      "tight_world_height": 4.573093980149712,
+      "ground_pivot_in_tight": {
+        "u": 0.5064938037426441,
+        "v": 0.0032120768229166666
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 0,
+      "cell_index": 0,
+      "source_variant": null,
+      "grove_config": "G1",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.75,
+        "u1": 0.16666666666666666,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.08333333333333333,
+        "v": 0.7581300055608153
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 20.275828742980956,
+      "rendered_world_width": 20.275828742980956,
+      "rendered_world_height": 20.275828742980956,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 495.3497486114502
+      },
+      "content_alpha_coverage": 0.2729301452636719,
+      "pixel_content_bounds": {
+        "x0": 6,
+        "y0": 17,
+        "x1": 507,
+        "y1": 496
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.001953125,
+        "v0": 0.7578125,
+        "u1": 0.1650390625,
+        "v1": 0.99169921875
+      },
+      "tight_world_width": 19.840215234830975,
+      "tight_world_height": 18.96898821853101,
+      "ground_pivot_in_tight": {
+        "u": 0.499001996007984,
+        "v": 0.0013575185564714085
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 1,
+      "cell_index": 1,
+      "source_variant": null,
+      "grove_config": "G2",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.75,
+        "u1": 0.3333333333333333,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.25,
+        "v": 0.7807480562478304
+      },
+      "source_physical_height_m": 17.25091312526766,
+      "rendered": true,
+      "ortho_scale": 22.878783187866212,
+      "rendered_world_width": 22.878783187866212,
+      "rendered_world_height": 22.878783187866212,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 449.02798080444336
+      },
+      "content_alpha_coverage": 0.25177001953125,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 64,
+        "x1": 507,
+        "y1": 450
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.16829427083333334,
+        "v0": 0.7802734375,
+        "u1": 0.3317057291666667,
+        "v1": 0.96875
+      },
+      "tight_world_width": 22.4319319537282,
+      "tight_world_height": 17.24845763772726,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0025181844444472556
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 2,
+      "cell_index": 2,
+      "source_variant": null,
+      "grove_config": "G3",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.75,
+        "u1": 0.5,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.4166666666666667,
+        "v": 0.7524510964285582
+      },
+      "source_physical_height_m": 19.71532799467385,
+      "rendered": true,
+      "ortho_scale": 20.109635882646543,
+      "rendered_world_width": 20.109635882646543,
+      "rendered_world_height": 20.109635882646543,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 506.98015451431274
+      },
+      "content_alpha_coverage": 0.35013580322265625,
+      "pixel_content_bounds": {
+        "x0": 52,
+        "y0": 6,
+        "x1": 460,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.3502604166666667,
+        "v0": 0.751953125,
+        "u1": 0.4830729166666667,
+        "v1": 0.9970703125
+      },
+      "tight_world_width": 16.024866093983963,
+      "tight_world_height": 19.716869556813602,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.002031564712524414
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 3,
+      "cell_index": 3,
+      "source_variant": null,
+      "grove_config": "G4",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.75,
+        "u1": 0.6666666666666666,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.5833333333333334,
+        "v": 0.7790659889578819
+      },
+      "source_physical_height_m": 16.303060557078794,
+      "rendered": true,
+      "ortho_scale": 21.242598037719727,
+      "rendered_world_width": 21.242598037719727,
+      "rendered_world_height": 21.242598037719727,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 452.4728546142578
+      },
+      "content_alpha_coverage": 0.30306243896484375,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 506,
+        "y1": 453
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.5016276041666666,
+        "v0": 0.77880859375,
+        "u1": 0.6647135416666666,
+        "v1": 0.970703125
+      },
+      "tight_world_width": 20.78621409550309,
+      "tight_world_height": 16.305353571921586,
+      "ground_pivot_in_tight": {
+        "u": 0.500998003992016,
+        "v": 0.001341336859394879
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 4,
+      "cell_index": 4,
+      "source_variant": null,
+      "grove_config": "G5",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 2048,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.75,
+        "u1": 0.8333333333333334,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.75,
+        "v": 0.7998948954045773
+      },
+      "source_physical_height_m": 14.148515237162428,
+      "rendered": true,
+      "ortho_scale": 23.547928619384766,
+      "rendered_world_width": 23.547928619384766,
+      "rendered_world_height": 23.547928619384766,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 409.8152542114258
+      },
+      "content_alpha_coverage": 0.24778366088867188,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 101,
+        "x1": 507,
+        "y1": 411
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6682942708333334,
+        "v0": 0.79931640625,
+        "u1": 0.8317057291666666,
+        "v1": 0.95068359375
+      },
+      "tight_world_width": 23.088008138537408,
+      "tight_world_height": 14.25753490626812,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0038217606083039315
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 0,
+      "col": 5,
+      "cell_index": 5,
+      "source_variant": null,
+      "grove_config": "G6",
+      "yaw_deg": 0.0,
+      "uv_rect_px": {
+        "x": 2560,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.75,
+        "u1": 1.0,
+        "v1": 1.0
+      },
+      "ground_pivot_uv": {
+        "u": 0.9166666666666666,
+        "v": 0.7540163830853999
+      },
+      "source_physical_height_m": 18.388335981108696,
+      "rendered": true,
+      "ortho_scale": 18.998830718994142,
+      "rendered_world_width": 18.998830718994142,
+      "rendered_world_height": 18.998830718994142,
+      "ground_pivot_px": {
+        "x": 256.0,
+        "y": 503.7744474411011
+      },
+      "content_alpha_coverage": 0.2884368896484375,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 9,
+        "x1": 507,
+        "y1": 505
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8349609375,
+        "v0": 0.75341796875,
+        "u1": 0.9983723958333334,
+        "v1": 0.99560546875
+      },
+      "tight_world_width": 18.627759806513787,
+      "tight_world_height": 18.405117259025577,
+      "ground_pivot_in_tight": {
+        "u": 0.5,
+        "v": 0.0024708720945542857
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 0,
+      "cell_index": 6,
+      "source_variant": null,
+      "grove_config": "G1",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.5,
+        "u1": 0.16666666666666666,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.08333338300387065,
+        "v": 0.5024509180802852
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336188325249523,
+      "rendered_world_width": 19.336188325249523,
+      "rendered_world_height": 19.336188325249523,
+      "ground_pivot_px": {
+        "x": 256.0001525878906,
+        "y": 506.9805197715759
+      },
+      "content_alpha_coverage": 0.27724456787109375,
+      "pixel_content_bounds": {
+        "x0": 25,
+        "y0": 6,
+        "x1": 487,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.008138020833333334,
+        "v0": 0.501953125,
+        "u1": 0.15852864583333334,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 17.447888684111874,
+      "tight_world_height": 18.958528397021993,
+      "ground_pivot_in_tight": {
+        "u": 0.5000003302768196,
+        "v": 0.0020308371084144868
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 1,
+      "cell_index": 7,
+      "source_variant": null,
+      "grove_config": "G2",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.5,
+        "u1": 0.3333333333333333,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.2500000496705373,
+        "v": 0.5058825705200434
+      },
+      "source_physical_height_m": 17.25091312526766,
+      "rendered": true,
+      "ortho_scale": 18.102855118410528,
+      "rendered_world_width": 18.102855118410528,
+      "rendered_world_height": 18.102855118410528,
+      "ground_pivot_px": {
+        "x": 256.0001525878906,
+        "y": 499.9524955749512
+      },
+      "content_alpha_coverage": 0.360626220703125,
+      "pixel_content_bounds": {
+        "x0": 4,
+        "y0": 13,
+        "x1": 507,
+        "y1": 501
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.16796875,
+        "v0": 0.50537109375,
+        "u1": 0.3317057291666667,
+        "v1": 0.74365234375
+      },
+      "tight_world_width": 17.784640868282217,
+      "tight_world_height": 17.254283784735033,
+      "ground_pivot_in_tight": {
+        "u": 0.5009943391409356,
+        "v": 0.0021465254611656315
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 2,
+      "cell_index": 8,
+      "source_variant": null,
+      "grove_config": "G3",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.5,
+        "u1": 0.5,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.4166667064030965,
+        "v": 0.5024509304203093
+      },
+      "source_physical_height_m": 19.71532799467385,
+      "rendered": true,
+      "ortho_scale": 20.109635495121584,
+      "rendered_world_width": 20.109635495121584,
+      "rendered_world_height": 20.109635495121584,
+      "ground_pivot_px": {
+        "x": 256.0001220703125,
+        "y": 506.98049449920654
+      },
+      "content_alpha_coverage": 0.313934326171875,
+      "pixel_content_bounds": {
+        "x0": 74,
+        "y0": 6,
+        "x1": 438,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.357421875,
+        "v0": 0.501953125,
+        "u1": 0.4759114583333333,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 14.296693984813,
+      "tight_world_height": 19.71686917685749,
+      "ground_pivot_in_tight": {
+        "u": 0.5000003353580014,
+        "v": 0.002030887451779795
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 3,
+      "cell_index": 9,
+      "source_variant": null,
+      "grove_config": "G4",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.5,
+        "u1": 0.6666666666666666,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.5833333830038706,
+        "v": 0.5064651551656425
+      },
+      "source_physical_height_m": 16.303060557078794,
+      "rendered": true,
+      "ortho_scale": 17.19227750172461,
+      "rendered_world_width": 17.19227750172461,
+      "rendered_world_height": 17.19227750172461,
+      "ground_pivot_px": {
+        "x": 256.0001525878906,
+        "y": 498.75936222076416
+      },
+      "content_alpha_coverage": 0.4365119934082031,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.5016276041666666,
+        "v0": 0.505859375,
+        "u1": 0.6650390625,
+        "v1": 0.7431640625
+      },
+      "tight_world_width": 16.85649083176905,
+      "tight_world_height": 16.31923215984016,
+      "ground_pivot_in_tight": {
+        "u": 0.5000003039599414,
+        "v": 0.00255275263217251
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 4,
+      "cell_index": 10,
+      "source_variant": null,
+      "grove_config": "G5",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 2048,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.5,
+        "u1": 0.8333333333333334,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.7500000596046448,
+        "v": 0.512633178383112
+      },
+      "source_physical_height_m": 14.148515237162428,
+      "rendered": true,
+      "ortho_scale": 15.739217089951103,
+      "rendered_world_width": 15.739217089951103,
+      "rendered_world_height": 15.739217089951103,
+      "ground_pivot_px": {
+        "x": 256.00018310546875,
+        "y": 486.1272506713867
+      },
+      "content_alpha_coverage": 0.42229461669921875,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 25,
+        "x1": 507,
+        "y1": 487
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6682942708333334,
+        "v0": 0.51220703125,
+        "u1": 0.8317057291666666,
+        "v1": 0.73779296875
+      },
+      "tight_world_width": 15.431810506162995,
+      "tight_world_height": 14.202184171010565,
+      "ground_pivot_in_tight": {
+        "u": 0.5000003647519298,
+        "v": 0.001889067810851258
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 1,
+      "col": 5,
+      "cell_index": 11,
+      "source_variant": null,
+      "grove_config": "G6",
+      "yaw_deg": 90.0,
+      "uv_rect_px": {
+        "x": 2560,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.5,
+        "u1": 1.0,
+        "v1": 0.75
+      },
+      "ground_pivot_uv": {
+        "u": 0.916666716337204,
+        "v": 0.5024509080685675
+      },
+      "source_physical_height_m": 18.388335981108696,
+      "rendered": true,
+      "ortho_scale": 18.756103735738755,
+      "rendered_world_width": 18.756103735738755,
+      "rendered_world_height": 18.756103735738755,
+      "ground_pivot_px": {
+        "x": 256.0001525878906,
+        "y": 506.98054027557373
+      },
+      "content_alpha_coverage": 0.286895751953125,
+      "pixel_content_bounds": {
+        "x0": 8,
+        "y0": 6,
+        "x1": 505,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8359375,
+        "v0": 0.501953125,
+        "u1": 0.9977213541666666,
+        "v1": 0.7470703125
+      },
+      "tight_world_width": 18.206608509105784,
+      "tight_world_height": 18.389773584650108,
+      "ground_pivot_in_tight": {
+        "u": 0.4989942708005848,
+        "v": 0.0020307962637973495
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 0,
+      "cell_index": 12,
+      "source_variant": null,
+      "grove_config": "G1",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.25,
+        "u1": 0.16666666666666666,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.08333318432172139,
+        "v": 0.25813003815710545
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 20.275834354291124,
+      "rendered_world_width": 20.275834354291124,
+      "rendered_world_height": 20.275834354291124,
+      "ground_pivot_px": {
+        "x": 255.99954223632812,
+        "y": 495.34968185424805
+      },
+      "content_alpha_coverage": 0.2729454040527344,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 18,
+        "x1": 506,
+        "y1": 496
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.0016276041666666667,
+        "v0": 0.2578125,
+        "u1": 0.16471354166666666,
+        "v1": 0.4912109375
+      },
+      "tight_world_width": 19.840220725585652,
+      "tight_world_height": 18.92939222920148,
+      "ground_pivot_in_tight": {
+        "u": 0.5009970902920721,
+        "v": 0.001360498212870195
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 1,
+      "cell_index": 13,
+      "source_variant": null,
+      "grove_config": "G2",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.25,
+        "u1": 0.3333333333333333,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.24999986092249551,
+        "v": 0.28074808046221733
+      },
+      "source_physical_height_m": 17.25091312526766,
+      "rendered": true,
+      "ortho_scale": 22.878788578232754,
+      "rendered_world_width": 22.878788578232754,
+      "rendered_world_height": 22.878788578232754,
+      "ground_pivot_px": {
+        "x": 255.99957275390625,
+        "y": 449.0279312133789
+      },
+      "content_alpha_coverage": 0.25197601318359375,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 64,
+        "x1": 507,
+        "y1": 450
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.16829427083333334,
+        "v0": 0.2802734375,
+        "u1": 0.3317057291666667,
+        "v1": 0.46875
+      },
+      "tight_world_width": 22.431937238814147,
+      "tight_world_height": 17.248461701558288,
+      "ground_pivot_in_tight": {
+        "u": 0.49999914891216385,
+        "v": 0.0025183129187074968
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 2,
+      "cell_index": 14,
+      "source_variant": null,
+      "grove_config": "G3",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.25,
+        "u1": 0.5,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.41666682561238605,
+        "v": 0.2524511080700904
+      },
+      "source_physical_height_m": 19.71532799467385,
+      "rendered": true,
+      "ortho_scale": 20.109638349896898,
+      "rendered_world_width": 20.109638349896898,
+      "rendered_world_height": 20.109638349896898,
+      "ground_pivot_px": {
+        "x": 256.00048828125,
+        "y": 506.98013067245483
+      },
+      "content_alpha_coverage": 0.3501014709472656,
+      "pixel_content_bounds": {
+        "x0": 52,
+        "y0": 6,
+        "x1": 460,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.3502604166666667,
+        "v0": 0.251953125,
+        "u1": 0.4830729166666667,
+        "v1": 0.4970703125
+      },
+      "tight_world_width": 16.02486806007409,
+      "tight_world_height": 19.716871975875474,
+      "ground_pivot_in_tight": {
+        "u": 0.5000011967677697,
+        "v": 0.002031612206265271
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 3,
+      "cell_index": 15,
+      "source_variant": null,
+      "grove_config": "G4",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.25,
+        "u1": 0.6666666666666666,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.5833331942558289,
+        "v": 0.279066015034914
+      },
+      "source_physical_height_m": 16.303060557078794,
+      "rendered": true,
+      "ortho_scale": 21.242603144608584,
+      "rendered_world_width": 21.242603144608584,
+      "rendered_world_height": 21.242603144608584,
+      "ground_pivot_px": {
+        "x": 255.99957275390625,
+        "y": 452.4728012084961
+      },
+      "content_alpha_coverage": 0.30307769775390625,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 60,
+        "x1": 507,
+        "y1": 453
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.5016276041666666,
+        "v0": 0.27880859375,
+        "u1": 0.6650390625,
+        "v1": 0.470703125
+      },
+      "tight_world_width": 20.827708551940447,
+      "tight_world_height": 16.30535749185776,
+      "ground_pivot_in_tight": {
+        "u": 0.49999914891216385,
+        "v": 0.0013414727519183364
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 4,
+      "cell_index": 16,
+      "source_variant": null,
+      "grove_config": "G5",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 2048,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.25,
+        "u1": 0.8333333333333334,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.7499998758236567,
+        "v": 0.29989491403102875
+      },
+      "source_physical_height_m": 14.148515237162428,
+      "rendered": true,
+      "ortho_scale": 23.54793317503393,
+      "rendered_world_width": 23.54793317503393,
+      "rendered_world_height": 23.54793317503393,
+      "ground_pivot_px": {
+        "x": 255.99961853027344,
+        "y": 409.8152160644531
+      },
+      "content_alpha_coverage": 0.247894287109375,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 102,
+        "x1": 507,
+        "y1": 411
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6682942708333334,
+        "v0": 0.29931640625,
+        "u1": 0.8317057291666666,
+        "v1": 0.4501953125
+      },
+      "tight_world_width": 23.088012605209048,
+      "tight_world_height": 14.211545607588835,
+      "ground_pivot_in_tight": {
+        "u": 0.4999992401001463,
+        "v": 0.003834252218598301
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 2,
+      "col": 5,
+      "cell_index": 17,
+      "source_variant": null,
+      "grove_config": "G6",
+      "yaw_deg": 180.0,
+      "uv_rect_px": {
+        "x": 2560,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.25,
+        "u1": 1.0,
+        "v1": 0.5
+      },
+      "ground_pivot_uv": {
+        "u": 0.9166665077209473,
+        "v": 0.2540164194069803
+      },
+      "source_physical_height_m": 18.388335981108696,
+      "rendered": true,
+      "ortho_scale": 18.99883635174936,
+      "rendered_world_width": 18.99883635174936,
+      "rendered_world_height": 18.99883635174936,
+      "ground_pivot_px": {
+        "x": 255.99951171875,
+        "y": 503.7743730545044
+      },
+      "content_alpha_coverage": 0.2884483337402344,
+      "pixel_content_bounds": {
+        "x0": 6,
+        "y0": 9,
+        "x1": 507,
+        "y1": 505
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8352864583333334,
+        "v0": 0.25341796875,
+        "u1": 0.9983723958333334,
+        "v1": 0.49560546875
+      },
+      "tight_world_width": 18.590658227004745,
+      "tight_world_height": 18.405122715757194,
+      "ground_pivot_in_tight": {
+        "u": 0.4990010213947106,
+        "v": 0.0024710220675314624
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 0,
+      "cell_index": 18,
+      "source_variant": null,
+      "grove_config": "G1",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 0,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.0,
+        "v0": 0.0,
+        "u1": 0.16666666666666666,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.08333328366279602,
+        "v": 0.0024509180802851915
+      },
+      "source_physical_height_m": 18.95704684406519,
+      "rendered": true,
+      "ortho_scale": 19.336188325249523,
+      "rendered_world_width": 19.336188325249523,
+      "rendered_world_height": 19.336188325249523,
+      "ground_pivot_px": {
+        "x": 255.99984741210938,
+        "y": 506.9805197715759
+      },
+      "content_alpha_coverage": 0.27741241455078125,
+      "pixel_content_bounds": {
+        "x0": 25,
+        "y0": 6,
+        "x1": 487,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.008138020833333334,
+        "v0": 0.001953125,
+        "u1": 0.15852864583333334,
+        "v1": 0.2470703125
+      },
+      "tight_world_width": 17.447888684111874,
+      "tight_world_height": 18.958528397021993,
+      "ground_pivot_in_tight": {
+        "u": 0.49999966972318044,
+        "v": 0.0020308371084144868
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 1,
+      "cell_index": 19,
+      "source_variant": null,
+      "grove_config": "G2",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 512,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.0,
+        "u1": 0.3333333333333333,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.24999994536240897,
+        "v": 0.005882570520043373
+      },
+      "source_physical_height_m": 17.25091312526766,
+      "rendered": true,
+      "ortho_scale": 18.102855118410528,
+      "rendered_world_width": 18.102855118410528,
+      "rendered_world_height": 18.102855118410528,
+      "ground_pivot_px": {
+        "x": 255.9998321533203,
+        "y": 499.9524955749512
+      },
+      "content_alpha_coverage": 0.3606719970703125,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 13,
+        "x1": 508,
+        "y1": 501
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.16829427083333334,
+        "v0": 0.00537109375,
+        "u1": 0.33203125,
+        "v1": 0.24365234375
+      },
+      "tight_world_width": 17.784640868282217,
+      "tight_world_height": 17.254283784735033,
+      "ground_pivot_in_tight": {
+        "u": 0.4990056305234996,
+        "v": 0.0021465254611656315
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 2,
+      "cell_index": 20,
+      "source_variant": null,
+      "grove_config": "G3",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1024,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.0,
+        "u1": 0.5,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.4166666219631831,
+        "v": 0.002450930420309305
+      },
+      "source_physical_height_m": 19.71532799467385,
+      "rendered": true,
+      "ortho_scale": 20.109635495121584,
+      "rendered_world_width": 20.109635495121584,
+      "rendered_world_height": 20.109635495121584,
+      "ground_pivot_px": {
+        "x": 255.99986267089844,
+        "y": 506.98049449920654
+      },
+      "content_alpha_coverage": 0.3139228820800781,
+      "pixel_content_bounds": {
+        "x0": 74,
+        "y0": 6,
+        "x1": 438,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.357421875,
+        "v0": 0.001953125,
+        "u1": 0.4759114583333333,
+        "v1": 0.2470703125
+      },
+      "tight_world_width": 14.296693984813,
+      "tight_world_height": 19.71686917685749,
+      "ground_pivot_in_tight": {
+        "u": 0.49999962272224846,
+        "v": 0.002030887451779795
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 3,
+      "cell_index": 21,
+      "source_variant": null,
+      "grove_config": "G4",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 1536,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.5,
+        "v0": 0.0,
+        "u1": 0.6666666666666666,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.5833332786957423,
+        "v": 0.0064651551656425
+      },
+      "source_physical_height_m": 16.303060557078794,
+      "rendered": true,
+      "ortho_scale": 17.19227750172461,
+      "rendered_world_width": 17.19227750172461,
+      "rendered_world_height": 17.19227750172461,
+      "ground_pivot_px": {
+        "x": 255.9998321533203,
+        "y": 498.75936222076416
+      },
+      "content_alpha_coverage": 0.4362335205078125,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 14,
+        "x1": 507,
+        "y1": 500
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.5016276041666666,
+        "v0": 0.005859375,
+        "u1": 0.6650390625,
+        "v1": 0.2431640625
+      },
+      "tight_world_width": 16.85649083176905,
+      "tight_world_height": 16.31923215984016,
+      "ground_pivot_in_tight": {
+        "u": 0.4999996656440644,
+        "v": 0.00255275263217251
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 4,
+      "cell_index": 22,
+      "source_variant": null,
+      "grove_config": "G5",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 2048,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.0,
+        "u1": 0.8333333333333334,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.7499999403953552,
+        "v": 0.012633178383111954
+      },
+      "source_physical_height_m": 14.148515237162428,
+      "rendered": true,
+      "ortho_scale": 15.739217089951103,
+      "rendered_world_width": 15.739217089951103,
+      "rendered_world_height": 15.739217089951103,
+      "ground_pivot_px": {
+        "x": 255.99981689453125,
+        "y": 486.1272506713867
+      },
+      "content_alpha_coverage": 0.42214202880859375,
+      "pixel_content_bounds": {
+        "x0": 5,
+        "y0": 26,
+        "x1": 507,
+        "y1": 487
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.6682942708333334,
+        "v0": 0.01220703125,
+        "u1": 0.8317057291666666,
+        "v1": 0.2373046875
+      },
+      "tight_world_width": 15.431810506162995,
+      "tight_world_height": 14.171443512631754,
+      "ground_pivot_in_tight": {
+        "u": 0.49999963524807023,
+        "v": 0.0018931655718292435
+      }
+    },
+    {
+      "atlas": "grove",
+      "classification": "grove",
+      "row": 3,
+      "col": 5,
+      "cell_index": 23,
+      "source_variant": null,
+      "grove_config": "G6",
+      "yaw_deg": 270.0,
+      "uv_rect_px": {
+        "x": 2560,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "uv_rect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.0,
+        "u1": 1.0,
+        "v1": 0.25
+      },
+      "ground_pivot_uv": {
+        "u": 0.9166666169961294,
+        "v": 0.0024509080685675144
+      },
+      "source_physical_height_m": 18.388335981108696,
+      "rendered": true,
+      "ortho_scale": 18.756103735738755,
+      "rendered_world_width": 18.756103735738755,
+      "rendered_world_height": 18.756103735738755,
+      "ground_pivot_px": {
+        "x": 255.99984741210938,
+        "y": 506.98054027557373
+      },
+      "content_alpha_coverage": 0.28702545166015625,
+      "pixel_content_bounds": {
+        "x0": 7,
+        "y0": 6,
+        "x1": 504,
+        "y1": 508
+      },
+      "alpha_tight_bounds_uv": {
+        "u0": 0.8356119791666666,
+        "v0": 0.001953125,
+        "u1": 0.9973958333333334,
+        "v1": 0.2470703125
+      },
+      "tight_world_width": 18.206608509105784,
+      "tight_world_height": 18.389773584650108,
+      "ground_pivot_in_tight": {
+        "u": 0.5010057291994152,
+        "v": 0.0020307962637973495
+      }
+    }
+  ],
+  "alpha_samples": [
+    {
+      "atlas": "tree",
+      "x": 111,
+      "y": 1988,
+      "rgba": [
+        0.14901961386203766,
+        0.13333334028720856,
+        0.11764706671237946,
+        0.04313725605607033
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 1927,
+      "y": 1730,
+      "rgba": [
+        0.30588236451148987,
+        0.3450980484485626,
+        0.1882353127002716,
+        0.5607843399047852
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 1413,
+      "y": 1303,
+      "rgba": [
+        0.19607844948768616,
+        0.1882353127002716,
+        0.16470588743686676,
+        0.686274528503418
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 602,
+      "y": 1164,
+      "rgba": [
+        0.21568629145622253,
+        0.2823529541492462,
+        0.10588236153125763,
+        0.9098039865493774
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 1699,
+      "y": 822,
+      "rgba": [
+        0.3764706254005432,
+        0.46274513006210327,
+        0.15294118225574493,
+        0.007843137718737125
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 609,
+      "y": 699,
+      "rgba": [
+        0.13333334028720856,
+        0.1764705926179886,
+        0.05882353335618973,
+        0.803921639919281
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 117,
+      "y": 581,
+      "rgba": [
+        0.19607844948768616,
+        0.2549019753932953,
+        0.09803922474384308,
+        0.6784313917160034
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 1460,
+      "y": 259,
+      "rgba": [
+        0.15294118225574493,
+        0.2196078598499298,
+        0.05882353335618973,
+        0.4431372880935669
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 1678,
+      "y": 150,
+      "rgba": [
+        0.10196079313755035,
+        0.13333334028720856,
+        0.04313725605607033,
+        0.9803922176361084
+      ]
+    },
+    {
+      "atlas": "tree",
+      "x": 654,
+      "y": 5,
+      "rgba": [
+        0.13333334028720856,
+        0.1568627506494522,
+        0.03921568766236305,
+        0.007843137718737125
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 88,
+      "y": 2043,
+      "rgba": [
+        0.1764705926179886,
+        0.16078431904315948,
+        0.15294118225574493,
+        0.019607843831181526
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 2416,
+      "y": 1789,
+      "rgba": [
+        0.25882354378700256,
+        0.30588236451148987,
+        0.14901961386203766,
+        0.8549020290374756
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 1375,
+      "y": 1655,
+      "rgba": [
+        0.15294118225574493,
+        0.19607844948768616,
+        0.07450980693101883,
+        0.3686274588108063
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 1753,
+      "y": 1306,
+      "rgba": [
+        0.16470588743686676,
+        0.2039215862751007,
+        0.0784313753247261,
+        0.8901961445808411
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 2098,
+      "y": 1200,
+      "rgba": [
+        0.27450981736183167,
+        0.32156863808631897,
+        0.16470588743686676,
+        0.8549020290374756
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 1011,
+      "y": 823,
+      "rgba": [
+        0.1882353127002716,
+        0.23137256503105164,
+        0.0941176563501358,
+        0.1568627506494522
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 2003,
+      "y": 706,
+      "rgba": [
+        0.2823529541492462,
+        0.3137255012989044,
+        0.2039215862751007,
+        0.9803922176361084
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 247,
+      "y": 361,
+      "rgba": [
+        0.2352941334247589,
+        0.22745099663734436,
+        0.20000001788139343,
+        0.9568628072738647
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 2422,
+      "y": 233,
+      "rgba": [
+        0.19607844948768616,
+        0.22745099663734436,
+        0.1098039299249649,
+        0.9803922176361084
+      ]
+    },
+    {
+      "atlas": "grove",
+      "x": 1280,
+      "y": 5,
+      "rgba": [
+        0.1725490242242813,
+        0.19607844948768616,
+        0.08627451211214066,
+        0.019607843831181526
+      ]
+    }
+  ],
+  "exit_code": 0
+}

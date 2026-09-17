@@ -1,0 +1,1765 @@
+{
+  "schema_version": 1,
+  "kind": "grove_top_cap",
+  "generated_at": "2026-09-12T19:59:42.565033+00:00",
+  "incomplete": false,
+  "exit_code": 0,
+  "bake": {
+    "pitch_deg": 90.0,
+    "view_direction": "world_up_down",
+    "alpha_threshold": 0.03,
+    "pixel_origin": "top-left",
+    "pixel_content_bounds_convention": "inclusive x0/y0/x1/y1",
+    "uv_convention": "u right from left edge; v measured from BOTTOM edge (OpenGL/Three.js convention)",
+    "yaw_convention": "right=(cos yaw,sin yaw,0); up=(-sin yaw,cos yaw,0); view=(0,0,-1)",
+    "render_settings": {
+      "render.image_settings.file_format": "PNG",
+      "render.image_settings.color_mode": "RGBA",
+      "render.image_settings.color_depth": "8",
+      "render.filter_size": 1.2,
+      "render.use_motion_blur": false,
+      "render.resolution_percentage": 100,
+      "render.pixel_aspect_x": 1.0,
+      "render.pixel_aspect_y": 1.0,
+      "render.use_border": false,
+      "render.use_crop_to_border": false,
+      "render.use_file_extension": true,
+      "use_nodes": false,
+      "view_settings.look": "None",
+      "view_settings.exposure": 0.0,
+      "view_settings.gamma": 1.0,
+      "cycles.samples": 48,
+      "cycles.use_adaptive_sampling": true,
+      "cycles.adaptive_threshold": 0.01,
+      "cycles.max_bounces": 4,
+      "cycles.diffuse_bounces": 2,
+      "cycles.glossy_bounces": 2,
+      "cycles.transmission_bounces": 2,
+      "cycles.transparent_max_bounces": 8,
+      "cycles.use_denoising": true,
+      "cycles.denoiser": "OPENIMAGEDENOISE",
+      "cycles.denoising_use_gpu": false,
+      "cycles.caustics_reflective": false,
+      "cycles.caustics_refractive": false
+    },
+    "world_color": [
+      0.55,
+      0.58,
+      0.6
+    ],
+    "world_strength": 1.0,
+    "sun_energy": 3.0,
+    "sun_angle": 0.15,
+    "sun_rotation_euler": [
+      0.9599310885968813,
+      0.0,
+      0.6108652381980153
+    ],
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "filter_size": 1.2,
+    "compositor": false,
+    "dof": false,
+    "total_seconds": 410.0789191109943,
+    "peak_memory_mb": 1078.13671875,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "compute_device_type": "NONE",
+    "blender_version": "4.5.13 LTS",
+    "samples": 48,
+    "film_transparent": true,
+    "view_transform": "Standard",
+    "use_adaptive_sampling": true,
+    "adaptive_threshold": 0.009999999776482582,
+    "max_bounces": 4,
+    "diffuse_bounces": 2,
+    "glossy_bounces": 2,
+    "transmission_bounces": 2,
+    "transparent_max_bounces": 8,
+    "use_denoising": true,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_use_gpu": false
+  },
+  "cap_height": {
+    "method": "foliage_material_binned_max_mean",
+    "bins": 64,
+    "foliage_pattern": "twig|needle|leaf|leaves|foliage",
+    "statistic": "mean_of_occupied_bin_max_z",
+    "methodsByConfig": {
+      "G1": "foliage_material_binned_max_mean",
+      "G2": "foliage_material_binned_max_mean",
+      "G3": "foliage_material_binned_max_mean",
+      "G4": "foliage_material_binned_max_mean",
+      "G5": "foliage_material_binned_max_mean",
+      "G6": "foliage_material_binned_max_mean"
+    }
+  },
+  "provenance": {
+    "sources": [
+      {
+        "file": "fir_tree_01_1k.blend",
+        "sha256_before": "153d20aae6d7c63a4c52689d91e8bead78f6d17a70e11ef4d03d19953383de00",
+        "sha256_after": "153d20aae6d7c63a4c52689d91e8bead78f6d17a70e11ef4d03d19953383de00",
+        "bytes": 218986261
+      },
+      {
+        "file": "tree_small_02_1k.blend",
+        "sha256_before": "af3fef6da3eb97057d9d4d3c4281c5944696b8d518715deddd8500482d30b1bd",
+        "sha256_after": "af3fef6da3eb97057d9d4d3c4281c5944696b8d518715deddd8500482d30b1bd",
+        "bytes": 63805841
+      }
+    ],
+    "previous_side_metadata": {
+      "file": "impostor-atlas-meta.json",
+      "sha256": "cc89ca5159aff9bdccb960e4f3467a0127e5845f530cf1ad48e6e93ef3b75653",
+      "sha256_before": "cc89ca5159aff9bdccb960e4f3467a0127e5845f530cf1ad48e6e93ef3b75653",
+      "sha256_after": "cc89ca5159aff9bdccb960e4f3467a0127e5845f530cf1ad48e6e93ef3b75653"
+    },
+    "previous_side_atlas": {
+      "file": "grove_atlas_3072x2048.png",
+      "sha256": "709388457f4987ec781fb9971ecc1d7659d11588ab57dbc6d09334c75c5bf2d2",
+      "sha256_before": "709388457f4987ec781fb9971ecc1d7659d11588ab57dbc6d09334c75c5bf2d2",
+      "sha256_after": "709388457f4987ec781fb9971ecc1d7659d11588ab57dbc6d09334c75c5bf2d2"
+    },
+    "previous_tree_atlas": {
+      "file": "tree_atlas_2048.png",
+      "sha256": "ea88e5e015476dc66b28e2a1c9f5513afd1bc57b2e588c68a001a6cb96fa80ec",
+      "sha256_before": "ea88e5e015476dc66b28e2a1c9f5513afd1bc57b2e588c68a001a6cb96fa80ec",
+      "sha256_after": "ea88e5e015476dc66b28e2a1c9f5513afd1bc57b2e588c68a001a6cb96fa80ec"
+    },
+    "previous_side_script": {
+      "file": "bake_tree_impostors.py",
+      "sha256": "596051bca005234944f71d6b9adc1327147b74733a3f52ce9c1b5cfe271d032d",
+      "sha256_before": "596051bca005234944f71d6b9adc1327147b74733a3f52ce9c1b5cfe271d032d",
+      "sha256_after": "596051bca005234944f71d6b9adc1327147b74733a3f52ce9c1b5cfe271d032d"
+    },
+    "bake_script_sha256": "d9e61ee8f00c4d5f2c434eaabb23054d5253eca5c4efef697031a5a38064f0ba"
+  },
+  "variants": {
+    "FIR_A": {
+      "object": "fir_tree_01_a_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 70661,
+      "source_physical_height_m": 18.95704684406519,
+      "source_width_m": 6.583094120025635,
+      "crown_width_over_height": 0.34726369429669784,
+      "class": "conifer"
+    },
+    "FIR_B": {
+      "object": "fir_tree_01_b_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 54927,
+      "source_physical_height_m": 14.077526301145554,
+      "source_width_m": 6.084495782852173,
+      "crown_width_over_height": 0.4322134196515086,
+      "class": "conifer"
+    },
+    "FIR_C": {
+      "object": "fir_tree_01_c_LOD2",
+      "source_file": "fir_tree_01_1k.blend",
+      "triangles": 31512,
+      "source_physical_height_m": 14.552308432757854,
+      "source_width_m": 6.3499040603637695,
+      "crown_width_over_height": 0.4363502938179808,
+      "class": "conifer"
+    },
+    "BL": {
+      "object": "tree_small_02_LOD1",
+      "source_file": "tree_small_02_1k.blend",
+      "triangles": 495533,
+      "source_physical_height_m": 4.564037313684821,
+      "source_width_m": 4.292668700218201,
+      "crown_width_over_height": 0.9405419818429293,
+      "class": "broadleaf"
+    }
+  },
+  "atlas": {
+    "file": "grove_top_atlas_3072x2048.png",
+    "width": 3072,
+    "height": 2048,
+    "cell_width": 512,
+    "cell_height": 512,
+    "cols": 6,
+    "rows": 4,
+    "sha256": "2fc0c887f0e44306862cd331c9692fcee3288589a0046d9cd8d6f0611ebf770e"
+  },
+  "cells": [
+    {
+      "cellId": "GTOP_G1_yaw0",
+      "matchingSideCellId": "G1_yaw0",
+      "matchingSideCellIndex": 0,
+      "cellIndex": 0,
+      "row": 0,
+      "col": 0,
+      "groveConfig": "G1",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:e30e29284f50a031224220f6cded7c7dab039274165050516ab3a444e0bcd59b",
+      "uvRect": {
+        "u0": 0.0,
+        "v0": 0.75,
+        "u1": 0.16666666666666666,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.95704684406519,
+      "capHeightWorld": 12.025479830307528,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.673006393015385,
+        "p75": 14.057230331003666,
+        "p90": 17.03610072284937,
+        "max": 18.81184420734644,
+        "occupiedBins": 1045,
+        "totalPolygons": 153712,
+        "foliagePolygons": 50385,
+        "foliageRatio": 0.3277883314250026
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.0016276041666666667,
+        "v0": 0.76708984375,
+        "u1": 0.1650390625,
+        "v1": 0.982421875
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 36,
+        "x1": 506,
+        "y1": 476
+      },
+      "alphaCoverage": 0.18696212768554688,
+      "tightWorldWidth": 19.87981646284461,
+      "tightWorldDepth": 17.464141554012894,
+      "tightWorldBounds": {
+        "rightMin": -9.939908231422304,
+        "rightMax": 9.939908231422304,
+        "depthMin": -8.751871391013264,
+        "depthMax": 8.71227016299963
+      },
+      "rendered": true,
+      "orthoScale": 20.275828742980956,
+      "renderedWorldWidth": 20.275828742980956,
+      "renderedWorldDepth": 20.275828742980956
+    },
+    {
+      "cellId": "GTOP_G2_yaw0",
+      "matchingSideCellId": "G2_yaw0",
+      "matchingSideCellIndex": 1,
+      "cellIndex": 1,
+      "row": 0,
+      "col": 1,
+      "groveConfig": "G2",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:bb52e7b286809f165fc77023c5c85b11fc66c517000ef020c6b6cf7755e0c75a",
+      "uvRect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.75,
+        "u1": 0.3333333333333333,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 17.25091312526766,
+      "capHeightWorld": 10.742664162862843,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.23471717965208,
+        "p75": 12.056186932542943,
+        "p90": 14.808698209644206,
+        "max": 17.118778721208514,
+        "occupiedBins": 1346,
+        "totalPolygons": 510204,
+        "foliagePolygons": 355813,
+        "foliageRatio": 0.6973935915829746
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.16829427083333334,
+        "v0": 0.77783203125,
+        "u1": 0.3317057291666667,
+        "v1": 0.97216796875
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 57,
+        "x1": 506,
+        "y1": 454
+      },
+      "alphaCoverage": 0.21129226684570312,
+      "tightWorldWidth": 22.4319319537282,
+      "tightWorldDepth": 17.784679118692875,
+      "tightWorldBounds": {
+        "rightMin": -11.2159659768641,
+        "rightMax": 11.2159659768641,
+        "depthMin": -8.892339559346437,
+        "depthMax": 8.892339559346437
+      },
+      "rendered": true,
+      "orthoScale": 22.878783187866212,
+      "renderedWorldWidth": 22.878783187866212,
+      "renderedWorldDepth": 22.878783187866212
+    },
+    {
+      "cellId": "GTOP_G3_yaw0",
+      "matchingSideCellId": "G3_yaw0",
+      "matchingSideCellIndex": 2,
+      "cellIndex": 2,
+      "row": 0,
+      "col": 2,
+      "groveConfig": "G3",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:47627fe0c7ccbee6cd0f6c05dd6ac9ef193436dece068b365dcde8dd33725b17",
+      "uvRect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.75,
+        "u1": 0.5,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 19.71532799467385,
+      "capHeightWorld": 12.60467627119325,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 12.490793430245787,
+        "p75": 14.753041207643719,
+        "p90": 17.01024363568377,
+        "max": 19.56431725721086,
+        "occupiedBins": 1912,
+        "totalPolygons": 201861,
+        "foliagePolygons": 72697,
+        "foliageRatio": 0.3601339535621046
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.3349609375,
+        "v0": 0.765625,
+        "u1": 0.498046875,
+        "v1": 0.984375
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 32,
+        "x1": 505,
+        "y1": 479
+      },
+      "alphaCoverage": 0.3656120300292969,
+      "tightWorldWidth": 15.988804140239953,
+      "tightWorldDepth": 14.297373762130736,
+      "tightWorldBounds": {
+        "rightMin": -8.010358960479497,
+        "rightMax": 7.978445179760455,
+        "depthMin": -7.148686881065368,
+        "depthMax": 7.148686881065368
+      },
+      "rendered": true,
+      "orthoScale": 16.339855728149413,
+      "renderedWorldWidth": 16.339855728149413,
+      "renderedWorldDepth": 16.339855728149413
+    },
+    {
+      "cellId": "GTOP_G4_yaw0",
+      "matchingSideCellId": "G4_yaw0",
+      "matchingSideCellIndex": 3,
+      "cellIndex": 3,
+      "row": 0,
+      "col": 3,
+      "groveConfig": "G4",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:cfea4c4584a9448ff501a195e012e14959bb5ff85eeda92b086cf276139b1f71",
+      "uvRect": {
+        "u0": 0.5,
+        "v0": 0.75,
+        "u1": 0.6666666666666666,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 1536,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 16.303060557078794,
+      "capHeightWorld": 10.703116125697084,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.743413201790418,
+        "p75": 12.191775569515755,
+        "p90": 13.084283658464665,
+        "max": 16.17818628493501,
+        "occupiedBins": 1939,
+        "totalPolygons": 864280,
+        "foliagePolygons": 667175,
+        "foliageRatio": 0.7719431202850928
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.5013020833333334,
+        "v0": 0.77587890625,
+        "u1": 0.6650390625,
+        "v1": 0.974609375
+      },
+      "pixelContentBounds": {
+        "x0": 4,
+        "y0": 52,
+        "x1": 506,
+        "y1": 458
+      },
+      "alphaCoverage": 0.3221435546875,
+      "tightWorldWidth": 20.869192994087935,
+      "tightWorldDepth": 16.886205862015487,
+      "tightWorldBounds": {
+        "rightMin": -10.455341221690178,
+        "rightMax": 10.413851772397758,
+        "depthMin": -8.422358206361533,
+        "depthMax": 8.463847655653954
+      },
+      "rendered": true,
+      "orthoScale": 21.242598037719727,
+      "renderedWorldWidth": 21.242598037719727,
+      "renderedWorldDepth": 21.242598037719727
+    },
+    {
+      "cellId": "GTOP_G5_yaw0",
+      "matchingSideCellId": "G5_yaw0",
+      "matchingSideCellIndex": 4,
+      "cellIndex": 4,
+      "row": 0,
+      "col": 4,
+      "groveConfig": "G5",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:c69828d465c3d2fbf9df60162fc79be4fd55b3e58967cbe2a04c3d06296915df",
+      "uvRect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.75,
+        "u1": 0.8333333333333334,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 2048,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 14.148515237162428,
+      "capHeightWorld": 11.137908928485405,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.324135245085472,
+        "p75": 12.399533224203083,
+        "p90": 13.16993585743453,
+        "max": 14.114490138221527,
+        "occupiedBins": 2049,
+        "totalPolygons": 1150544,
+        "foliagePolygons": 947050,
+        "foliageRatio": 0.8231323617349706
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.66796875,
+        "v0": 0.79296875,
+        "u1": 0.8317057291666666,
+        "v1": 0.95654296875
+      },
+      "pixelContentBounds": {
+        "x0": 4,
+        "y0": 89,
+        "x1": 506,
+        "y1": 423
+      },
+      "alphaCoverage": 0.2887916564941406,
+      "tightWorldWidth": 23.134000186622146,
+      "tightWorldDepth": 15.407336108386517,
+      "tightWorldBounds": {
+        "rightMin": -11.58999611735344,
+        "rightMax": 11.544004069268704,
+        "depthMin": -7.726664078235626,
+        "depthMax": 7.68067203015089
+      },
+      "rendered": true,
+      "orthoScale": 23.547928619384766,
+      "renderedWorldWidth": 23.547928619384766,
+      "renderedWorldDepth": 23.547928619384766
+    },
+    {
+      "cellId": "GTOP_G6_yaw0",
+      "matchingSideCellId": "G6_yaw0",
+      "matchingSideCellIndex": 5,
+      "cellIndex": 5,
+      "row": 0,
+      "col": 5,
+      "groveConfig": "G6",
+      "bakedYaw": 0.0,
+      "sourceCompositionDigest": "sha256:faf43a4043a98053eb3d7f52cd84d22a2f4d67a43c99354443e1f0ec34d71b0f",
+      "uvRect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.75,
+        "u1": 1.0,
+        "v1": 1.0
+      },
+      "atlasPixelRect": {
+        "x": 2560,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.388335981108696,
+      "capHeightWorld": 11.422648024821944,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.735726334154606,
+        "p75": 12.773499559601305,
+        "p90": 15.897589753469674,
+        "max": 18.247489419948124,
+        "occupiedBins": 1221,
+        "totalPolygons": 446383,
+        "foliagePolygons": 340156,
+        "foliageRatio": 0.7620272277394077
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.8349609375,
+        "v0": 0.75537109375,
+        "u1": 0.9983723958333334,
+        "v1": 0.99462890625
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 11,
+        "x1": 506,
+        "y1": 500
+      },
+      "alphaCoverage": 0.239959716796875,
+      "tightWorldWidth": 18.627759806513787,
+      "tightWorldDepth": 18.182474711537363,
+      "tightWorldBounds": {
+        "rightMin": -9.313879903256893,
+        "rightMax": 9.313879903256893,
+        "depthMin": -9.091237355768682,
+        "depthMax": 9.091237355768682
+      },
+      "rendered": true,
+      "orthoScale": 18.998830718994142,
+      "renderedWorldWidth": 18.998830718994142,
+      "renderedWorldDepth": 18.998830718994142
+    },
+    {
+      "cellId": "GTOP_G1_yaw90",
+      "matchingSideCellId": "G1_yaw90",
+      "matchingSideCellIndex": 6,
+      "cellIndex": 6,
+      "row": 1,
+      "col": 0,
+      "groveConfig": "G1",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:e30e29284f50a031224220f6cded7c7dab039274165050516ab3a444e0bcd59b",
+      "uvRect": {
+        "u0": 0.0,
+        "v0": 0.5,
+        "u1": 0.16666666666666666,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.95704684406519,
+      "capHeightWorld": 12.025479830307528,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.673006393015385,
+        "p75": 14.057230331003666,
+        "p90": 17.03610072284937,
+        "max": 18.81184420734644,
+        "occupiedBins": 1045,
+        "totalPolygons": 153712,
+        "foliagePolygons": 50385,
+        "foliageRatio": 0.3277883314250026
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.011393229166666666,
+        "v0": 0.50244140625,
+        "u1": 0.15494791666666666,
+        "v1": 0.7470703125
+      },
+      "pixelContentBounds": {
+        "x0": 35,
+        "y0": 6,
+        "x1": 475,
+        "y1": 506
+      },
+      "alphaCoverage": 0.18674087524414062,
+      "tightWorldWidth": 17.464141554012894,
+      "tightWorldDepth": 19.840215234830975,
+      "tightWorldBounds": {
+        "rightMin": -8.751871391013264,
+        "rightMax": 8.71227016299963,
+        "depthMin": -9.939908231422304,
+        "depthMax": 9.90030700340867
+      },
+      "rendered": true,
+      "orthoScale": 20.275828742980956,
+      "renderedWorldWidth": 20.275828742980956,
+      "renderedWorldDepth": 20.275828742980956
+    },
+    {
+      "cellId": "GTOP_G2_yaw90",
+      "matchingSideCellId": "G2_yaw90",
+      "matchingSideCellIndex": 7,
+      "cellIndex": 7,
+      "row": 1,
+      "col": 1,
+      "groveConfig": "G2",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:bb52e7b286809f165fc77023c5c85b11fc66c517000ef020c6b6cf7755e0c75a",
+      "uvRect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.5,
+        "u1": 0.3333333333333333,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 17.25091312526766,
+      "capHeightWorld": 10.742664162862843,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.23471717965208,
+        "p75": 12.056186932542943,
+        "p90": 14.808698209644206,
+        "max": 17.118778721208514,
+        "occupiedBins": 1346,
+        "totalPolygons": 510204,
+        "foliagePolygons": 355813,
+        "foliageRatio": 0.6973935915829746
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.18522135416666666,
+        "v0": 0.50244140625,
+        "u1": 0.314453125,
+        "v1": 0.74755859375
+      },
+      "pixelContentBounds": {
+        "x0": 57,
+        "y0": 5,
+        "x1": 453,
+        "y1": 506
+      },
+      "alphaCoverage": 0.21111679077148438,
+      "tightWorldWidth": 17.73999399527907,
+      "tightWorldDepth": 22.4319319537282,
+      "tightWorldBounds": {
+        "rightMin": -8.892339559346437,
+        "rightMax": 8.847654435932636,
+        "depthMin": -11.2159659768641,
+        "depthMax": 11.2159659768641
+      },
+      "rendered": true,
+      "orthoScale": 22.878783187866212,
+      "renderedWorldWidth": 22.878783187866212,
+      "renderedWorldDepth": 22.878783187866212
+    },
+    {
+      "cellId": "GTOP_G3_yaw90",
+      "matchingSideCellId": "G3_yaw90",
+      "matchingSideCellIndex": 8,
+      "cellIndex": 8,
+      "row": 1,
+      "col": 2,
+      "groveConfig": "G3",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:47627fe0c7ccbee6cd0f6c05dd6ac9ef193436dece068b365dcde8dd33725b17",
+      "uvRect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.5,
+        "u1": 0.5,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 19.71532799467385,
+      "capHeightWorld": 12.60467627119325,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 12.490793430245787,
+        "p75": 14.753041207643719,
+        "p90": 17.01024363568377,
+        "max": 19.56431725721086,
+        "occupiedBins": 1912,
+        "totalPolygons": 201861,
+        "foliagePolygons": 72697,
+        "foliageRatio": 0.3601339535621046
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.34375,
+        "v0": 0.5029296875,
+        "u1": 0.4895833333333333,
+        "v1": 0.74755859375
+      },
+      "pixelContentBounds": {
+        "x0": 32,
+        "y0": 5,
+        "x1": 479,
+        "y1": 505
+      },
+      "alphaCoverage": 0.3656005859375,
+      "tightWorldWidth": 14.297373762130736,
+      "tightWorldDepth": 15.988804140239953,
+      "tightWorldBounds": {
+        "rightMin": -7.148686881065368,
+        "rightMax": 7.148686881065368,
+        "depthMin": -7.978445179760455,
+        "depthMax": 8.010358960479497
+      },
+      "rendered": true,
+      "orthoScale": 16.339855728149413,
+      "renderedWorldWidth": 16.339855728149413,
+      "renderedWorldDepth": 16.339855728149413
+    },
+    {
+      "cellId": "GTOP_G4_yaw90",
+      "matchingSideCellId": "G4_yaw90",
+      "matchingSideCellIndex": 9,
+      "cellIndex": 9,
+      "row": 1,
+      "col": 3,
+      "groveConfig": "G4",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:cfea4c4584a9448ff501a195e012e14959bb5ff85eeda92b086cf276139b1f71",
+      "uvRect": {
+        "u0": 0.5,
+        "v0": 0.5,
+        "u1": 0.6666666666666666,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 1536,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 16.303060557078794,
+      "capHeightWorld": 10.703116125697084,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.743413201790418,
+        "p75": 12.191775569515755,
+        "p90": 13.084283658464665,
+        "max": 16.17818628493501,
+        "occupiedBins": 1939,
+        "totalPolygons": 864280,
+        "foliagePolygons": 667175,
+        "foliageRatio": 0.7719431202850928
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.5172526041666666,
+        "v0": 0.50244140625,
+        "u1": 0.6497395833333334,
+        "v1": 0.748046875
+      },
+      "pixelContentBounds": {
+        "x0": 53,
+        "y0": 4,
+        "x1": 459,
+        "y1": 506
+      },
+      "alphaCoverage": 0.3219451904296875,
+      "tightWorldWidth": 16.886205862015487,
+      "tightWorldDepth": 20.869192994087935,
+      "tightWorldBounds": {
+        "rightMin": -8.422358206361533,
+        "rightMax": 8.463847655653954,
+        "depthMin": -10.413851772397758,
+        "depthMax": 10.455341221690178
+      },
+      "rendered": true,
+      "orthoScale": 21.242598037719727,
+      "renderedWorldWidth": 21.242598037719727,
+      "renderedWorldDepth": 21.242598037719727
+    },
+    {
+      "cellId": "GTOP_G5_yaw90",
+      "matchingSideCellId": "G5_yaw90",
+      "matchingSideCellIndex": 10,
+      "cellIndex": 10,
+      "row": 1,
+      "col": 4,
+      "groveConfig": "G5",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:c69828d465c3d2fbf9df60162fc79be4fd55b3e58967cbe2a04c3d06296915df",
+      "uvRect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.5,
+        "u1": 0.8333333333333334,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 2048,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 14.148515237162428,
+      "capHeightWorld": 11.137908928485405,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.324135245085472,
+        "p75": 12.399533224203083,
+        "p90": 13.16993585743453,
+        "max": 14.114490138221527,
+        "occupiedBins": 2049,
+        "totalPolygons": 1150544,
+        "foliagePolygons": 947050,
+        "foliageRatio": 0.8231323617349706
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.6953125,
+        "v0": 0.501953125,
+        "u1": 0.8046875,
+        "v1": 0.748046875
+      },
+      "pixelContentBounds": {
+        "x0": 88,
+        "y0": 4,
+        "x1": 423,
+        "y1": 507
+      },
+      "alphaCoverage": 0.2887535095214844,
+      "tightWorldWidth": 15.453328156471253,
+      "tightWorldDepth": 23.17999223470688,
+      "tightWorldBounds": {
+        "rightMin": -7.726664078235626,
+        "rightMax": 7.726664078235626,
+        "depthMin": -11.58999611735344,
+        "depthMax": 11.58999611735344
+      },
+      "rendered": true,
+      "orthoScale": 23.547928619384766,
+      "renderedWorldWidth": 23.547928619384766,
+      "renderedWorldDepth": 23.547928619384766
+    },
+    {
+      "cellId": "GTOP_G6_yaw90",
+      "matchingSideCellId": "G6_yaw90",
+      "matchingSideCellIndex": 11,
+      "cellIndex": 11,
+      "row": 1,
+      "col": 5,
+      "groveConfig": "G6",
+      "bakedYaw": 90.0,
+      "sourceCompositionDigest": "sha256:faf43a4043a98053eb3d7f52cd84d22a2f4d67a43c99354443e1f0ec34d71b0f",
+      "uvRect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.5,
+        "u1": 1.0,
+        "v1": 0.75
+      },
+      "atlasPixelRect": {
+        "x": 2560,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.388335981108696,
+      "capHeightWorld": 11.422648024821944,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.735726334154606,
+        "p75": 12.773499559601305,
+        "p90": 15.897589753469674,
+        "max": 18.247489419948124,
+        "occupiedBins": 1221,
+        "totalPolygons": 446383,
+        "foliagePolygons": 340156,
+        "foliageRatio": 0.7620272277394077
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.8369140625,
+        "v0": 0.50244140625,
+        "u1": 0.9964192708333334,
+        "v1": 0.74755859375
+      },
+      "pixelContentBounds": {
+        "x0": 11,
+        "y0": 5,
+        "x1": 500,
+        "y1": 506
+      },
+      "alphaCoverage": 0.2400054931640625,
+      "tightWorldWidth": 18.182474711537363,
+      "tightWorldDepth": 18.627759806513787,
+      "tightWorldBounds": {
+        "rightMin": -9.091237355768682,
+        "rightMax": 9.091237355768682,
+        "depthMin": -9.313879903256893,
+        "depthMax": 9.313879903256893
+      },
+      "rendered": true,
+      "orthoScale": 18.998830718994142,
+      "renderedWorldWidth": 18.998830718994142,
+      "renderedWorldDepth": 18.998830718994142
+    },
+    {
+      "cellId": "GTOP_G1_yaw180",
+      "matchingSideCellId": "G1_yaw180",
+      "matchingSideCellIndex": 12,
+      "cellIndex": 12,
+      "row": 2,
+      "col": 0,
+      "groveConfig": "G1",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:e30e29284f50a031224220f6cded7c7dab039274165050516ab3a444e0bcd59b",
+      "uvRect": {
+        "u0": 0.0,
+        "v0": 0.25,
+        "u1": 0.16666666666666666,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 0,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.95704684406519,
+      "capHeightWorld": 12.025479830307528,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.673006393015385,
+        "p75": 14.057230331003666,
+        "p90": 17.03610072284937,
+        "max": 18.81184420734644,
+        "occupiedBins": 1045,
+        "totalPolygons": 153712,
+        "foliagePolygons": 50385,
+        "foliageRatio": 0.3277883314250026
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.0016276041666666667,
+        "v0": 0.267578125,
+        "u1": 0.16471354166666666,
+        "v1": 0.48291015625
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 35,
+        "x1": 505,
+        "y1": 475
+      },
+      "alphaCoverage": 0.18680191040039062,
+      "tightWorldWidth": 19.840215234830982,
+      "tightWorldDepth": 17.464141554012897,
+      "tightWorldBounds": {
+        "rightMin": -9.939908231422308,
+        "rightMax": 9.900307003408674,
+        "depthMin": -8.712270162999632,
+        "depthMax": 8.751871391013267
+      },
+      "rendered": true,
+      "orthoScale": 20.275828742980963,
+      "renderedWorldWidth": 20.275828742980963,
+      "renderedWorldDepth": 20.275828742980963
+    },
+    {
+      "cellId": "GTOP_G2_yaw180",
+      "matchingSideCellId": "G2_yaw180",
+      "matchingSideCellIndex": 13,
+      "cellIndex": 13,
+      "row": 2,
+      "col": 1,
+      "groveConfig": "G2",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:bb52e7b286809f165fc77023c5c85b11fc66c517000ef020c6b6cf7755e0c75a",
+      "uvRect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.25,
+        "u1": 0.3333333333333333,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 512,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 17.25091312526766,
+      "capHeightWorld": 10.742664162862843,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.23471717965208,
+        "p75": 12.056186932542943,
+        "p90": 14.808698209644206,
+        "max": 17.118778721208514,
+        "occupiedBins": 1346,
+        "totalPolygons": 510204,
+        "foliagePolygons": 355813,
+        "foliageRatio": 0.6973935915829746
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.16829427083333334,
+        "v0": 0.2783203125,
+        "u1": 0.3317057291666667,
+        "v1": 0.47216796875
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 57,
+        "x1": 506,
+        "y1": 453
+      },
+      "alphaCoverage": 0.21120071411132812,
+      "tightWorldWidth": 22.431931953728203,
+      "tightWorldDepth": 17.73999399527908,
+      "tightWorldBounds": {
+        "rightMin": -11.215965976864101,
+        "rightMax": 11.215965976864101,
+        "depthMin": -8.847654435932638,
+        "depthMax": 8.89233955934644
+      },
+      "rendered": true,
+      "orthoScale": 22.878783187866215,
+      "renderedWorldWidth": 22.878783187866215,
+      "renderedWorldDepth": 22.878783187866215
+    },
+    {
+      "cellId": "GTOP_G3_yaw180",
+      "matchingSideCellId": "G3_yaw180",
+      "matchingSideCellIndex": 14,
+      "cellIndex": 14,
+      "row": 2,
+      "col": 2,
+      "groveConfig": "G3",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:47627fe0c7ccbee6cd0f6c05dd6ac9ef193436dece068b365dcde8dd33725b17",
+      "uvRect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.25,
+        "u1": 0.5,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 1024,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 19.71532799467385,
+      "capHeightWorld": 12.60467627119325,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 12.490793430245787,
+        "p75": 14.753041207643719,
+        "p90": 17.01024363568377,
+        "max": 19.56431725721086,
+        "occupiedBins": 1912,
+        "totalPolygons": 201861,
+        "foliagePolygons": 72697,
+        "foliageRatio": 0.3601339535621046
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.3349609375,
+        "v0": 0.265625,
+        "u1": 0.4983723958333333,
+        "v1": 0.484375
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 32,
+        "x1": 506,
+        "y1": 479
+      },
+      "alphaCoverage": 0.365631103515625,
+      "tightWorldWidth": 16.020717920958994,
+      "tightWorldDepth": 14.297373762130736,
+      "tightWorldBounds": {
+        "rightMin": -8.010358960479497,
+        "rightMax": 8.010358960479497,
+        "depthMin": -7.148686881065368,
+        "depthMax": 7.148686881065368
+      },
+      "rendered": true,
+      "orthoScale": 16.339855728149413,
+      "renderedWorldWidth": 16.339855728149413,
+      "renderedWorldDepth": 16.339855728149413
+    },
+    {
+      "cellId": "GTOP_G4_yaw180",
+      "matchingSideCellId": "G4_yaw180",
+      "matchingSideCellIndex": 15,
+      "cellIndex": 15,
+      "row": 2,
+      "col": 3,
+      "groveConfig": "G4",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:cfea4c4584a9448ff501a195e012e14959bb5ff85eeda92b086cf276139b1f71",
+      "uvRect": {
+        "u0": 0.5,
+        "v0": 0.25,
+        "u1": 0.6666666666666666,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 1536,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 16.303060557078794,
+      "capHeightWorld": 10.703116125697084,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.743413201790418,
+        "p75": 12.191775569515755,
+        "p90": 13.084283658464665,
+        "max": 16.17818628493501,
+        "occupiedBins": 1939,
+        "totalPolygons": 864280,
+        "foliagePolygons": 667175,
+        "foliageRatio": 0.7719431202850928
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.5016276041666666,
+        "v0": 0.275390625,
+        "u1": 0.6653645833333334,
+        "v1": 0.47412109375
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 53,
+        "x1": 507,
+        "y1": 459
+      },
+      "alphaCoverage": 0.3218574523925781,
+      "tightWorldWidth": 20.86919299408794,
+      "tightWorldDepth": 16.886205862015487,
+      "tightWorldBounds": {
+        "rightMin": -10.41385177239776,
+        "rightMax": 10.45534122169018,
+        "depthMin": -8.463847655653955,
+        "depthMax": 8.422358206361533
+      },
+      "rendered": true,
+      "orthoScale": 21.24259803771973,
+      "renderedWorldWidth": 21.24259803771973,
+      "renderedWorldDepth": 21.24259803771973
+    },
+    {
+      "cellId": "GTOP_G5_yaw180",
+      "matchingSideCellId": "G5_yaw180",
+      "matchingSideCellIndex": 16,
+      "cellIndex": 16,
+      "row": 2,
+      "col": 4,
+      "groveConfig": "G5",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:c69828d465c3d2fbf9df60162fc79be4fd55b3e58967cbe2a04c3d06296915df",
+      "uvRect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.25,
+        "u1": 0.8333333333333334,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 2048,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 14.148515237162428,
+      "capHeightWorld": 11.137908928485405,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.324135245085472,
+        "p75": 12.399533224203083,
+        "p90": 13.16993585743453,
+        "max": 14.114490138221527,
+        "occupiedBins": 2049,
+        "totalPolygons": 1150544,
+        "foliagePolygons": 947050,
+        "foliageRatio": 0.8231323617349706
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.66796875,
+        "v0": 0.29345703125,
+        "u1": 0.83203125,
+        "v1": 0.45703125
+      },
+      "pixelContentBounds": {
+        "x0": 4,
+        "y0": 88,
+        "x1": 507,
+        "y1": 422
+      },
+      "alphaCoverage": 0.2888755798339844,
+      "tightWorldWidth": 23.179992234706884,
+      "tightWorldDepth": 15.40733610838652,
+      "tightWorldBounds": {
+        "rightMin": -11.589996117353442,
+        "rightMax": 11.589996117353442,
+        "depthMin": -7.680672030150892,
+        "depthMax": 7.726664078235627
+      },
+      "rendered": true,
+      "orthoScale": 23.54792861938477,
+      "renderedWorldWidth": 23.54792861938477,
+      "renderedWorldDepth": 23.54792861938477
+    },
+    {
+      "cellId": "GTOP_G6_yaw180",
+      "matchingSideCellId": "G6_yaw180",
+      "matchingSideCellIndex": 17,
+      "cellIndex": 17,
+      "row": 2,
+      "col": 5,
+      "groveConfig": "G6",
+      "bakedYaw": 180.0,
+      "sourceCompositionDigest": "sha256:faf43a4043a98053eb3d7f52cd84d22a2f4d67a43c99354443e1f0ec34d71b0f",
+      "uvRect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.25,
+        "u1": 1.0,
+        "v1": 0.5
+      },
+      "atlasPixelRect": {
+        "x": 2560,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.388335981108696,
+      "capHeightWorld": 11.422648024821944,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.735726334154606,
+        "p75": 12.773499559601305,
+        "p90": 15.897589753469674,
+        "max": 18.247489419948124,
+        "occupiedBins": 1221,
+        "totalPolygons": 446383,
+        "foliagePolygons": 340156,
+        "foliageRatio": 0.7620272277394077
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.8349609375,
+        "v0": 0.25537109375,
+        "u1": 0.9983723958333334,
+        "v1": 0.49462890625
+      },
+      "pixelContentBounds": {
+        "x0": 5,
+        "y0": 11,
+        "x1": 506,
+        "y1": 500
+      },
+      "alphaCoverage": 0.23986434936523438,
+      "tightWorldWidth": 18.62775980651379,
+      "tightWorldDepth": 18.182474711537367,
+      "tightWorldBounds": {
+        "rightMin": -9.313879903256895,
+        "rightMax": 9.313879903256895,
+        "depthMin": -9.091237355768683,
+        "depthMax": 9.091237355768683
+      },
+      "rendered": true,
+      "orthoScale": 18.998830718994146,
+      "renderedWorldWidth": 18.998830718994146,
+      "renderedWorldDepth": 18.998830718994146
+    },
+    {
+      "cellId": "GTOP_G1_yaw270",
+      "matchingSideCellId": "G1_yaw270",
+      "matchingSideCellIndex": 18,
+      "cellIndex": 18,
+      "row": 3,
+      "col": 0,
+      "groveConfig": "G1",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:e30e29284f50a031224220f6cded7c7dab039274165050516ab3a444e0bcd59b",
+      "uvRect": {
+        "u0": 0.0,
+        "v0": 0.0,
+        "u1": 0.16666666666666666,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 0,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.95704684406519,
+      "capHeightWorld": 12.025479830307528,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.673006393015385,
+        "p75": 14.057230331003666,
+        "p90": 17.03610072284937,
+        "max": 18.81184420734644,
+        "occupiedBins": 1045,
+        "totalPolygons": 153712,
+        "foliagePolygons": 50385,
+        "foliageRatio": 0.3277883314250026
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.01171875,
+        "v0": 0.0029296875,
+        "u1": 0.1552734375,
+        "v1": 0.24755859375
+      },
+      "pixelContentBounds": {
+        "x0": 36,
+        "y0": 5,
+        "x1": 476,
+        "y1": 505
+      },
+      "alphaCoverage": 0.18682098388671875,
+      "tightWorldWidth": 17.464141554012897,
+      "tightWorldDepth": 19.840215234830982,
+      "tightWorldBounds": {
+        "rightMin": -8.712270162999632,
+        "rightMax": 8.751871391013267,
+        "depthMin": -9.900307003408674,
+        "depthMax": 9.939908231422308
+      },
+      "rendered": true,
+      "orthoScale": 20.275828742980963,
+      "renderedWorldWidth": 20.275828742980963,
+      "renderedWorldDepth": 20.275828742980963
+    },
+    {
+      "cellId": "GTOP_G2_yaw270",
+      "matchingSideCellId": "G2_yaw270",
+      "matchingSideCellIndex": 19,
+      "cellIndex": 19,
+      "row": 3,
+      "col": 1,
+      "groveConfig": "G2",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:bb52e7b286809f165fc77023c5c85b11fc66c517000ef020c6b6cf7755e0c75a",
+      "uvRect": {
+        "u0": 0.16666666666666666,
+        "v0": 0.0,
+        "u1": 0.3333333333333333,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 512,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 17.25091312526766,
+      "capHeightWorld": 10.742664162862843,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.23471717965208,
+        "p75": 12.056186932542943,
+        "p90": 14.808698209644206,
+        "max": 17.118778721208514,
+        "occupiedBins": 1346,
+        "totalPolygons": 510204,
+        "foliagePolygons": 355813,
+        "foliageRatio": 0.6973935915829746
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.18522135416666666,
+        "v0": 0.00244140625,
+        "u1": 0.3147786458333333,
+        "v1": 0.24755859375
+      },
+      "pixelContentBounds": {
+        "x0": 57,
+        "y0": 5,
+        "x1": 454,
+        "y1": 506
+      },
+      "alphaCoverage": 0.2113800048828125,
+      "tightWorldWidth": 17.78467911869288,
+      "tightWorldDepth": 22.431931953728203,
+      "tightWorldBounds": {
+        "rightMin": -8.89233955934644,
+        "rightMax": 8.89233955934644,
+        "depthMin": -11.215965976864101,
+        "depthMax": 11.215965976864101
+      },
+      "rendered": true,
+      "orthoScale": 22.878783187866215,
+      "renderedWorldWidth": 22.878783187866215,
+      "renderedWorldDepth": 22.878783187866215
+    },
+    {
+      "cellId": "GTOP_G3_yaw270",
+      "matchingSideCellId": "G3_yaw270",
+      "matchingSideCellIndex": 20,
+      "cellIndex": 20,
+      "row": 3,
+      "col": 2,
+      "groveConfig": "G3",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:47627fe0c7ccbee6cd0f6c05dd6ac9ef193436dece068b365dcde8dd33725b17",
+      "uvRect": {
+        "u0": 0.3333333333333333,
+        "v0": 0.0,
+        "u1": 0.5,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 1024,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 19.71532799467385,
+      "capHeightWorld": 12.60467627119325,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 12.490793430245787,
+        "p75": 14.753041207643719,
+        "p90": 17.01024363568377,
+        "max": 19.56431725721086,
+        "occupiedBins": 1912,
+        "totalPolygons": 201861,
+        "foliagePolygons": 72697,
+        "foliageRatio": 0.3601339535621046
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.34375,
+        "v0": 0.00244140625,
+        "u1": 0.4895833333333333,
+        "v1": 0.2470703125
+      },
+      "pixelContentBounds": {
+        "x0": 32,
+        "y0": 6,
+        "x1": 479,
+        "y1": 506
+      },
+      "alphaCoverage": 0.3656272888183594,
+      "tightWorldWidth": 14.29737376213074,
+      "tightWorldDepth": 15.988804140239957,
+      "tightWorldBounds": {
+        "rightMin": -7.14868688106537,
+        "rightMax": 7.14868688106537,
+        "depthMin": -8.010358960479499,
+        "depthMax": 7.978445179760457
+      },
+      "rendered": true,
+      "orthoScale": 16.339855728149416,
+      "renderedWorldWidth": 16.339855728149416,
+      "renderedWorldDepth": 16.339855728149416
+    },
+    {
+      "cellId": "GTOP_G4_yaw270",
+      "matchingSideCellId": "G4_yaw270",
+      "matchingSideCellIndex": 21,
+      "cellIndex": 21,
+      "row": 3,
+      "col": 3,
+      "groveConfig": "G4",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:cfea4c4584a9448ff501a195e012e14959bb5ff85eeda92b086cf276139b1f71",
+      "uvRect": {
+        "u0": 0.5,
+        "v0": 0.0,
+        "u1": 0.6666666666666666,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 1536,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 16.303060557078794,
+      "capHeightWorld": 10.703116125697084,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.743413201790418,
+        "p75": 12.191775569515755,
+        "p90": 13.084283658464665,
+        "max": 16.17818628493501,
+        "occupiedBins": 1939,
+        "totalPolygons": 864280,
+        "foliagePolygons": 667175,
+        "foliageRatio": 0.7719431202850928
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.5169270833333334,
+        "v0": 0.00244140625,
+        "u1": 0.6494140625,
+        "v1": 0.24755859375
+      },
+      "pixelContentBounds": {
+        "x0": 52,
+        "y0": 5,
+        "x1": 458,
+        "y1": 506
+      },
+      "alphaCoverage": 0.3219337463378906,
+      "tightWorldWidth": 16.886205862015487,
+      "tightWorldDepth": 20.82770354479552,
+      "tightWorldBounds": {
+        "rightMin": -8.463847655653955,
+        "rightMax": 8.422358206361533,
+        "depthMin": -10.41385177239776,
+        "depthMax": 10.41385177239776
+      },
+      "rendered": true,
+      "orthoScale": 21.24259803771973,
+      "renderedWorldWidth": 21.24259803771973,
+      "renderedWorldDepth": 21.24259803771973
+    },
+    {
+      "cellId": "GTOP_G5_yaw270",
+      "matchingSideCellId": "G5_yaw270",
+      "matchingSideCellIndex": 22,
+      "cellIndex": 22,
+      "row": 3,
+      "col": 4,
+      "groveConfig": "G5",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:c69828d465c3d2fbf9df60162fc79be4fd55b3e58967cbe2a04c3d06296915df",
+      "uvRect": {
+        "u0": 0.6666666666666666,
+        "v0": 0.0,
+        "u1": 0.8333333333333334,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 2048,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 14.148515237162428,
+      "capHeightWorld": 11.137908928485405,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 11.324135245085472,
+        "p75": 12.399533224203083,
+        "p90": 13.16993585743453,
+        "max": 14.114490138221527,
+        "occupiedBins": 2049,
+        "totalPolygons": 1150544,
+        "foliagePolygons": 947050,
+        "foliageRatio": 0.8231323617349706
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.6953125,
+        "v0": 0.001953125,
+        "u1": 0.8046875,
+        "v1": 0.24755859375
+      },
+      "pixelContentBounds": {
+        "x0": 88,
+        "y0": 5,
+        "x1": 423,
+        "y1": 507
+      },
+      "alphaCoverage": 0.28881072998046875,
+      "tightWorldWidth": 15.453328156471255,
+      "tightWorldDepth": 23.134000186622146,
+      "tightWorldBounds": {
+        "rightMin": -7.726664078235627,
+        "rightMax": 7.726664078235627,
+        "depthMin": -11.589996117353442,
+        "depthMax": 11.544004069268706
+      },
+      "rendered": true,
+      "orthoScale": 23.54792861938477,
+      "renderedWorldWidth": 23.54792861938477,
+      "renderedWorldDepth": 23.54792861938477
+    },
+    {
+      "cellId": "GTOP_G6_yaw270",
+      "matchingSideCellId": "G6_yaw270",
+      "matchingSideCellIndex": 23,
+      "cellIndex": 23,
+      "row": 3,
+      "col": 5,
+      "groveConfig": "G6",
+      "bakedYaw": 270.0,
+      "sourceCompositionDigest": "sha256:faf43a4043a98053eb3d7f52cd84d22a2f4d67a43c99354443e1f0ec34d71b0f",
+      "uvRect": {
+        "u0": 0.8333333333333334,
+        "v0": 0.0,
+        "u1": 1.0,
+        "v1": 0.25
+      },
+      "atlasPixelRect": {
+        "x": 2560,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "sourceWorldHeight": 18.388335981108696,
+      "capHeightWorld": 11.422648024821944,
+      "capHeightDiagnostics": {
+        "method": "foliage_material_binned_max_mean",
+        "p50": 10.735726334154606,
+        "p75": 12.773499559601305,
+        "p90": 15.897589753469674,
+        "max": 18.247489419948124,
+        "occupiedBins": 1221,
+        "totalPolygons": 446383,
+        "foliagePolygons": 340156,
+        "foliageRatio": 0.7620272277394077
+      },
+      "alphaTightBoundsUV": {
+        "u0": 0.8369140625,
+        "v0": 0.00244140625,
+        "u1": 0.9964192708333334,
+        "v1": 0.2470703125
+      },
+      "pixelContentBounds": {
+        "x0": 11,
+        "y0": 6,
+        "x1": 500,
+        "y1": 506
+      },
+      "alphaCoverage": 0.23987960815429688,
+      "tightWorldWidth": 18.182474711537367,
+      "tightWorldDepth": 18.590652715265755,
+      "tightWorldBounds": {
+        "rightMin": -9.091237355768683,
+        "rightMax": 9.091237355768683,
+        "depthMin": -9.313879903256895,
+        "depthMax": 9.27677281200886
+      },
+      "rendered": true,
+      "orthoScale": 18.998830718994146,
+      "renderedWorldWidth": 18.998830718994146,
+      "renderedWorldDepth": 18.998830718994146
+    }
+  ],
+  "alpha_samples": [
+    {
+      "atlas": "grove_top",
+      "x": 1875,
+      "y": 2043,
+      "rgba": [
+        0.2666666805744171,
+        0.2823529541492462,
+        0.26274511218070984,
+        0.019607843831181526
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 1792,
+      "y": 1794,
+      "rgba": [
+        0.4431372880935669,
+        0.4941176772117615,
+        0.27450981736183167,
+        0.5843137502670288
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 2417,
+      "y": 1616,
+      "rgba": [
+        0.3450980484485626,
+        0.40000003576278687,
+        0.22745099663734436,
+        0.6784313917160034
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 2741,
+      "y": 1345,
+      "rgba": [
+        0.3333333432674408,
+        0.38431376218795776,
+        0.23137256503105164,
+        0.960784375667572
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 1984,
+      "y": 1183,
+      "rgba": [
+        0.3529411852359772,
+        0.40392160415649414,
+        0.21568629145622253,
+        0.41568630933761597
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 675,
+      "y": 897,
+      "rgba": [
+        0.2039215862751007,
+        0.24705883860588074,
+        0.12156863510608673,
+        0.960784375667572
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 1782,
+      "y": 713,
+      "rgba": [
+        0.06666667014360428,
+        0.10196079313755035,
+        0.019607843831181526,
+        0.0784313753247261
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 267,
+      "y": 394,
+      "rgba": [
+        0.13333334028720856,
+        0.16862745583057404,
+        0.05882353335618973,
+        0.9803922176361084
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 1602,
+      "y": 231,
+      "rgba": [
+        0.3176470696926117,
+        0.364705890417099,
+        0.19215688109397888,
+        0.917647123336792
+      ]
+    },
+    {
+      "atlas": "grove_top",
+      "x": 2894,
+      "y": 10,
+      "rgba": [
+        0.3450980484485626,
+        0.4117647409439087,
+        0.20000001788139343,
+        0.019607843831181526
+      ]
+    }
+  ]
+}
