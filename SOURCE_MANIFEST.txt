@@ -1,0 +1,361 @@
+================================================================
+SOURCE MANIFEST — SALOMON 高尾山 3D マウンテンアニメーション
+================================================================
+
+generated_at        : 2026-09-16 14:28:15 JST
+package_name        : salomon-source-r12route-20260916-142537
+source_project      : salomon-mountain-animation
+                      （個人環境の絶対パスは記載しません）
+
+----------------------------------------------------------------
+ソース状態
+----------------------------------------------------------------
+source_state        : 現在公開中の R12route と同一のソース状態
+preview_version     : r12route-20260916-122106
+deployed_bundle     : assets/index-DvdWGnVo.js
+deployed_bundle_sha : 8e1f697c73e8c97a00cd09a4d552f19f0024035709dd8f52c5fc7126e9475e0b
+deployed_index_sha  : 2baedbaa7e88a6e23d76db0e8b197c6ef745ece7eedfe2420f37499f5c69d39e
+build_command_used  : npx vite build --base /r10-preview/r12route-20260916-122106/ --outDir dist-r12route
+
+route_occlusion_issue : 3D 森林によるルート線の一部遮蔽は
+                        INTENTIONALLY UNRESOLVED（今回は意図的に未修正）
+
+----------------------------------------------------------------
+Git 情報（読み取りのみ。commit / add / push は一切していません）
+----------------------------------------------------------------
+git_branch          : main
+git_head_commit     : c12b921151b05fc14f18af099511bea99a92384f
+git_head_short      : c12b921
+git_status_summary  : modified(未コミット) 34 件 / untracked 107 エントリ
+                      → working tree は HEAD と一致していません。
+                      本パッケージは HEAD ではなく
+                      **current working tree の実ファイル**を source of truth としています。
+
+----------------------------------------------------------------
+パッケージ内容
+----------------------------------------------------------------
+package_file_count  : 446 （本マニフェスト・SHA256SUMS.txt を含む）
+source_file_count   : 443 （元プロジェクトからコピーしたファイル）
+included_untracked  : 292 ファイル（下記一覧）
+sha256_manifest     : SHA256SUMS.txt （パッケージ root 直下）
+handoff_readme      : DELIVERY_README.md （パッケージ root 直下）
+
+同梱したトップレベル:
+  index.html / forest-lab.html
+  package.json / package-lock.json
+  tsconfig.json / vite.config.ts / vitest.config.ts
+  .gitignore / README.md
+  src/ / public/ / scripts/ / deploy/
+
+除外したもの:
+  .git/ node_modules/ dist*/ UNADOPTED-*/ .scratch/ .local/
+  .aerial-texture-tmp/ .claude/ outputs/ memory/ docs/
+  PROJECT_STATE.md .DS_Store 等の OS メタデータ
+  ※ docs/reference/ はクライアント提供の社外秘資料のため除外
+  ※ .env 等の秘密情報ファイルは元プロジェクトにも存在しません
+
+----------------------------------------------------------------
+秘密情報スキャン
+----------------------------------------------------------------
+同梱テキストファイル 402 件を秘密鍵ヘッダ・各種 API トークン形式・
+Bearer / パスワード / credential 代入パターンで走査。
+実際の秘密情報は 0 件。検出 10 件はすべて誤検出（除外パターンの記述、
+Nginx 設定内の証明書パス表記、テスト用文字列）であり、値は含まれていません。
+
+----------------------------------------------------------------
+git untracked だが必要なため同梱したファイル一覧
+----------------------------------------------------------------
+（git archive HEAD だけでは欠落する。全 443 件中 292 件）
+
+forest-lab.html
+public/data/forest/far-canopy-fullmountain-2048.png
+public/data/forest/far-canopy-fullmountain-meta.json
+public/data/forest/far-canopy-fullmountain-r9i3-2048.png
+public/data/forest/far-canopy-fullmountain-r9i3-meta.json
+public/data/forest/foliage/broadleaf_alpha_512.png
+public/data/forest/foliage/broadleaf_diff_512.png
+public/data/forest/foliage/fir_twig_alpha_512.png
+public/data/forest/foliage/fir_twig_diff_512.png
+public/data/forest/impostor-v2/grove_atlas_3072x2048.png
+public/data/forest/impostor-v2/grove_top_atlas_3072x2048.png
+public/data/forest/impostor-v2/grove_top_atlas_meta.json
+public/data/forest/impostor-v2/impostor-atlas-meta.json
+public/data/forest/impostor-v2/tree_atlas_2048.png
+public/data/forest/r10/grove-atlas-r8-i1-skylight-blue-3072x2048.png
+public/data/forest/r10/tree-atlas-r8-i2b-pervariant-blue-2048x2048.png
+public/data/forest/takao-forest-mask-meta.json
+public/data/forest/takao-forest-mask.png
+src/config/assetBase.test.ts
+src/config/assetBase.ts
+src/config/defaults/canopySurface.test.ts
+src/config/defaults/canopySurface.ts
+src/config/defaults/farCanopy.ts
+src/config/defaults/forest.test.ts
+src/config/defaults/forest.ts
+src/config/defaults/forestCandidate.test.ts
+src/config/defaults/forestCandidate.ts
+src/config/defaults/forestImpostorV2.ts
+src/config/defaults/lighting.test.ts
+src/config/defaults/lighting.ts
+src/config/defaults/terrainSurface.test.ts
+src/config/defaults/terrainSurface.ts
+src/dev/forestCapturePoses.test.ts
+src/dev/forestCapturePoses.ts
+src/dev/scopeProof.test.ts
+src/dev/scopeProof.ts
+src/dev/stillExportName.test.ts
+src/dev/stillExportName.ts
+src/dev/takaoLocalPoses.test.ts
+src/dev/takaoLocalPoses.ts
+src/forest/billboardForest.test.ts
+src/forest/billboardForest.ts
+src/forest/candidate/canopyCardAtlas.ts
+src/forest/candidate/canopyCardMesh.test.ts
+src/forest/candidate/canopyCardMesh.ts
+src/forest/candidate/crownLayout.test.ts
+src/forest/candidate/crownLayout.ts
+src/forest/candidate/foliageSprites.test.ts
+src/forest/candidate/foliageSprites.ts
+src/forest/candidate/forestCandidateController.test.ts
+src/forest/candidate/forestCandidateController.ts
+src/forest/candidate/forestCandidateFlags.test.ts
+src/forest/candidate/forestCandidateFlags.ts
+src/forest/candidate/forestCandidatePlacement.test.ts
+src/forest/candidate/forestCandidatePlacement.ts
+src/forest/candidate/forestCandidateWiring.test.ts
+src/forest/candidate/forestMask.test.ts
+src/forest/candidate/forestMask.ts
+src/forest/candidate/types.ts
+src/forest/canopyBlobGeometry.test.ts
+src/forest/canopyBlobGeometry.ts
+src/forest/canopyCardTexture.test.ts
+src/forest/canopyCardTexture.ts
+src/forest/canopyClusterForest.test.ts
+src/forest/canopyClusterForest.ts
+src/forest/farCanopyOverlay.test.ts
+src/forest/farCanopyOverlay.ts
+src/forest/forestBuild.test.ts
+src/forest/forestBuild.ts
+src/forest/forestController.test.ts
+src/forest/forestController.ts
+src/forest/forestDensity.test.ts
+src/forest/forestDensity.ts
+src/forest/forestIsolationGuard.test.ts
+src/forest/forestPlacement.test.ts
+src/forest/forestPlacement.ts
+src/forest/forestRandom.test.ts
+src/forest/forestRandom.ts
+src/forest/forestVariant.test.ts
+src/forest/forestVariant.ts
+src/forest/impostorV2/forestImpostorV2Assets.integrity.test.ts
+src/forest/impostorV2/forestImpostorV2Controller.test.ts
+src/forest/impostorV2/forestImpostorV2Controller.ts
+src/forest/impostorV2/forestImpostorV2Flags.test.ts
+src/forest/impostorV2/forestImpostorV2Flags.ts
+src/forest/impostorV2/forestImpostorV2Regression.test.ts
+src/forest/impostorV2/forestImpostorV2Wiring.test.ts
+src/forest/impostorV2/forestMaskV2.test.ts
+src/forest/impostorV2/forestMaskV2.ts
+src/forest/impostorV2/groveTopCapAssets.test.ts
+src/forest/impostorV2/groveTopCapAssets.ts
+src/forest/impostorV2/groveTopCapGeometry.test.ts
+src/forest/impostorV2/groveTopCapGeometry.ts
+src/forest/impostorV2/groveTopCapMeshes.test.ts
+src/forest/impostorV2/groveTopCapMeshes.ts
+src/forest/impostorV2/groveTopCapMeta.test.ts
+src/forest/impostorV2/groveTopCapMeta.ts
+src/forest/impostorV2/impostorAssets.test.ts
+src/forest/impostorV2/impostorAssets.ts
+src/forest/impostorV2/impostorAtlasMeta.test.ts
+src/forest/impostorV2/impostorAtlasMeta.ts
+src/forest/impostorV2/impostorGeometry.test.ts
+src/forest/impostorV2/impostorGeometry.ts
+src/forest/impostorV2/impostorMaterial.test.ts
+src/forest/impostorV2/impostorMaterial.ts
+src/forest/impostorV2/impostorMeshes.test.ts
+src/forest/impostorV2/impostorMeshes.ts
+src/forest/impostorV2/impostorPlacement.test.ts
+src/forest/impostorV2/impostorPlacement.ts
+src/forest/impostorV2/macroForestField.test.ts
+src/forest/impostorV2/macroForestField.ts
+src/forest/impostorV2/macroNoise.test.ts
+src/forest/impostorV2/macroNoise.ts
+src/forest/impostorV2/r10AtlasPreset.test.ts
+src/forest/impostorV2/r10AtlasPreset.ts
+src/forest/impostorV2/r10CanopyTint.test.ts
+src/forest/impostorV2/r10CanopyTint.ts
+src/forest/impostorV2/r10CompositionPreset.test.ts
+src/forest/impostorV2/r10CompositionPreset.ts
+src/forest/impostorV2/r10DepthHaze.test.ts
+src/forest/impostorV2/r10DepthHaze.ts
+src/forest/impostorV2/r10TonePreset.test.ts
+src/forest/impostorV2/r10TonePreset.ts
+src/forest/impostorV2/r10WidePreset.test.ts
+src/forest/impostorV2/r10WidePreset.ts
+src/forest/impostorV2/types.ts
+src/forest/instancedTreeForest.test.ts
+src/forest/instancedTreeForest.ts
+src/forest/macroShade.test.ts
+src/forest/macroShade.ts
+src/forest/routeDistanceField.test.ts
+src/forest/routeDistanceField.ts
+src/forest/terrainHeightSampler.test.ts
+src/forest/terrainHeightSampler.ts
+src/forest/treeGeometry.test.ts
+src/forest/treeGeometry.ts
+src/forestLab/appearance/appearanceConstants.ts
+src/forestLab/appearance/appearanceCrossCheck.test.ts
+src/forestLab/appearance/appearanceInvariants.test.ts
+src/forestLab/appearance/appearanceMetrics.ts
+src/forestLab/appearance/appearanceModel.test.ts
+src/forestLab/appearance/appearanceModel.ts
+src/forestLab/appearance/familySelection.test.ts
+src/forestLab/appearance/familySelection.ts
+src/forestLab/appearance/macroFamilyField.test.ts
+src/forestLab/appearance/macroFamilyField.ts
+src/forestLab/camera/labCameras.test.ts
+src/forestLab/camera/labCameras.ts
+src/forestLab/candidates/candidateController.test.ts
+src/forestLab/candidates/candidateController.ts
+src/forestLab/candidates/terrainIdentity.test.ts
+src/forestLab/cluster/biViewGeometry.ts
+src/forestLab/cluster/biViewYawOffset.test.ts
+src/forestLab/cluster/clusterAssets.test.ts
+src/forestLab/cluster/clusterAssets.ts
+src/forestLab/cluster/clusterConstants.test.ts
+src/forestLab/cluster/clusterConstants.ts
+src/forestLab/cluster/clusterMeshes.test.ts
+src/forestLab/cluster/clusterMeshes.ts
+src/forestLab/cluster/clusterPlacement.test.ts
+src/forestLab/cluster/clusterPlacement.ts
+src/forestLab/cluster/clusterTypes.test.ts
+src/forestLab/cluster/clusterTypes.ts
+src/forestLab/cluster/clusterVisibility.test.ts
+src/forestLab/cluster/clusterVisibility.ts
+src/forestLab/cluster/farCanopyLayer.test.ts
+src/forestLab/cluster/farCanopyLayer.ts
+src/forestLab/configDump.test.ts
+src/forestLab/configDump.ts
+src/forestLab/forestLabMain.ts
+src/forestLab/generated/denseBroadleafGroveGenerated.test.ts
+src/forestLab/generated/far-canopy-2048.png
+src/forestLab/generated/far-canopy-meta.json
+src/forestLab/generated/far-canopy-r1-2048.png
+src/forestLab/generated/far-canopy-r1-meta.json
+src/forestLab/generated/far-canopy-r2-2048.png
+src/forestLab/generated/far-canopy-r2-meta.json
+src/forestLab/generated/far-canopy-r4-2048.png
+src/forestLab/generated/far-canopy-r4-meta.json
+src/forestLab/generated/far-canopy-r5-2048.png
+src/forestLab/generated/far-canopy-r5-meta.json
+src/forestLab/generated/far-canopy-r9-i1-skylight-blue-2048.png
+src/forestLab/generated/far-canopy-r9-i1-skylight-blue-meta.json
+src/forestLab/generated/far-canopy-r9-i2-farcanopy-fit-2048.png
+src/forestLab/generated/far-canopy-r9-i2-farcanopy-fit-meta.json
+src/forestLab/generated/far-canopy-r9-i3-farcanopy-fit-2048.png
+src/forestLab/generated/far-canopy-r9-i3-farcanopy-fit-meta.json
+src/forestLab/generated/farCanopyGenerated.test.ts
+src/forestLab/generated/farCanopyMaskAlignment.test.ts
+src/forestLab/generated/farCanopyR1Generated.test.ts
+src/forestLab/generated/farCanopyR2Generated.test.ts
+src/forestLab/generated/farCanopyR9Generated.test.ts
+src/forestLab/generated/grove-atlas-r3-dense-broadleaf-3072x2048.png
+src/forestLab/generated/grove-atlas-r3-dense-broadleaf-params.json
+src/forestLab/generated/grove-atlas-r4-fine-grain-3072x2048.png
+src/forestLab/generated/grove-atlas-r7-g4-real3d-3072x2048.png
+src/forestLab/generated/grove-atlas-r7-g4v2-micro-canopy-3072x2048.png
+src/forestLab/generated/grove-atlas-r7-g4v3-densify-3072x2048.png
+src/forestLab/generated/grove-atlas-r7-g4v4-canopy-chroma-3072x2048.png
+src/forestLab/generated/grove-atlas-r8-i1-skylight-blue-3072x2048.png
+src/forestLab/generated/r4-canopy-atlases-params.json
+src/forestLab/generated/r4CanopyContinuityGenerated.test.ts
+src/forestLab/generated/r5FarCanopyGenerated.test.ts
+src/forestLab/generated/tree-atlas-r4-crown-dominant-2048x2048.png
+src/forestLab/generated/tree-atlas-r8-i2-skylight-blue-2048x2048.png
+src/forestLab/generated/tree-atlas-r8-i2b-pervariant-blue-2048x2048.png
+src/forestLab/hybrid/detailMeshes.test.ts
+src/forestLab/hybrid/detailMeshes.ts
+src/forestLab/hybrid/detailPlacement.test.ts
+src/forestLab/hybrid/detailPlacement.ts
+src/forestLab/isolation/labClusterAssetGuard.test.ts
+src/forestLab/isolation/labIsolationGuard.test.ts
+src/forestLab/isolation/labReferenceGuard.test.ts
+src/forestLab/labConstants.test.ts
+src/forestLab/labConstants.ts
+src/forestLab/labHook.test.ts
+src/forestLab/labHook.ts
+src/forestLab/labTypes.ts
+src/forestLab/patch/patchGrid.test.ts
+src/forestLab/patch/patchGrid.ts
+src/forestLab/patch/patchManifest.test.ts
+src/forestLab/patch/patchManifest.ts
+src/forestLab/r10/coverageFill.test.ts
+src/forestLab/r10/coverageFill.ts
+src/forestLab/r10/macroShade.test.ts
+src/forestLab/r10/macroShade.ts
+src/forestLab/r10/r10LabConfig.test.ts
+src/forestLab/r10/r10LabConfig.ts
+src/forestLab/scene/labDataSources.ts
+src/forestLab/scene/labRenderer.test.ts
+src/forestLab/scene/labRenderer.ts
+src/forestLab/scene/labTerrain.ts
+src/forestLab/shell/crownField.test.ts
+src/forestLab/shell/crownField.ts
+src/forestLab/shell/maskDistanceField.test.ts
+src/forestLab/shell/maskDistanceField.ts
+src/forestLab/shell/shellHeightField.test.ts
+src/forestLab/shell/shellHeightField.ts
+src/forestLab/shell/shellMesh.test.ts
+src/forestLab/shell/shellMesh.ts
+src/forestLab/telemetry/labTelemetry.test.ts
+src/forestLab/telemetry/labTelemetry.ts
+src/forestLab/ui/labOrbit.test.ts
+src/forestLab/ui/labOrbit.ts
+src/forestLab/ui/labUi.test.ts
+src/forestLab/ui/labUi.ts
+src/interaction/manualOrbit.test.ts
+src/interaction/manualOrbit.ts
+src/interaction/pointerOrbit.test.ts
+src/interaction/pointerOrbit.ts
+src/perf/benchmarkMode.test.ts
+src/perf/benchmarkMode.ts
+src/perf/benchmarkProtocol.test.ts
+src/perf/benchmarkProtocol.ts
+src/perf/stableBenchmark.test.ts
+src/perf/stableBenchmark.ts
+src/referenceAssetGuard.test.ts
+src/route/r11RouteStylePreset.test.ts
+src/route/r11RouteStylePreset.ts
+src/scene/gpuFrameTimer.test.ts
+src/scene/gpuFrameTimer.ts
+src/scene/labelLayerPromotion.test.ts
+src/scene/labelLayerPromotion.ts
+src/scene/labelPerfBypass.test.ts
+src/scene/labelPerfBypass.ts
+src/scene/perfBypass.test.ts
+src/scene/perfBypass.ts
+src/terrain/aerialLuminance.test.ts
+src/terrain/aerialLuminance.ts
+src/terrain/canopyDetailNormal.test.ts
+src/terrain/canopyDetailNormal.ts
+src/terrain/canopySurface.test.ts
+src/terrain/canopySurface.ts
+src/terrain/canopySurfaceShader.test.ts
+src/terrain/canopySurfaceShader.ts
+src/terrain/canopySurfaceVariant.test.ts
+src/terrain/canopySurfaceVariant.ts
+src/terrain/demNormalMap.test.ts
+src/terrain/demNormalMap.ts
+src/terrain/multiScaleHillshade.test.ts
+src/terrain/multiScaleHillshade.ts
+src/terrain/normalFieldTexture.test.ts
+src/terrain/normalFieldTexture.ts
+src/terrain/terrainIndexLayout.test.ts
+src/terrain/terrainRaycastRange.test.ts
+src/terrain/terrainRaycastRange.ts
+src/terrain/terrainShadeComposite.test.ts
+src/terrain/terrainShadeComposite.ts
+src/terrain/terrainTextureAdjust.test.ts
+src/terrain/terrainTextureAdjust.ts
+src/terrain/terrainVariant.test.ts
+src/terrain/terrainVariant.ts
